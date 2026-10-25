@@ -1,0 +1,122 @@
+[
+  {
+    "id": "REG001",
+    "volunteerId": "V001",
+    "shiftId": "SH001",
+    "status": "confirmed",
+    "registeredAt": "2026-10-15T08:30:00",
+    "hoursLogged": 4
+  },
+  {
+    "id": "REG002",
+    "volunteerId": "V006",
+    "shiftId": "SH001",
+    "status": "confirmed",
+    "registeredAt": "2026-10-15T09:00:00",
+    "hoursLogged": 4
+  },
+  {
+    "id": "REG003",
+    "volunteerId": "V005",
+    "shiftId": "SH001",
+    "status": "pending",
+    "registeredAt": "2026-10-16T10:00:00",
+    "hoursLogged": 0
+  },
+  {
+    "id": "REG004",
+    "volunteerId": "V002",
+    "shiftId": "SH004",
+    "status": "confirmed",
+    "registeredAt": "2026-10-17T07:00:00",
+    "hoursLogged": 3
+  },
+  {
+    "id": "REG005",
+    "volunteerId": "V003",
+    "shiftId": "SH006",
+    "status": "confirmed",
+    "registeredAt": "2026-10-16T14:00:00",
+    "hoursLogged": 10
+  },
+  {
+    "id": "REG006",
+    "volunteerId": "V004",
+    "shiftId": "SH009",
+    "status": "completed",
+    "registeredAt": "2026-10-20T11:00:00",
+    "hoursLogged": 6
+  },
+  {
+    "id": "REG007",
+    "volunteerId": "V008",
+    "shiftId": "SH009",
+    "status": "completed",
+    "registeredAt": "2026-10-20T12:00:00",
+    "hoursLogged": 6
+  },
+  {
+    "id": "REG008",
+    "volunteerId": "V001",
+    "shiftId": "SH008",
+    "status": "pending",
+    "registeredAt": "2026-10-18T08:00:00",
+    "hoursLogged": 0
+  },
+  {
+    "id": "REG009",
+    "volunteerId": "V003",
+    "shiftId": "SH007",
+    "status": "cancelled",
+    "registeredAt": "2026-10-17T16:00:00",
+    "hoursLogged": 0
+  },
+  {
+    "id": "REG010",
+    "volunteerId": "V005",
+    "shiftId": "SH010",
+    "status": "confirmed",
+    "registeredAt": "2026-10-18T09:00:00",
+    "hoursLogged": 0
+  },
+  {
+    "id": "REG011",
+    "volunteerId": "V001",
+    "shiftId": "SH011",
+    "status": "completed",
+    "registeredAt": "2026-10-01T07:30:00",
+    "hoursLogged": 8
+  },
+  {
+    "id": "REG012",
+    "volunteerId": "V001",
+    "shiftId": "SH012",
+    "status": "completed",
+    "registeredAt": "2026-10-05T07:30:00",
+    "hoursLogged": 8
+  },
+  {
+    "id": "REG013",
+    "volunteerId": "V001",
+    "shiftId": "SH013",
+    "status": "completed",
+    "registeredAt": "2026-10-09T07:30:00",
+    "hoursLogged": 8
+  },
+  {
+    "id": "REG014",
+    "volunteerId": "V001",
+    "shiftId": "SH014",
+    "status": "completed",
+    "registeredAt": "2026-10-13T07:30:00",
+    "hoursLogged": 8
+  },
+  {
+    "id": "REG015",
+    "volunteerId": "V001",
+    "shiftId": "SH015",
+    "status": "completed",
+    "registeredAt": "2026-10-17T07:30:00",
+    "hoursLogged": 8
+  }
+]

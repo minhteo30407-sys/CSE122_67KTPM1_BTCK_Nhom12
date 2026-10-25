@@ -1,0 +1,12 @@
+[
+  { "id": "SK001", "name": "Sơ cứu", "category": "Y tế", "status": "active" },
+  { "id": "SK002", "name": "Tư vấn tâm lý", "category": "Y tế", "status": "active" },
+  { "id": "SK003", "name": "Dạy học", "category": "Giáo dục", "status": "active" },
+  { "id": "SK004", "name": "Tin học cơ bản", "category": "Giáo dục", "status": "active" },
+  { "id": "SK005", "name": "Nấu ăn", "category": "Hậu cần", "status": "active" },
+  { "id": "SK006", "name": "Lái xe", "category": "Vận chuyển", "status": "active" },
+  { "id": "SK007", "name": "Chụp ảnh", "category": "Truyền thông", "status": "active" },
+  { "id": "SK008", "name": "Viết bài", "category": "Truyền thông", "status": "active" },
+  { "id": "SK009", "name": "Dịch thuật", "category": "Ngôn ngữ", "status": "active" },
+  { "id": "SK010", "name": "Quản lý sự kiện", "category": "Tổ chức", "status": "active" }
+]

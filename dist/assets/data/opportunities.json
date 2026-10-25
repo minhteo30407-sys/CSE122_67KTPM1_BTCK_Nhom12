@@ -1,0 +1,93 @@
+[
+  {
+    "id": "OPP001",
+    "orgId": "ORG001",
+    "title": "Khám bệnh miễn phí cho người cao tuổi",
+    "description": "Chương trình khám sức khỏe tổng quát và phát thuốc miễn phí cho người cao tuổi tại phường Bến Nghé.",
+    "location": "Nhà văn hóa Quận 1, TP.HCM",
+    "startDate": "2026-11-01",
+    "endDate": "2026-11-03",
+    "requiredSkills": ["SK001", "SK002"],
+    "category": "Y tế",
+    "status": "open",
+    "maxVolunteers": 15
+  },
+  {
+    "id": "OPP002",
+    "orgId": "ORG002",
+    "title": "Dạy học cho trẻ em vùng khó khăn",
+    "description": "Chương trình dạy kèm miễn phí các môn Toán, Tiếng Việt, Tiếng Anh cho trẻ em ở xã Nhơn Đức, Nhà Bè.",
+    "location": "Trường TH Nhơn Đức, Nhà Bè, TP.HCM",
+    "startDate": "2026-11-05",
+    "endDate": "2026-11-20",
+    "requiredSkills": ["SK003", "SK004"],
+    "category": "Giáo dục",
+    "status": "open",
+    "maxVolunteers": 10
+  },
+  {
+    "id": "OPP003",
+    "orgId": "ORG003",
+    "title": "Chiến dịch Mùa hè xanh 2026",
+    "description": "Hoạt động xây nhà tình thương, làm đường, dọn vệ sinh môi trường tại huyện Cần Giờ.",
+    "location": "Huyện Cần Giờ, TP.HCM",
+    "startDate": "2026-11-10",
+    "endDate": "2026-11-15",
+    "requiredSkills": ["SK005", "SK006", "SK010"],
+    "category": "Môi trường",
+    "status": "open",
+    "maxVolunteers": 30
+  },
+  {
+    "id": "OPP004",
+    "orgId": "ORG004",
+    "title": "Gây quỹ Trung thu cho trẻ em",
+    "description": "Tổ chức chương trình Trung thu cho trẻ em có hoàn cảnh khó khăn: phát quà, biểu diễn văn nghệ.",
+    "location": "Công viên 23/9, Quận 1, TP.HCM",
+    "startDate": "2026-10-25",
+    "endDate": "2026-10-25",
+    "requiredSkills": ["SK007", "SK008", "SK010"],
+    "category": "Giáo dục",
+    "status": "completed",
+    "maxVolunteers": 20
+  },
+  {
+    "id": "OPP005",
+    "orgId": "ORG001",
+    "title": "Phát cơm từ thiện mỗi tuần",
+    "description": "Chương trình nấu và phát cơm miễn phí cho người vô gia cư, bệnh nhân nghèo mỗi Chủ nhật.",
+    "location": "Bệnh viện Chợ Rẫy, Quận 5, TP.HCM",
+    "startDate": "2026-11-01",
+    "endDate": "2026-12-31",
+    "requiredSkills": ["SK005"],
+    "category": "Hậu cần",
+    "status": "open",
+    "maxVolunteers": 12
+  },
+  {
+    "id": "OPP006",
+    "orgId": "ORG002",
+    "title": "Dịch tài liệu y tế cho người dân tộc",
+    "description": "Dịch các tài liệu hướng dẫn phòng chống dịch bệnh sang tiếng dân tộc thiểu số.",
+    "location": "Trực tuyến",
+    "startDate": "2026-11-15",
+    "endDate": "2026-12-15",
+    "requiredSkills": ["SK009"],
+    "category": "Ngôn ngữ",
+    "status": "open",
+    "maxVolunteers": 5
+  },
+  {
+    "id": "OPP007",
+    "orgId": "ORG001",
+    "title": "Hỗ trợ hậu cần chiến dịch cộng đồng",
+    "description": "Chuẩn bị vật phẩm, điều phối điểm phát và hỗ trợ hậu cần cho các hoạt động cộng đồng.",
+    "location": "Quận 1, TP. Hồ Chí Minh",
+    "startDate": "2026-10-01",
+    "endDate": "2026-10-20",
+    "requiredSkills": ["SK005"],
+    "category": "Hậu cần",
+    "status": "completed",
+    "maxVolunteers": 5
+  }
+]

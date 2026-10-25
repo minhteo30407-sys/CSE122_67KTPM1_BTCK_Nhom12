@@ -1,0 +1,225 @@
+﻿<!doctype html>
+<!-- VolunteerLink: Page structure and content for volunteer profile. -->
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hồ sơ tình nguyện viên - VolunteerLink</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-content" id="main">
+      <div class="page-header">
+        <div>
+          <h1>Hồ sơ của tôi</h1>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 14px;
+              margin-top: 4px;
+            "
+          >
+            Quản lý thông tin cá nhân, năng lực chuyên môn và lịch rảnh tham gia
+            tình nguyện
+          </p>
+          <span class="badge badge-success" style="margin-top: 8px"
+            >Tài khoản đang hoạt động</span
+          >
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="saveProfile()">
+          💾 Lưu thay đổi
+        </button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="volTotalHours">0</div>
+          <div class="stat-label">Tổng giờ cống hiến</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--info)"
+            id="volCompletedShifts"
+          >
+            0
+          </div>
+          <div class="stat-label">Ca đã hoàn thành</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--accent)"
+            id="volBadgeCount"
+          >
+            0
+          </div>
+          <div class="stat-label">Huy hiệu đạt được</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--success)"
+            id="volImpactScore"
+          >
+            0%
+          </div>
+          <div
+            class="stat-label"
+            title="Tỷ lệ ca hoàn thành trên tổng số ca đã hoàn thành hoặc bị hủy."
+          >
+            Điểm tin cậy & cam kết
+          </div>
+        </div>
+      </div>
+
+      <div class="board-layout">
+        <div class="card">
+          <div class="card-header">
+            <span>Thông tin cá nhân & Kỹ năng</span>
+          </div>
+          <div class="card-body">
+            <form
+              id="profileForm"
+              onsubmit="
+                event.preventDefault();
+                saveProfile();
+              "
+            >
+              <input type="hidden" id="profileVolId" />
+
+              <div class="form-group">
+                <label class="form-label" for="profileName">Họ và tên *</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  id="profileName"
+                  required
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="profileEmail">Email *</label>
+                  <input
+                    type="email"
+                    class="form-input"
+                    id="profileEmail"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="profilePhone"
+                    >Số điện thoại *</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-input"
+                    id="profilePhone"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Kỹ năng chuyên môn</label>
+                <div class="checkbox-group" id="profileSkillsGroup"></div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label"
+                  >Lịch rảnh thường xuyên trong tuần</label
+                >
+                <div class="schedule-grid" id="availabilityGrid">
+                  <div
+                    class="schedule-slot"
+                    data-day="Thứ 2"
+                    onclick="toggleSlot(this)"
+                  >
+                    Thứ 2
+                  </div>
+                  <div
+                    class="schedule-slot"
+                    data-day="Thứ 3"
+                    onclick="toggleSlot(this)"
+                  >
+                    Thứ 3
+                  </div>
+                  <div
+                    class="schedule-slot"
+                    data-day="Thứ 4"
+                    onclick="toggleSlot(this)"
+                  >
+                    Thứ 4
+                  </div>
+                  <div
+                    class="schedule-slot"
+                    data-day="Thứ 5"
+                    onclick="toggleSlot(this)"
+                  >
+                    Thứ 5
+                  </div>
+                  <div
+                    class="schedule-slot"
+                    data-day="Thứ 6"
+                    onclick="toggleSlot(this)"
+                  >
+                    Thứ 6
+                  </div>
+                  <div
+                    class="schedule-slot"
+                    data-day="Thứ 7"
+                    onclick="toggleSlot(this)"
+                  >
+                    Thứ 7
+                  </div>
+                  <div
+                    class="schedule-slot"
+                    data-day="Chủ nhật"
+                    onclick="toggleSlot(this)"
+                  >
+                    Chủ nhật
+                  </div>
+                </div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--text-secondary);
+                    margin-top: 6px;
+                  "
+                >
+                  Nhấn chọn các ngày bạn có thể tham gia hoạt động để AI tự động
+                  ghép ca phù hợp nhất.
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span>Hành trình thành tựu</span>
+          </div>
+          <div class="card-body">
+            <p class="achievement-intro">
+              Theo dõi những cột mốc bạn đã chinh phục và mục tiêu tiếp theo
+              trên hành trình tình nguyện.
+            </p>
+            <div
+              id="profileBadges"
+              class="achievement-list"
+              aria-live="polite"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../../js/services.js"></script>
+    <script src="../../js/modules/volunteer-achievements.js"></script>
+    <script src="../../js/modules/ai-panel.js"></script>
+    <script src="../../js/modules/shift-predictor.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
