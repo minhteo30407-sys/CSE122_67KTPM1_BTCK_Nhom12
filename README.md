@@ -3,8 +3,7 @@
 > **BTL-24** · Học phần Phát triển ứng dụng web cơ bản (CSE122)  
 > **Nhóm thực hiện:** Trần Văn Minh · Nguyễn Bá Thành  
 > **GitHub Repository:** [CSE122_67KTPM1_BTCK_Nhom12](https://github.com/minhteo30407-sys/CSE122_67KTPM1_BTCK_Nhom12)  
-> **Link Live Deployment:** *(Dán link Render / Vercel / GitHub Pages tại đây sau khi kích hoạt)*
-
+> **Link Live Deployment:**  https://minhteo30407-sys.github.io/CSE122_67KTPM1_BTCK_Nhom12/
 ## Giới thiệu
 
 **VolunteerLink** là một ứng dụng web nguyên mẫu ghép tình nguyện viên với các ca hoạt động cộng đồng. Giao diện chạy trên trình duyệt; máy chủ Node.js phục vụ ứng dụng và cung cấp API chatbot. Sản phẩm giải quyết 4 vấn đề:
