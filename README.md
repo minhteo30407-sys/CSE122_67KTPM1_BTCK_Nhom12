@@ -1,7 +1,9 @@
 # VolunteerLink 🤝
 
 > **BTL-24** · Học phần Phát triển ứng dụng web cơ bản (CSE122)  
-> **Nhóm:** Trần Văn Minh · Nguyễn Bá Thành
+> **Nhóm thực hiện:** Trần Văn Minh · Nguyễn Bá Thành  
+> **GitHub Repository:** [CSE122_67KTPM1_BTCK_Nhom12](https://github.com/minhteo30407-sys/CSE122_67KTPM1_BTCK_Nhom12)  
+> **Link Live Deployment:** *(Dán link Render / Vercel / GitHub Pages tại đây sau khi kích hoạt)*
 
 ## Giới thiệu
 
