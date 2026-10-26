@@ -1,0 +1,218 @@
+﻿<!doctype html>
+<!-- VolunteerLink: Page structure and content for organization opportunity management. -->
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý hoạt động - VolunteerLink</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-content" id="main">
+      <div class="page-header">
+        <div>
+          <h1>Quản lý hoạt động</h1>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 14px;
+              margin-top: 4px;
+            "
+          >
+            Tạo, chỉnh sửa và quản lý các chương trình tình nguyện của tổ chức
+          </p>
+        </div>
+        <button class="btn btn-primary" onclick="openCreateModal()">
+          ➕ Tạo hoạt động mới
+        </button>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm theo tên hoạt động, địa điểm..."
+            oninput="filterOpportunities()"
+          />
+        </div>
+        <select
+          id="statusFilter"
+          class="filter-select"
+          onchange="filterOpportunities()"
+        >
+          <option value="">-- Tất cả trạng thái --</option>
+          <option value="open">Đang mở (open)</option>
+          <option value="filled">Đã đủ (filled)</option>
+          <option value="completed">Hoàn thành (completed)</option>
+          <option value="cancelled">Đã hủy (cancelled)</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Tên hoạt động</th>
+              <th>Danh mục</th>
+              <th>Địa điểm</th>
+              <th>Thời gian</th>
+              <th>TNV tối đa</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="opportunityTableBody"></tbody>
+        </table>
+      </div>
+
+      <div id="emptyContainer" class="hidden"></div>
+    </main>
+
+    <div class="modal-overlay" id="opportunityModal">
+      <div class="modal" style="max-width: 650px">
+        <div class="modal-header">
+          <span id="modalTitle">Tạo hoạt động mới</span>
+          <button class="modal-close" onclick="closeModal('opportunityModal')">
+            &times;
+          </button>
+        </div>
+        <form id="opportunityForm" onsubmit="handleFormSubmit(event)">
+          <div class="modal-body">
+            <input type="hidden" id="oppId" />
+
+            <div class="form-group">
+              <label class="form-label" for="oppTitle">Tên hoạt động *</label>
+              <input
+                type="text"
+                class="form-input"
+                id="oppTitle"
+                placeholder="Ví dụ: Khám bệnh miễn phí cho người cao tuổi"
+                required
+              />
+              <div class="form-error"></div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="oppCategory">Danh mục *</label>
+                <select class="form-select" id="oppCategory" required>
+                  <option value="Y tế">Y tế</option>
+                  <option value="Giáo dục">Giáo dục</option>
+                  <option value="Môi trường">Môi trường</option>
+                  <option value="Hậu cần">Hậu cần</option>
+                  <option value="Văn hóa - Xã hội">Văn hóa - Xã hội</option>
+                  <option value="Cứu trợ">Cứu trợ</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="oppStatus">Trạng thái *</label>
+                <select class="form-select" id="oppStatus" required>
+                  <option value="open">Đang mở (open)</option>
+                  <option value="filled">Đã đủ (filled)</option>
+                  <option value="completed">Hoàn thành (completed)</option>
+                  <option value="cancelled">Đã hủy (cancelled)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="oppDescription"
+                >Mô tả chi tiết *</label
+              >
+              <textarea
+                class="form-textarea"
+                id="oppDescription"
+                rows="3"
+                placeholder="Mục tiêu, nội dung chính của hoạt động..."
+                required
+              ></textarea>
+              <div class="form-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="oppLocation"
+                >Địa điểm tổ chức *</label
+              >
+              <input
+                type="text"
+                class="form-input"
+                id="oppLocation"
+                placeholder="Ví dụ: Nhà văn hóa Quận 1, TP.HCM"
+                required
+              />
+              <div class="form-error"></div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="oppStartDate"
+                  >Ngày bắt đầu *</label
+                >
+                <input
+                  type="date"
+                  class="form-input"
+                  id="oppStartDate"
+                  required
+                />
+                <div class="form-error"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="oppEndDate"
+                  >Ngày kết thúc *</label
+                >
+                <input
+                  type="date"
+                  class="form-input"
+                  id="oppEndDate"
+                  required
+                />
+                <div class="form-error"></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="oppMaxVolunteers"
+                  >Số TNV tối đa *</label
+                >
+                <input
+                  type="number"
+                  class="form-input"
+                  id="oppMaxVolunteers"
+                  min="1"
+                  value="15"
+                  required
+                />
+                <div class="form-error"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Kỹ năng yêu cầu</label>
+              <div class="checkbox-group" id="skillsCheckboxGroup"></div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="closeModal('opportunityModal')"
+            >
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-primary" id="saveButton">
+              Lưu thông tin
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/modules/ai-panel.js"></script>
+    <script src="../../js/modules/shift-predictor.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

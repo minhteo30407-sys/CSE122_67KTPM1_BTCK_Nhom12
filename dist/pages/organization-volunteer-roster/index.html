@@ -1,0 +1,126 @@
+﻿<!doctype html>
+<!-- VolunteerLink: Page structure and content for organization volunteer roster. -->
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách tình nguyện viên đăng ký - VolunteerLink</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-content" id="main">
+      <div class="page-header">
+        <div>
+          <h1>Danh sách tình nguyện viên đăng ký</h1>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 14px;
+              margin-top: 4px;
+            "
+          >
+            Xét duyệt, phân công và quản lý tình nguyện viên đăng ký các ca làm
+            việc
+          </p>
+        </div>
+        <button class="btn btn-secondary btn-sm" onclick="exportCSV()">
+          📥 Xuất danh sách
+        </button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="totalRegsCount">0</div>
+          <div class="stat-label">Tổng lượt đăng ký</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--accent)"
+            id="pendingRegsCount"
+          >
+            0
+          </div>
+          <div class="stat-label">Chờ xét duyệt</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--success)"
+            id="confirmedRegsCount"
+          >
+            0
+          </div>
+          <div class="stat-label">Đã xác nhận</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--info)"
+            id="completedRegsCount"
+          >
+            0
+          </div>
+          <div class="stat-label">Đã hoàn thành ca</div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="rosterSearchInput"
+            placeholder="Tìm theo tên tình nguyện viên, email..."
+            oninput="filterRoster()"
+          />
+        </div>
+        <select
+          id="shiftFilter"
+          class="filter-select"
+          onchange="filterRoster()"
+        >
+          <option value="">-- Tất cả các ca --</option>
+        </select>
+        <select
+          id="statusFilter"
+          class="filter-select"
+          onchange="filterRoster()"
+        >
+          <option value="">-- Tất cả trạng thái --</option>
+          <option value="pending">Chờ duyệt (pending)</option>
+          <option value="confirmed">Đã xác nhận (confirmed)</option>
+          <option value="completed">Đã hoàn thành (completed)</option>
+          <option value="rejected">Từ chối (rejected)</option>
+          <option value="cancelled">Đã hủy (cancelled)</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Mã ĐK</th>
+              <th>Tình nguyện viên</th>
+              <th>Email / Số điện thoại</th>
+              <th>Ca làm việc</th>
+              <th>Ngày diễn ra</th>
+              <th>Thời gian đăng ký</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="rosterTableBody"></tbody>
+        </table>
+      </div>
+
+      <div id="emptyContainer" class="hidden"></div>
+    </main>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/modules/ai-panel.js"></script>
+    <script src="../../js/modules/shift-predictor.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

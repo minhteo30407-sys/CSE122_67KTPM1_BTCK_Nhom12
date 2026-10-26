@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ORG001",
+    "name": "Hội Chữ thập đỏ Quận 1",
+    "email": "ctd.q1@email.com",
+    "phone": "0281234567",
+    "address": "123 Nguyễn Huệ, Quận 1, TP.HCM",
+    "description": "Tổ chức nhân đạo hỗ trợ cộng đồng tại Quận 1",
+    "status": "active",
+    "role": "organization"
+  },
+  {
+    "id": "ORG002",
+    "name": "Trung tâm Tình nguyện Thành phố",
+    "email": "ttnguyen@email.com",
+    "phone": "0282345678",
+    "address": "456 Lê Lợi, Quận 3, TP.HCM",
+    "description": "Trung tâm kết nối tình nguyện viên với các hoạt động cộng đồng",
+    "status": "active",
+    "role": "organization"
+  },
+  {
+    "id": "ORG003",
+    "name": "CLB Sinh viên Tình nguyện ĐH ABC",
+    "email": "clbsv.abc@email.com",
+    "phone": "0283456789",
+    "address": "789 Điện Biên Phủ, Quận Bình Thạnh, TP.HCM",
+    "description": "Câu lạc bộ tình nguyện của trường Đại học ABC",
+    "status": "active",
+    "role": "organization"
+  },
+  {
+    "id": "ORG004",
+    "name": "Quỹ Bảo trợ Trẻ em Miền Nam",
+    "email": "bttreem@email.com",
+    "phone": "0284567890",
+    "address": "101 Pasteur, Quận 1, TP.HCM",
+    "description": "Quỹ hỗ trợ trẻ em có hoàn cảnh khó khăn ở miền Nam",
+    "status": "active",
+    "role": "organization"
+  }
+]

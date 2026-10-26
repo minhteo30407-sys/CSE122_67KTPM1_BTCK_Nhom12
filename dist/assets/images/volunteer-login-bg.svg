@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C5E8D8"/>
+      <stop offset=".56" stop-color="#E8F4D9"/>
+      <stop offset="1" stop-color="#A9D4A5"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="799" y1="560" x2="799" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7EBD82"/>
+      <stop offset="1" stop-color="#397A59"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="297" y1="596" x2="426" y2="817" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5A85C"/>
+      <stop offset="1" stop-color="#D96F4D"/>
+    </linearGradient>
+    <linearGradient id="shirt2" x1="1164" y1="567" x2="1294" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#66A9A0"/>
+      <stop offset="1" stop-color="#32796E"/>
+    </linearGradient>
+    <filter id="blur" x="-100" y="-100" width="1800" height="1200" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1600v1000H0z"/>
+  <circle cx="1290" cy="175" r="112" fill="#FFF4C6" opacity=".77"/>
+  <g fill="#fff" opacity=".45" filter="url(#blur)">
+    <ellipse cx="222" cy="206" rx="198" ry="47"/>
+    <ellipse cx="730" cy="130" rx="167" ry="38"/>
+    <ellipse cx="1450" cy="355" rx="181" ry="46"/>
+  </g>
+  <path fill="#9ACB9A" d="M0 506c188-104 324-94 488-19 163 75 257 89 431 2 177-89 327-110 681-5v516H0V506Z"/>
+  <path fill="url(#hill)" d="M0 669c186-102 369-90 576 8 173 82 329 104 512 8 190-99 318-92 512-8v333H0V669Z"/>
+  <path fill="#2D684C" opacity=".56" d="M0 814c158-72 312-75 473-2 197 90 335 101 533 19 242-100 396-96 594-8v177H0V814Z"/>
+  <g fill="#3E8057" opacity=".72">
+    <path d="M126 560h24v162h-24z"/><circle cx="138" cy="536" r="58"/><circle cx="100" cy="567" r="40"/><circle cx="175" cy="572" r="43"/>
+    <path d="M1462 531h24v178h-24z"/><circle cx="1474" cy="505" r="65"/><circle cx="1430" cy="546" r="43"/><circle cx="1521" cy="548" r="44"/>
+  </g>
+  <g opacity=".32" fill="#fff">
+    <path d="M541 373c-31-39-88-19-88 28 0 51 88 100 88 100s88-49 88-100c0-47-57-67-88-28Z"/>
+    <path d="M1040 269c-19-24-55-12-55 18 0 32 55 64 55 64s55-32 55-64c0-30-36-42-55-18Z"/>
+  </g>
+  <g stroke="#285B45" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="22" d="m322 730-26 154m101-151 36 151"/>
+    <path fill="#F0C49A" stroke-width="10" d="M336 517c0-39 25-70 57-70s57 31 57 70v37H336v-37Z"/>
+    <path fill="url(#shirt)" stroke-width="12" d="M354 550h77c34 0 57 26 63 61l24 149H299l13-145c3-39 20-65 42-65Z"/>
+    <path stroke-width="18" d="m337 600-81 95m157-75 79 62"/>
+    <path fill="#285B45" stroke-width="8" d="M332 470c10-50 86-66 119-16-28-11-58-5-75 14-15 16-26 26-44 28v-26Z"/>
+    <path fill="#D98A55" stroke-width="8" d="M297 873h67v30h-84c0-17 7-30 17-30Zm134 0h66c17 0 28 13 28 30h-83c-7-9-11-19-11-30Z"/>
+  </g>
+  <g stroke="#285B45" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="22" d="m1163 735-20 149m104-148 34 148"/>
+    <path fill="#E8B98E" stroke-width="10" d="M1161 505c0-39 25-70 57-70s57 31 57 70v37h-114v-37Z"/>
+    <path fill="url(#shirt2)" stroke-width="12" d="M1177 540h78c35 0 57 27 63 63l23 157h-218l12-155c3-39 20-65 42-65Z"/>
+    <path stroke-width="18" d="m1160 594-68 73m163-64 81 78"/>
+    <path fill="#332E32" stroke-width="8" d="M1157 458c11-50 84-64 117-18-30-9-56-3-76 16-15 14-25 22-41 23v-21Z"/>
+    <path fill="#345E44" stroke-width="8" d="M1131 873h66v30h-83c0-17 7-30 17-30Zm136 0h65c17 0 28 13 28 30h-82c-7-9-11-19-11-30Z"/>
+  </g>
+  <g stroke="#D8EBC7" stroke-linecap="round" stroke-width="9">
+    <path d="M782 770c-27-55-25-105 8-148m21 148c-4-70 18-121 66-150m-74 148c-39-42-77-54-116-38m129 39c27-42 59-64 99-66"/>
+  </g>
+  <path fill="#F3C66B" d="M783 762h18l-7 86h-14l3-86Z"/>
+  <g fill="#fff" opacity=".82">
+    <circle cx="686" cy="694" r="6"/><circle cx="906" cy="700" r="5"/><circle cx="842" cy="640" r="4"/>
+    <circle cx="614" cy="779" r="5"/><circle cx="1009" cy="770" r="6"/>
+  </g>
+</svg>

@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<!-- VolunteerLink: Page structure and content for forgot password. -->
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quên mật khẩu - VolunteerLink</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="layout-public">
+    <header class="public-header">
+      <a
+        class="logo"
+        href="#"
+        onclick="
+          window.location.href = getPageUrl('index');
+          return false;
+        "
+        >Volunteer<span>Link</span></a
+      >
+      <nav>
+        <a
+          href="#"
+          onclick="
+            window.location.href = getPageUrl('index');
+            return false;
+          "
+          >Trang chủ</a
+        >
+        <a
+          href="#"
+          onclick="
+            window.location.href = getPageUrl('login');
+            return false;
+          "
+          >Đăng nhập</a
+        >
+      </nav>
+    </header>
+
+    <main class="public-content">
+      <div class="auth-box">
+        <h1>Khôi phục mật khẩu</h1>
+        <div class="auth-subtitle">Bảo vệ và khôi phục quyền truy cập</div>
+
+        <div
+          class="mb-2"
+          style="
+            padding: 16px;
+            background: var(--warning-light);
+            color: #854d0e;
+            border-radius: var(--radius);
+          "
+        >
+          <strong>Khôi phục qua email chưa khả dụng</strong>
+          <p style="font-size: 13px; margin-top: 4px">
+            Bản nguyên mẫu chưa kết nối dịch vụ gửi email, vì vậy chưa thể gửi
+            liên kết đặt lại mật khẩu.
+          </p>
+        </div>
+
+        <p class="text-secondary text-center">
+          Vui lòng liên hệ quản trị viên để được hỗ trợ. Tài khoản demo có thể
+          đăng nhập bằng thông tin trên trang đăng nhập.
+        </p>
+
+        <div class="auth-footer">
+          Đã nhớ lại mật khẩu?
+          <a
+            href="#"
+            onclick="
+              window.location.href = getPageUrl('login');
+              return false;
+            "
+            style="font-weight: 600"
+          >
+            Quay lại Đăng nhập
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="public-footer">
+      © 2026 VolunteerLink - BTL Phát triển ứng dụng web
+    </footer>
+
+    <script src="../../js/api.js"></script>
+    <script src="../../js/main.js"></script>
+  </body>
+</html>
