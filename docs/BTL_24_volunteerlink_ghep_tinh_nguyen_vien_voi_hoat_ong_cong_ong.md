@@ -1,19 +1,19 @@
 # BTL-24 – VolunteerLink – Ghép tình nguyện viên với hoạt động cộng đồng
 
-> **Học phần:** PHÁT TRIỂN ỨNG DỤNG WEB CƠ BẢN – CSE122  
-> **Nhóm thực hiện:** 3 sinh viên  
-> **Loại sản phẩm:** Sản phẩm Web Frontend (nguyên mẫu) có nhiều vai trò, CRUD, responsive, tương tác JavaScript và trải nghiệm AI  
-> **Nguyên tắc minh chứng:** Mỗi giao diện thực tế đã được duyệt trong bảng kiểm kê màn hình = 1 video OBS có mặt sinh viên + commit/PR GitHub tương ứng.
+> Học phần: PHÁT TRIỂN ỨNG DỤNG WEB CƠ BẢN – CSE122
+> Nhóm thực hiện: 2 sinh viên — Trần Văn Minh và Nguyễn Bá Thành
+> Loại sản phẩm: Sản phẩm Web Frontend (nguyên mẫu) có nhiều vai trò, CRUD, responsive, tương tác JavaScript và trải nghiệm AI
+> Nguyên tắc minh chứng: Mỗi giao diện thực tế đã được duyệt trong bảng kiểm kê màn hình = 1 video OBS có mặt sinh viên + commit/PR GitHub tương ứng.
 
 ---
 
 ## 1. Lĩnh vực
 
-**Hoạt động xã hội / VolunteerTech**
+Hoạt động xã hội / VolunteerTech
 
 ## 2. Tóm tắt sản phẩm
 
-**VolunteerLink – Ghép tình nguyện viên với hoạt động cộng đồng** là một sản phẩm Frontend giải quyết bài toán thực tế trong lĩnh vực **Hoạt động xã hội / VolunteerTech**, được thiết kế như một mini-product có nhiều role, nhiều luồng nghiệp vụ và các tính năng AI có thể mô phỏng ngay ở phía Frontend.
+VolunteerLink – Ghép tình nguyện viên với hoạt động cộng đồng là một sản phẩm Frontend giải quyết bài toán thực tế trong lĩnh vực Hoạt động xã hội / VolunteerTech, được thiết kế như một mini-product có nhiều role, nhiều luồng nghiệp vụ và các tính năng AI có thể mô phỏng ngay ở phía Frontend.
 
 ## 3. Ngữ cảnh
 
@@ -21,29 +21,27 @@ Các hoạt động tình nguyện tuyển người qua mạng xã hội, khó b
 
 ## 4. Phát biểu vấn đề
 
-- **P1.** Thông tin hoạt động phân tán.
-- **P2.** Khó ghép đúng kỹ năng.
-- **P3.** Điều phối ca thủ công.
-- **P4.** Khó ghi nhận đóng góp.
+- P1. Thông tin hoạt động phân tán.
+- P2. Khó ghép đúng kỹ năng.
+- P3. Điều phối ca thủ công.
+- P4. Khó ghi nhận đóng góp.
 
 ## 5. Mục tiêu
 
-- **O1.** Biến bài toán thực tế thành một sản phẩm Frontend có hành trình người dùng rõ ràng.
-- **O2.** Thiết kế đầy đủ giao diện cho từng vai trò, bảo đảm mỗi vai trò có ít nhất 3 màn hình.
-- **O3.** Thể hiện các thao tác CRUD hoặc trạng thái nghiệp vụ phù hợp thay vì CRUD hình thức.
-- **O4.** Sử dụng JavaScript/DOM cho tìm kiếm, lọc, kiểm tra hợp lệ, cửa sổ bật, thẻ, trạng thái và kết xuất dữ liệu.
-- **O5.** Sử dụng JSON giả lập / LocalStorage / MockAPI / API công khai khi phù hợp.
-- **O6.** Thiết kế ít nhất 3 trải nghiệm AI có thể mô phỏng được ở Frontend.
-- **O7.** Tổ chức làm việc nhóm bằng Trello/Jira/Notion và Git/GitHub theo nhánh + yêu cầu hợp nhất.
+- O1. Biến bài toán thực tế thành một sản phẩm Frontend có hành trình người dùng rõ ràng.
+- O2. Thiết kế đầy đủ giao diện cho từng vai trò, bảo đảm mỗi vai trò có ít nhất 3 màn hình.
+- O3. Thể hiện các thao tác CRUD hoặc trạng thái nghiệp vụ phù hợp thay vì CRUD hình thức.
+- O4. Sử dụng JavaScript/DOM cho tìm kiếm, lọc, kiểm tra hợp lệ, cửa sổ bật, thẻ, trạng thái và kết xuất dữ liệu.
+- O5. Sử dụng JSON giả lập / LocalStorage / MockAPI / API công khai khi phù hợp.
+- O6. Thiết kế ít nhất 3 trải nghiệm AI có thể mô phỏng được ở Frontend.
+- O7. Tổ chức làm việc nhóm bằng Trello/Jira/Notion và Git/GitHub theo nhánh + yêu cầu hợp nhất.
 
 ## 6. Các vai trò
 
-| Vai trò | Trách nhiệm chính |
-|---|---|
-| Tình nguyện viên | Xây hồ sơ và đăng ký ca |
-| Tổ chức xã hội | Tạo hoạt động và ca |
-| Điều phối viên | Matching và theo dõi thiếu hụt |
-| Quản trị viên | Taxonomy và kiểm duyệt |
+- Tình nguyện viên: Xây hồ sơ và đăng ký ca.
+- Tổ chức xã hội: Tạo hoạt động và ca.
+- Điều phối viên: Matching và theo dõi thiếu hụt.
+- Quản trị viên: Taxonomy và kiểm duyệt.
 
 ## 7. Hành trình người dùng tổng quát
 
@@ -63,10 +61,9 @@ Vai trò vận hành duyệt / xử lý
 Bảng điều khiển / báo cáo / hoàn tất
 ```
 
-
 ## NGUYÊN TẮC PHẠM VI – BẮT BUỘC ÁP DỤNG
 
-> **Con số “tối thiểu 3 giao diện cho mỗi vai trò” chỉ là NGƯỠNG TỐI THIỂU để ngăn nhóm cố tình làm ít. Đây KHÔNG phải mục tiêu số lượng.**
+> Con số “tối thiểu 3 giao diện cho mỗi vai trò” chỉ là NGƯỠNG TỐI THIỂU để ngăn nhóm cố tình làm ít. Đây KHÔNG phải mục tiêu số lượng.
 
 Sinh viên phải phân tích đầy đủ:
 
@@ -82,20 +79,25 @@ Ngữ cảnh
 → Triển khai
 ```
 
-Và xây dựng **toàn bộ các màn hình cần thiết** để các luồng nghiệp vụ chính có thể được mô phỏng đầy đủ từ đầu đến cuối.
+Và xây dựng toàn bộ các màn hình cần thiết để các luồng nghiệp vụ chính có thể được mô phỏng đầy đủ từ đầu đến cuối.
 
 Một vai trò có thể cần 3, 5, 7 hoặc nhiều hơn màn hình tùy bản chất nghiệp vụ. Không được cắt bỏ màn hình cần thiết chỉ vì đã đạt số lượng tối thiểu; đồng thời không được tách một chức năng đơn giản thành nhiều trang vô nghĩa chỉ để tăng số lượng.
 
-**Tiêu chí đánh giá: ĐỘ ĐẦY ĐỦ CỦA NGHIỆP VỤ > SỐ LƯỢNG GIAO DIỆN.**
+Tiêu chí đánh giá: ĐỘ ĐẦY ĐỦ CỦA NGHIỆP VỤ > SỐ LƯỢNG GIAO DIỆN.
 
 ### Bảng kiểm kê màn hình bắt buộc trước khi viết mã
 
-Nhóm phải lập và được duyệt bảng:
+Nhóm phải lập danh sách kiểm kê màn hình trước khi triển khai. Với mỗi màn hình, ghi rõ:
 
-| Vai trò | Mục tiêu người dùng | Nhiệm vụ người dùng | Màn hình | Tệp | CRUD/Trạng thái | AI | Người phụ trách |
-|---|---|---|---|---|---|---|---|
+- Vai trò.
+- Mục tiêu người dùng.
+- Nhiệm vụ người dùng.
+- Màn hình và tệp tương ứng.
+- CRUD/trạng thái.
+- Tính năng AI nếu có.
+- Người phụ trách.
 
-Giảng viên duyệt **bảng kiểm kê màn hình + luồng người dùng + Figma/Canva** trước khi nhóm triển khai code chính thức.
+Giảng viên duyệt bảng kiểm kê màn hình + luồng người dùng + Figma/Canva trước khi nhóm triển khai code chính thức.
 
 ### Bao phủ trạng thái bắt buộc
 
@@ -128,11 +130,11 @@ Ngoài màn hình theo role, nhóm phải phân tích các màn hình dùng chun
 - `403.html`
 - `404.html`
 
-Các màn hình này **không bắt buộc một cách máy móc**, nhưng phải được xem xét trong bảng kiểm kê màn hình.
+Các màn hình này không bắt buộc một cách máy móc, nhưng phải được xem xét trong bảng kiểm kê màn hình.
 
 ### Định nghĩa hoàn thành cho mỗi màn hình
 
-Một màn hình chỉ được tính là **DONE** khi các mục phù hợp đã hoàn thành:
+Một màn hình chỉ được tính là DONE khi các mục phù hợp đã hoàn thành:
 
 - [ ] Bản mô phỏng Figma/Canva
 - [ ] HTML ngữ nghĩa
@@ -195,7 +197,7 @@ Khi bảo vệ, giảng viên có thể yêu cầu ngẫu nhiên một thay đ�
 - thay đổi layout responsive;
 - thêm trạng thái mới.
 
-Mục tiêu là kiểm tra sinh viên **có thực sự hiểu và điều khiển được sản phẩm** hay không.
+Mục tiêu là kiểm tra sinh viên có thực sự hiểu và điều khiển được sản phẩm hay không.
 
 ---
 
@@ -203,49 +205,65 @@ Mục tiêu là kiểm tra sinh viên **có thực sự hiểu và điều khi�
 
 ### Tình nguyện viên
 
-| # | Tệp | Giao diện | CRUD | Chức năng chính |
-|---:|---|---|---|---|
-| 1 | `volunteer-profile.html` | Volunteer Profile | R | Xây hồ sơ và đăng ký ca. |
-| 2 | `volunteer-opportunity-search.html` | Opportunity Search | C/R/U | Xây hồ sơ và đăng ký ca. |
-| 3 | `volunteer-my-shifts.html` | My Shifts | C/R/U/D | Xây hồ sơ và đăng ký ca. |
+- `volunteer-profile.html` — Volunteer Profile
+  - CRUD: R.
+  - Chức năng: Xây hồ sơ và đăng ký ca.
+- `volunteer-opportunity-search.html` — Opportunity Search
+  - CRUD: C/R/U.
+  - Chức năng: Xây hồ sơ và đăng ký ca.
+- `volunteer-my-shifts.html` — My Shifts
+  - CRUD: C/R/U/D.
+  - Chức năng: Xây hồ sơ và đăng ký ca.
 
 ### Tổ chức xã hội
 
-| # | Tệp | Giao diện | CRUD | Chức năng chính |
-|---:|---|---|---|---|
-| 4 | `organization-opportunity-management.html` | Opportunity Management | R | Tạo hoạt động và ca. |
-| 5 | `organization-shift-management.html` | Shift Management | C/R/U | Tạo hoạt động và ca. |
-| 6 | `organization-volunteer-roster.html` | Volunteer Roster | C/R/U/D | Tạo hoạt động và ca. |
+- `organization-opportunity-management.html` — Opportunity Management
+  - CRUD: R.
+  - Chức năng: Tạo hoạt động và ca.
+- `organization-shift-management.html` — Shift Management
+  - CRUD: C/R/U.
+  - Chức năng: Tạo hoạt động và ca.
+- `organization-volunteer-roster.html` — Volunteer Roster
+  - CRUD: C/R/U/D.
+  - Chức năng: Tạo hoạt động và ca.
 
 ### Điều phối viên
 
-| # | Tệp | Giao diện | CRUD | Chức năng chính |
-|---:|---|---|---|---|
-| 7 | `coordinator-resource-dashboard.html` | Resource Dashboard | R | Matching và theo dõi thiếu hụt. |
-| 8 | `coordinator-matching-board.html` | Matching Board | C/R/U | Matching và theo dõi thiếu hụt. |
-| 9 | `coordinator-impact-summary.html` | Impact Summary | C/R/U/D | Matching và theo dõi thiếu hụt. |
+- `coordinator-resource-dashboard.html` — Resource Dashboard
+  - CRUD: R.
+  - Chức năng: Matching và theo dõi thiếu hụt.
+- `coordinator-matching-board.html` — Matching Board
+  - CRUD: C/R/U.
+  - Chức năng: Matching và theo dõi thiếu hụt.
+- `coordinator-impact-summary.html` — Impact Summary
+  - CRUD: C/R/U/D.
+  - Chức năng: Matching và theo dõi thiếu hụt.
 
 ### Quản trị viên
 
-| # | Tệp | Giao diện | CRUD | Chức năng chính |
-|---:|---|---|---|---|
-| 10 | `admin-category-management.html` | Category Management | R | Taxonomy và kiểm duyệt. |
-| 11 | `admin-user-management.html` | User Management | C/R/U | Taxonomy và kiểm duyệt. |
-| 12 | `admin-moderation.html` | Moderation | C/R/U/D | Taxonomy và kiểm duyệt. |
+- `admin-category-management.html` — Category Management
+  - CRUD: R.
+  - Chức năng: Taxonomy và kiểm duyệt.
+- `admin-user-management.html` — User Management
+  - CRUD: C/R/U.
+  - Chức năng: Taxonomy và kiểm duyệt.
+- `admin-moderation.html` — Moderation
+  - CRUD: C/R/U/D.
+  - Chức năng: Taxonomy và kiểm duyệt.
 
 ## 9. Chuẩn chi tiết cho TỪNG giao diện thực tế đã được duyệt
 
 Mỗi giao diện ở mục 8 phải được nhóm triển khai đầy đủ theo danh sách kiểm tra sau:
 
-- **Tệp HTML:** đúng tên tệp quy định.
-- **Đầu trang / Điều hướng:** nhất quán trong toàn bộ vai trò.
-- **Nội dung chính:** card, list, table, form hoặc dashboard phù hợp.
-- **Trạng thái giao diện:** đang tải, rỗng, thành công, lỗi khi hợp lý.
-- **Responsive:** desktop + tablet/mobile.
-- **JavaScript:** tối thiểu một tương tác có ý nghĩa.
-- **Kiểm tra hợp lệ:** với mọi biểu mẫu.
-- **Dữ liệu giả lập:** không viết cứng rải rác; ưu tiên JSON/mô-đun dữ liệu.
-- **Giao diện AI:** nếu trang có AI phải có Nhập → Đang xử lý → Kết quả → Giải thích → Người dùng kiểm soát.
+- Tệp HTML: đúng tên tệp quy định.
+- Đầu trang / Điều hướng: nhất quán trong toàn bộ vai trò.
+- Nội dung chính: card, list, table, form hoặc dashboard phù hợp.
+- Trạng thái giao diện: đang tải, rỗng, thành công, lỗi khi hợp lý.
+- Responsive: desktop + tablet/mobile.
+- JavaScript: tối thiểu một tương tác có ý nghĩa.
+- Kiểm tra hợp lệ: với mọi biểu mẫu.
+- Dữ liệu giả lập: không viết cứng rải rác; ưu tiên JSON/mô-đun dữ liệu.
+- Giao diện AI: nếu trang có AI phải có Nhập → Đang xử lý → Kết quả → Giải thích → Người dùng kiểm soát.
 
 ### Quy tắc CRUD
 
@@ -253,40 +271,35 @@ Mỗi giao diện ở mục 8 phải được nhóm triển khai đầy đủ th
 - `R` = Đọc
 - `U` = Sửa
 - `D` = Xóa
-- Với dữ liệu nghiệp vụ, có thể thay Xóa bằng **Hủy / Lưu trữ / Vô hiệu hóa / Đóng** khi hợp lý.
+- Với dữ liệu nghiệp vụ, có thể thay Xóa bằng Hủy / Lưu trữ / Vô hiệu hóa / Đóng khi hợp lý.
 
 ---
 
 ## 10. Ma trận thực thể & CRUD gợi ý
 
-| Thực thể | Tạo | Đọc | Sửa | Xóa/Lưu trữ | Ghi chú |
-|---|---:|---:|---:|---:|---|
-| `volunteers` | ✓ | ✓ | ✓ | ✓/Archive | Dùng mock data hoặc API giả lập. |
-| `organizations` | ✓ | ✓ | ✓ | ✓/Archive | Dùng mock data hoặc API giả lập. |
-| `opportunities` | ✓ | ✓ | ✓ | ✓/Archive | Dùng mock data hoặc API giả lập. |
-| `shifts` | ✓ | ✓ | ✓ | ✓/Archive | Dùng mock data hoặc API giả lập. |
-| `registrations` | ✓ | ✓ | ✓ | ✓/Archive | Dùng mock data hoặc API giả lập. |
-| `skills` | ✓ | ✓ | ✓ | ✓/Archive | Dùng mock data hoặc API giả lập. |
+- Các thực thể gồm `volunteers`, `organizations`, `opportunities`, `shifts`, `registrations` và `skills`.
+- Với mỗi thực thể, cân nhắc các thao tác tạo, đọc, sửa và xóa/lưu trữ theo nghiệp vụ phù hợp.
+- Dữ liệu có thể dùng mock data hoặc API giả lập.
 
 ## 11. Tính năng AI bắt buộc
 
 ### AI-1
 
 - Volunteer Matcher: ghép kỹ năng và lịch rảnh.
-- **Trải nghiệm bắt buộc:** nhập dữ liệu → trạng thái đang xử lý → kết quả → lý do/giải thích → Chấp nhận/Sửa/Từ chối/Tạo lại/Lưu.
-- **Cách mô phỏng:** JSON giả lập, JavaScript theo quy tắc, phản hồi định sẵn hoặc API LLM nếu nhóm đủ khả năng.
+- Trải nghiệm bắt buộc: nhập dữ liệu → trạng thái đang xử lý → kết quả → lý do/giải thích → Chấp nhận/Sửa/Từ chối/Tạo lại/Lưu.
+- Cách mô phỏng: JSON giả lập, JavaScript theo quy tắc, phản hồi định sẵn hoặc API LLM nếu nhóm đủ khả năng.
 
 ### AI-2
 
 - Shift Shortage Predictor: cảnh báo ca thiếu người.
-- **Trải nghiệm bắt buộc:** nhập dữ liệu → trạng thái đang xử lý → kết quả → lý do/giải thích → Chấp nhận/Sửa/Từ chối/Tạo lại/Lưu.
-- **Cách mô phỏng:** JSON giả lập, JavaScript theo quy tắc, phản hồi định sẵn hoặc API LLM nếu nhóm đủ khả năng.
+- Trải nghiệm bắt buộc: nhập dữ liệu → trạng thái đang xử lý → kết quả → lý do/giải thích → Chấp nhận/Sửa/Từ chối/Tạo lại/Lưu.
+- Cách mô phỏng: JSON giả lập, JavaScript theo quy tắc, phản hồi định sẵn hoặc API LLM nếu nhóm đủ khả năng.
 
 ### AI-3
 
 - Impact Summary: sinh tóm tắt đóng góp sau hoạt động.
-- **Trải nghiệm bắt buộc:** nhập dữ liệu → trạng thái đang xử lý → kết quả → lý do/giải thích → Chấp nhận/Sửa/Từ chối/Tạo lại/Lưu.
-- **Cách mô phỏng:** JSON giả lập, JavaScript theo quy tắc, phản hồi định sẵn hoặc API LLM nếu nhóm đủ khả năng.
+- Trải nghiệm bắt buộc: nhập dữ liệu → trạng thái đang xử lý → kết quả → lý do/giải thích → Chấp nhận/Sửa/Từ chối/Tạo lại/Lưu.
+- Cách mô phỏng: JSON giả lập, JavaScript theo quy tắc, phản hồi định sẵn hoặc API LLM nếu nhóm đủ khả năng.
 
 ## 12. Nguyên tắc trải nghiệm AI
 
@@ -336,36 +349,56 @@ Không bắt buộc máy chủ thật.
 
 ---
 
-## 14. Phân công nhóm 3 sinh viên
+## 14. Phân công nhóm 2 sinh viên
 
-### SV1
-- Phụ trách chính: **Tình nguyện viên**.
-- Đồng phụ trách một phần giao diện dùng chung.
-- Chịu trách nhiệm responsive và kiểm tra giao diện của phần mình.
+Phân công dưới đây khớp với cấu trúc mã nguồn hiện tại. Mỗi người phụ trách trọn bộ HTML, CSS và JavaScript của các trang thuộc thư mục mình; hai người cùng kiểm thử tích hợp và chuẩn bị minh chứng bảo vệ.
 
-### SV2
-- Phụ trách chính: **Tổ chức xã hội**.
-- Đồng phụ trách tương tác JavaScript / dữ liệu giả lập.
-- Đánh giá yêu cầu hợp nhất của SV1 hoặc SV3.
+### Trần Văn Minh
 
-### SV3
-- Phụ trách chính: **Điều phối viên + Quản trị viên**.
-- Chịu trách nhiệm tích hợp bố cục, điều hướng, bảng điều khiển/quản trị và phát hành.
-- Đánh giá tính nhất quán toàn dự án.
+- Thư mục trang: `src/pages/tran_van_minh/`.
+- Vai trò: Điều phối viên, quản trị viên và tài khoản.
+- 10 trang:
+  - `coordinator-resource-dashboard`
+  - `coordinator-matching-board`
+  - `coordinator-impact-summary`
+  - `admin-category-management`
+  - `admin-dashboard`
+  - `admin-moderation`
+  - `admin-user-management`
+  - `login`
+  - `register`
+  - `forgot-password`
+- Module AI gắn với các trang phụ trách:
+  - `src/js/modules/volunteer-matcher.js` cho ghép tình nguyện viên ở bảng điều phối.
+  - `src/js/modules/impact-summary.js` cho báo cáo tác động.
+- Trách nhiệm chéo: kiểm tra luồng điều hướng và quyền theo vai trò; review phần việc của Thành; tham gia kiểm thử responsive và tích hợp.
 
-> Nhóm có thể chia lại nhưng phải bảo đảm mỗi thành viên đều có HTML + CSS + JavaScript + Git + OBS và khối lượng công việc tương đối cân bằng.
+### Nguyễn Bá Thành
 
+- Thư mục trang: `src/pages/nguyen_ba_thanh/`.
+- Vai trò: Tình nguyện viên, tổ chức xã hội và các trang dùng chung.
+- 11 trang:
+  - `index`
+  - `notifications`
+  - `403`
+  - `404`
+  - `volunteer-profile`
+  - `volunteer-opportunity-search`
+  - `volunteer-my-shifts`
+  - `volunteer-achievements`
+  - `organization-opportunity-management`
+  - `organization-shift-management`
+  - `organization-volunteer-roster`
+- Module AI gắn với các trang phụ trách:
+  - `src/js/modules/volunteer-matcher.js` cho gợi ý hoạt động phù hợp.
+  - `src/js/modules/shift-predictor.js` cho cảnh báo ca thiếu người.
+  - `src/js/modules/volunteer-achievements.js` cho thành tựu tình nguyện.
+- Trách nhiệm chéo: kiểm tra dữ liệu và luồng nghiệp vụ; review phần việc của Minh; tham gia kiểm thử responsive và tích hợp.
 
-### Trách nhiệm chéo bắt buộc
+### Công việc chung
 
-Ngoài phần việc theo vai trò, mỗi sinh viên phải có ít nhất một trách nhiệm xuyên suốt:
-
-- Hệ thống thiết kế / Điều hướng / Khả năng tiếp cận;
-- JavaScript / Dữ liệu / Tương tác AI;
-- Responsive / Tích hợp / Phát hành / Đảm bảo chất lượng.
-
-Mục tiêu là tránh việc tạo ra ba “website con” rời rạc và buộc nhóm cộng tác thực sự.
-
+- Các module trong `src/js/`, dữ liệu trong `src/assets/` và cấu hình build phục vụ nhiều trang. Việc dùng module không tự xác định ai là tác giả; hai thành viên cần cùng review các thay đổi ảnh hưởng nhiều trang.
+- Mỗi người tự trình bày và thực hiện chỉnh sửa trực tiếp cho các màn hình mình phụ trách; hai người cùng chuẩn bị video OBS, kiểm thử end-to-end và review chéo.
 
 ---
 
@@ -433,7 +466,7 @@ docs: update screen list and obs links
 
 Không chấp nhận commit kiểu `update`, `done`, `final`, `fix code`.
 
-Không đánh giá cao việc **spam commit**. Lịch sử phát triển phải thể hiện được quan hệ:
+Không đánh giá cao việc spam commit. Lịch sử phát triển phải thể hiện được quan hệ:
 
 ```text
 Công việc ↔ Nhánh ↔ Ghi nhận thay đổi ↔ Yêu cầu hợp nhất ↔ Đánh giá ↔ Màn hình ↔ OBS
@@ -442,6 +475,8 @@ Công việc ↔ Nhánh ↔ Ghi nhận thay đổi ↔ Yêu cầu hợp nhất �
 ---
 
 ## 16. Bảng công việc Trello / Jira / Notion
+
+- Bảng Trello của nhóm: [VolunteerLink - BTL Phát triển ứng dụng web](https://trello.com/b/6aa76d8cbf36c881dce53f29/).
 
 Tối thiểu:
 
@@ -482,9 +517,9 @@ Task mẫu:
 
 ## 17. Video OBS – Minh chứng bắt buộc
 
-**Mỗi trang giao diện thực tế đã được duyệt = 1 video.**
+Mỗi trang giao diện thực tế đã được duyệt = 1 video.
 
-Số video OBS bằng số giao diện độc lập trong **bảng kiểm kê màn hình cuối cùng**. Không sử dụng con số 12 như một mục tiêu; nếu nghiệp vụ đầy đủ cần 16, 20, 24+ giao diện thì số video phải tương ứng.
+Số video OBS bằng số giao diện độc lập trong bảng kiểm kê màn hình cuối cùng. Không sử dụng con số 12 như một mục tiêu; nếu nghiệp vụ đầy đủ cần 16, 20, 24+ giao diện thì số video phải tương ứng.
 
 Mỗi video phải:
 
@@ -503,7 +538,6 @@ Mỗi video phải:
 SV1-01-screen-name.mp4
 SV1-02-screen-name.mp4
 SV2-01-screen-name.mp4
-SV3-01-screen-name.mp4
 ```
 
 ---
@@ -512,9 +546,10 @@ SV3-01-screen-name.mp4
 
 Trước khi code chính thức, nhóm phải có và được duyệt:
 
+- Bản thiết kế Figma của nhóm: [BTL_Volunteerlink](https://www.figma.com/design/HuP4KEqctSwA49iLHnBQV6/BTL_Volunteerlink?node-id=5-2030&t=JJLerCAi8yzLaugf-1).
 - sơ đồ trang;
 - luồng người dùng;
-- **bảng kiểm kê màn hình đầy đủ**;
+- bảng kiểm kê màn hình đầy đủ;
 - khung dây (khung dây);
 - bản mô phỏng desktop;
 - phiên bản responsive chính;
@@ -533,7 +568,6 @@ project-root/
 ├── README.md
 ├── node_modules/              # Thư mục thư viện, Git bỏ qua
 ├── src/
-│   ├── css/
 │   ├── js/
 │   ├── assets/
 │   └── pages/
@@ -571,7 +605,8 @@ Trong `docs/ai-usage-report.md`, nhóm bắt buộc khai báo:
 ## 21. Phạm vi sản phẩm tối thiểu (MVP)
 
 ### BẮT BUỘC PHẢI CÓ
-- Đủ vai trò và **toàn bộ màn hình cần thiết theo bảng kiểm kê màn hình đã duyệt**; danh sách ở mục 8 chỉ là nền tảng ban đầu.
+
+- Đủ vai trò và toàn bộ màn hình cần thiết theo bảng kiểm kê màn hình đã duyệt; danh sách ở mục 8 chỉ là nền tảng ban đầu.
 - Navigation xuyên suốt.
 - Responsive.
 - CRUD mô phỏng có ý nghĩa.
@@ -583,6 +618,7 @@ Trong `docs/ai-usage-report.md`, nhóm bắt buộc khai báo:
 - OBS cho từng trang.
 
 ### NÊN CÓ
+
 - Biểu đồ/bảng điều khiển.
 - Thông báo nổi.
 - Trạng thái rỗng/đang tải/lỗi.
@@ -590,6 +626,7 @@ Trong `docs/ai-usage-report.md`, nhóm bắt buộc khai báo:
 - Chế độ tối/sáng hoặc cải thiện khả năng tiếp cận nếu phù hợp.
 
 ### CÓ THÌ TỐT
+
 - LLM API thật.
 - Hoạt ảnh/tương tác vi mô.
 - PWA/bộ đệm cục bộ.

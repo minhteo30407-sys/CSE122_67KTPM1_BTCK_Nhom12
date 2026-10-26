@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<!-- VolunteerLink: Page structure and content for admin category management. -->
+<!-- Cấu trúc và nội dung giao diện cho trang quản lý danh mục. -->
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -34,6 +34,7 @@
           <input
             type="text"
             id="skillSearchInput"
+            aria-label="Tìm kỹ năng theo tên hoặc mã"
             placeholder="Tìm kiếm theo tên kỹ năng hoặc mã..."
             oninput="filterSkills()"
           />
@@ -41,6 +42,7 @@
         <select
           id="categoryFilter"
           class="filter-select"
+          aria-label="Lọc kỹ năng theo nhóm danh mục"
           onchange="filterSkills()"
         >
           <option value="">-- Tất cả nhóm danh mục --</option>
@@ -55,6 +57,7 @@
         <select
           id="statusFilter"
           class="filter-select"
+          aria-label="Lọc kỹ năng theo trạng thái"
           onchange="filterSkills()"
         >
           <option value="">-- Tất cả trạng thái --</option>

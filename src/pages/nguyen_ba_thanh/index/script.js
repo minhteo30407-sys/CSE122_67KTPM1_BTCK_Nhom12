@@ -1,4 +1,4 @@
-// VolunteerLink: Page-specific interactions for index.
+// Mã xử lý giao diện và thao tác trên trang chủ.
 function getHomeDashboard(user) {
   if (!user) return "login";
   const dashboardByRole = {

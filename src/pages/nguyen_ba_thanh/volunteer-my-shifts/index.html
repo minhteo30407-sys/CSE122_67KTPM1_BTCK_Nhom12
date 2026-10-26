@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- VolunteerLink: Page structure and content for volunteer my shifts. -->
+<!-- Cấu trúc và nội dung giao diện cho trang ca tình nguyện của tôi. -->
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -148,6 +148,7 @@
           <input
             type="text"
             id="myShiftsSearch"
+            aria-label="Tìm ca đã đăng ký theo hoạt động hoặc địa điểm"
             placeholder="Tìm theo tên hoạt động, địa điểm..."
             oninput="filterMyShifts()"
           />
@@ -155,6 +156,7 @@
         <select
           id="myShiftStatusFilter"
           class="filter-select"
+          aria-label="Lọc ca đã đăng ký theo trạng thái"
           onchange="filterMyShifts()"
         >
           <option value="">-- Tất cả trạng thái --</option>

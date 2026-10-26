@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- VolunteerLink: Page structure and content for organization opportunity management. -->
+<!-- Cấu trúc và nội dung giao diện cho trang quản lý hoạt động của tổ chức. -->
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -33,6 +33,7 @@
           <input
             type="text"
             id="searchInput"
+            aria-label="Tìm hoạt động theo tên hoặc địa điểm"
             placeholder="Tìm theo tên hoạt động, địa điểm..."
             oninput="filterOpportunities()"
           />
@@ -40,6 +41,7 @@
         <select
           id="statusFilter"
           class="filter-select"
+          aria-label="Lọc hoạt động theo trạng thái"
           onchange="filterOpportunities()"
         >
           <option value="">-- Tất cả trạng thái --</option>

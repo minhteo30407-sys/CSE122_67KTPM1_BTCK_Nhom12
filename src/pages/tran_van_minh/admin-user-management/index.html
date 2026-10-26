@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<!-- VolunteerLink: Page structure and content for admin user management. -->
+<!-- Cấu trúc và nội dung giao diện cho trang quản lý người dùng. -->
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -67,11 +67,17 @@
           <input
             type="text"
             id="userSearchInput"
+            aria-label="Tìm người dùng theo tên, email hoặc mã"
             placeholder="Tìm kiếm theo tên, email, mã người dùng..."
             oninput="filterUsers()"
           />
         </div>
-        <select id="roleFilter" class="filter-select" onchange="filterUsers()">
+        <select
+          id="roleFilter"
+          class="filter-select"
+          aria-label="Lọc người dùng theo vai trò"
+          onchange="filterUsers()"
+        >
           <option value="">-- Tất cả vai trò --</option>
           <option value="volunteer">Tình nguyện viên (volunteer)</option>
           <option value="organization">Tổ chức xã hội (organization)</option>
@@ -81,6 +87,7 @@
         <select
           id="statusFilter"
           class="filter-select"
+          aria-label="Lọc người dùng theo trạng thái"
           onchange="filterUsers()"
         >
           <option value="">-- Tất cả trạng thái --</option>

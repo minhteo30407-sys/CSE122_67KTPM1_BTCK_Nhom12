@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for admin category management.
+// Mã xử lý giao diện và thao tác trên trang quản lý danh mục.
 function renderSkillTable(skills) {
   const tbody = document.getElementById("skillTableBody");
   const emptyDiv = document.getElementById("emptyContainer");

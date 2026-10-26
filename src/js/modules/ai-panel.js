@@ -1,4 +1,4 @@
-// VolunteerLink: Shared ai panel feature module.
+// Điều khiển bảng trợ lý AI dùng chung, bao gồm mở, đóng và hiển thị trạng thái hội thoại.
 function safeBadgeMarkup(markup) {
   const template = document.createElement("template");
   template.innerHTML = String(markup || "");

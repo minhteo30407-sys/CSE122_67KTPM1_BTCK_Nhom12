@@ -1,598 +1,948 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Tài liệu Giới thiệu Hệ thống VolunteerLink</title>
-  <style>
-    @page {
-      size: A4;
-      margin: 18mm 16mm;
-    }
-    body {
-      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-      color: #1F2937;
-      line-height: 1.5;
-      font-size: 13.5px;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-    }
-    h1, h2, h3, h4 {
-      color: #1F5A41;
-      margin-top: 1.2em;
-      margin-bottom: 0.5em;
-      font-weight: 700;
-    }
-    h1 {
-      font-size: 26px;
-      text-align: center;
-      color: #1F5A41;
-      border-bottom: 3px solid #2E7D5B;
-      padding-bottom: 10px;
-      margin-top: 0;
-    }
-    .subtitle {
-      text-align: center;
-      color: #4B5563;
-      font-size: 14px;
-      margin-bottom: 25px;
-    }
-    .badge {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-    .badge-primary { background: #E8F5EE; color: #2E7D5B; border: 1px solid #2E7D5B; }
-    .badge-accent { background: #FEF3C7; color: #B45309; border: 1px solid #F59E0B; }
-    .badge-ai { background: #F3E8FF; color: #7C3AED; border: 1px solid #7C3AED; }
-    .badge-gray { background: #F3F4F6; color: #4B5563; border: 1px solid #D1D5DB; }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tài liệu Giới thiệu Hệ thống VolunteerLink</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 18mm 16mm;
+      }
+      body {
+        font-family:
+          "Segoe UI",
+          -apple-system,
+          BlinkMacSystemFont,
+          Roboto,
+          sans-serif;
+        color: #1f2937;
+        line-height: 1.5;
+        font-size: 13.5px;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #1f5a41;
+        margin-top: 1.2em;
+        margin-bottom: 0.5em;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: 26px;
+        text-align: center;
+        color: #1f5a41;
+        border-bottom: 3px solid #2e7d5b;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+      .subtitle {
+        text-align: center;
+        color: #4b5563;
+        font-size: 14px;
+        margin-bottom: 25px;
+      }
+      .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      .badge-primary {
+        background: #e8f5ee;
+        color: #2e7d5b;
+        border: 1px solid #2e7d5b;
+      }
+      .badge-accent {
+        background: #fef3c7;
+        color: #b45309;
+        border: 1px solid #f59e0b;
+      }
+      .badge-ai {
+        background: #f3e8ff;
+        color: #7c3aed;
+        border: 1px solid #7c3aed;
+      }
+      .badge-gray {
+        background: #f3f4f6;
+        color: #4b5563;
+        border: 1px solid #d1d5db;
+      }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 12px 0 20px 0;
-      page-break-inside: avoid;
-      font-size: 12.5px;
-    }
-    th, td {
-      border: 1px solid #E5E7EB;
-      padding: 8px 10px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background-color: #E8F5EE;
-      color: #1F5A41;
-      font-weight: 600;
-    }
-    tr:nth-child(even) td {
-      background-color: #F9FAFB;
-    }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0 20px 0;
+        page-break-inside: avoid;
+        font-size: 12.5px;
+      }
+      th,
+      td {
+        border: 1px solid #e5e7eb;
+        padding: 8px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background-color: #e8f5ee;
+        color: #1f5a41;
+        font-weight: 600;
+      }
+      tr:nth-child(even) td {
+        background-color: #f9fafb;
+      }
 
-    .card {
-      border: 1px solid #E5E7EB;
-      border-radius: 6px;
-      padding: 12px 14px;
-      margin-bottom: 14px;
-      background: #FAFAFA;
-      page-break-inside: avoid;
-    }
-    .card-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1F5A41;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-    }
-    .card-meta {
-      font-size: 12px;
-      color: #6B7280;
-      margin-bottom: 8px;
-    }
-    .card-body ul {
-      margin: 4px 0;
-      padding-left: 20px;
-    }
-    .card-body li {
-      margin-bottom: 3px;
-    }
+      .card {
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        padding: 12px 14px;
+        margin-bottom: 14px;
+        background: #fafafa;
+        page-break-inside: avoid;
+      }
+      .card-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #1f5a41;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+      .card-meta {
+        font-size: 12px;
+        color: #6b7280;
+        margin-bottom: 8px;
+      }
+      .card-body ul {
+        margin: 4px 0;
+        padding-left: 20px;
+      }
+      .card-body li {
+        margin-bottom: 3px;
+      }
 
-    .page-break {
-      page-break-before: always;
-    }
+      .page-break {
+        page-break-before: always;
+      }
 
-    .highlight-box {
-      background: #F0FDF4;
-      border-left: 4px solid #2E7D5B;
-      padding: 10px 14px;
-      margin: 14px 0;
-      border-radius: 0 4px 4px 0;
-    }
-    .ai-box {
-      background: #FAF5FF;
-      border-left: 4px solid #7C3AED;
-      padding: 10px 14px;
-      margin: 14px 0;
-      border-radius: 0 4px 4px 0;
-    }
-    .footer-note {
-      text-align: center;
-      font-size: 11px;
-      color: #9CA3AF;
-      margin-top: 30px;
-      border-top: 1px solid #E5E7EB;
-      padding-top: 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>HỆ THỐNG TÌNH NGUYỆN VIÊN VOLUNTEERLINK</h1>
-  <div class="subtitle">
-    <strong>BTL-24 · Học phần Phát triển ứng dụng web cơ bản (CSE122)</strong><br>
-    Nhóm phát triển (2 thành viên): <strong>Trần Văn Minh</strong> & <strong>Nguyễn Bá Thành</strong>
-  </div>
-
-  <div class="highlight-box">
-    <strong>Mục tiêu sản phẩm:</strong> VolunteerLink là ứng dụng web frontend nguyên mẫu, chuyên biệt kết nối tình nguyện viên với các hoạt động thiện nguyện cộng đồng. Hệ thống giải quyết 4 bài toán cấp thiết:
-    (1) Thông tin phân tán, (2) Khó ghép đúng kỹ năng chuyên môn, (3) Điều phối ca trực thủ công, (4) Khó khăn trong việc ghi nhận và tổng kết đóng góp xã hội.
-  </div>
-
-  <h2>1. Kiến trúc & Công nghệ nền tảng</h2>
-  <ul>
-    <li><strong>HTML5 Semantic:</strong> Chuẩn hóa ngữ nghĩa (header, nav, aside, main, section, article, form, footer).</li>
-    <li><strong>CSS3 thuần (Pure CSS):</strong> Sử dụng CSS Variables (Design Tokens), Flexbox và CSS Grid. Thiết kế tối giản, sạch sẽ, không phụ thuộc framework bên thứ ba (như Bootstrap). Hỗ trợ responsive hoàn chỉnh cho Desktop, Tablet và Mobile.</li>
-    <li><strong>JavaScript thuần (Vanilla ES6+):</strong> Lập trình DOM, xử lý sự kiện, kiểm tra tính hợp lệ biểu mẫu (Form validation), quản trị trạng thái (loading, rỗng, lỗi, thành công).</li>
-    <li><strong>Lưu trữ dữ liệu giả lập (Data Layer):</strong> Kết hợp 6 thực thể JSON (`volunteers`, `organizations`, `opportunities`, `shifts`, `registrations`, `skills`) được tự động đồng bộ vào <code>LocalStorage</code> của trình duyệt, hỗ trợ đầy đủ các thao tác CRUD.</li>
-    <li><strong>Tổ chức mã nguồn:</strong> Tích hợp 19 màn hình vào <code>dist/</code>; toàn bộ trang HTML, CSS, JavaScript và dữ liệu mẫu được tập trung tại đây để dễ chạy và bảo trì.</li>
-  </ul>
-
-  <h2>2. Ma trận phân công trách nhiệm nhóm 2 người</h2>
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 18%;">Hạng mục</th>
-        <th style="width: 41%;">Trần Văn Minh</th>
-        <th style="width: 41%;">Nguyễn Bá Thành</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Vai trò chính</strong></td>
-        <td>Tình nguyện viên (Volunteer) + Điều phối viên (Coordinator)</td>
-        <td>Tổ chức xã hội (Organization) + Quản trị viên (Admin)</td>
-      </tr>
-      <tr>
-        <td><strong>Màn hình phụ trách</strong></td>
-        <td>
-          • 6 màn hình nghiệp vụ vai trò<br>
-          • 3 màn hình xác thực (login, register, forgot-password)<br>
-          <em>(Tổng: 9 màn hình)</em>
-        </td>
-        <td>
-          • 6 màn hình nghiệp vụ vai trò<br>
-          • 4 màn hình hệ thống (index, notifications, 403, 404)<br>
-          <em>(Tổng: 10 màn hình)</em>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Tính năng AI</strong></td>
-        <td>
-          <strong>AI-1: Volunteer Matcher</strong> (Ghép kỹ năng & lịch rảnh)<br>
-          <strong>AI-3: Impact Summary</strong> (Tổng kết đóng góp sau hoạt động)
-        </td>
-        <td>
-          <strong>AI-2: Shift Shortage Predictor</strong> (Dự báo ca thiếu nhân sự)<br>
-          Xây dựng component Panel AI dùng chung cho toàn hệ thống<br>
-          <strong>AI-4: Chatbot VolunteerLink</strong> (Hỏi đáp cách sử dụng website)
-        </td>
-      </tr>
-      <tr>
-        <td><strong>Trách nhiệm chéo</strong></td>
-        <td>Thiết kế hệ sinh thái giao diện (Design System), bố cục Khung A & B, tối ưu Responsive đa thiết bị</td>
-        <td>Thiết kế Data Store (api.js), dữ liệu mẫu 6 thực thể JSON, tích hợp bản phân phối dist/ và QA</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="page-break"></div>
-
-  <h2>3. Danh mục chi tiết 19 màn hình & Chức năng</h2>
-
-  <h3>A. Nhóm màn hình Tình nguyện viên (Volunteer) — Phụ trách: Trần Văn Minh</h3>
-
-  <div class="card">
-    <div class="card-title">
-      <span>1. volunteer-profile.html — Hồ sơ cá nhân tình nguyện viên</span>
-      <span class="badge badge-primary">Khung B</span>
+      .highlight-box {
+        background: #f0fdf4;
+        border-left: 4px solid #2e7d5b;
+        padding: 10px 14px;
+        margin: 14px 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .ai-box {
+        background: #faf5ff;
+        border-left: 4px solid #7c3aed;
+        padding: 10px 14px;
+        margin: 14px 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .footer-note {
+        text-align: center;
+        font-size: 11px;
+        color: #9ca3af;
+        margin-top: 30px;
+        border-top: 1px solid #e5e7eb;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HỆ THỐNG TÌNH NGUYỆN VIÊN VOLUNTEERLINK</h1>
+    <div class="subtitle">
+      <strong>BTL-24 · Học phần Phát triển ứng dụng web cơ bản (CSE122)</strong
+      ><br />
+      Nhóm phát triển (2 thành viên): <strong>Trần Văn Minh</strong> &
+      <strong>Nguyễn Bá Thành</strong>
     </div>
-    <div class="card-meta">Vai trò: Tình nguyện viên | CRUD: Read, Update</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Xem và cập nhật thông tin:</strong> Họ tên, email, số điện thoại, ảnh đại diện, tiểu sử giới thiệu.</li>
-        <li><strong>Đăng ký kỹ năng sở trường:</strong> Lựa chọn nhiều kỹ năng từ danh mục hệ thống (Sơ cứu, Dạy học, Tin học, Lái xe,...).</li>
-        <li><strong>Quản lý lịch rảnh trong tuần:</strong> Chọn nhanh các buổi/ngày rảnh (Thứ 2 đến Chủ nhật) để thuật toán AI ghép ca phù hợp.</li>
-        <li><strong>Thống kê đóng góp:</strong> Hiển thị tổng số giờ thiện nguyện đã tích lũy và huy hiệu đạt được.</li>
-      </ul>
-    </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>2. volunteer-opportunity-search.html — Khám phá hoạt động & Gợi ý AI</span>
-      <span class="badge badge-ai">Tích hợp AI-1</span>
+    <div class="highlight-box">
+      <strong>Mục tiêu sản phẩm:</strong> VolunteerLink là ứng dụng web frontend
+      nguyên mẫu, chuyên biệt kết nối tình nguyện viên với các hoạt động thiện
+      nguyện cộng đồng. Hệ thống giải quyết 4 bài toán cấp thiết: (1) Thông tin
+      phân tán, (2) Khó ghép đúng kỹ năng chuyên môn, (3) Điều phối ca trực thủ
+      công, (4) Khó khăn trong việc ghi nhận và tổng kết đóng góp xã hội.
     </div>
-    <div class="card-meta">Vai trò: Tình nguyện viên | CRUD: Create, Read, Update</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Tìm kiếm & Lọc đa tiêu chí:</strong> Tìm theo từ khóa hoạt động, lọc theo nhóm ngành (Y tế, Giáo dục, Môi trường, Hậu cần) và trạng thái.</li>
-        <li><strong>Trợ lý AI Matcher (AI-1):</strong> Tự động phân tích hồ sơ và đề xuất các hoạt động có độ tương thích cao nhất kèm điểm số và giải thích lý do cụ thể.</li>
-        <li><strong>Xem chi tiết & Đăng ký:</strong> Mở cửa sổ popup xem thông tin chi tiết đơn vị tổ chức, các ca trực và nhấn đăng ký tham gia ca trực tiếp.</li>
-      </ul>
-    </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>3. volunteer-my-shifts.html — Quản lý ca trực cá nhân</span>
-      <span class="badge badge-primary">Khung B</span>
-    </div>
-    <div class="card-meta">Vai trò: Tình nguyện viên | CRUD: Create, Read, Update, Delete (Cancel)</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Danh sách ca trực theo dõi:</strong> Thống kê toàn bộ ca trực đã đăng ký kèm thông tin thời gian, địa điểm, đơn vị phụ trách.</li>
-        <li><strong>Lọc theo trạng thái:</strong> Chờ duyệt (Pending), Đã xác nhận (Confirmed), Hoàn thành (Completed), Đã hủy (Cancelled).</li>
-        <li><strong>Hành động hủy đăng ký:</strong> Cho phép hủy ca trực sắp diễn ra với hộp thoại xác nhận an toàn, cập nhật lại trạng thái ngay trên giao diện.</li>
-        <li><strong>Xử lý trạng thái rỗng:</strong> Hiển thị Empty State khi chưa đăng ký ca nào kèm nút điều hướng đến trang tìm kiếm.</li>
-      </ul>
-    </div>
-  </div>
+    <h2>1. Kiến trúc & Công nghệ nền tảng</h2>
+    <ul>
+      <li>
+        <strong>HTML5 Semantic:</strong> Chuẩn hóa ngữ nghĩa (header, nav,
+        aside, main, section, article, form, footer).
+      </li>
+      <li>
+        <strong>CSS3 thuần (Pure CSS):</strong> Sử dụng CSS Variables (Design
+        Tokens), Flexbox và CSS Grid. Thiết kế tối giản, sạch sẽ, không phụ
+        thuộc framework bên thứ ba (như Bootstrap). Hỗ trợ responsive hoàn chỉnh
+        cho Desktop, Tablet và Mobile.
+      </li>
+      <li>
+        <strong>JavaScript thuần (Vanilla ES6+):</strong> Lập trình DOM, xử lý
+        sự kiện, kiểm tra tính hợp lệ biểu mẫu (Form validation), quản trị trạng
+        thái (loading, rỗng, lỗi, thành công).
+      </li>
+      <li>
+        <strong>Lưu trữ dữ liệu giả lập (Data Layer):</strong> Kết hợp 6 thực
+        thể JSON (`volunteers`, `organizations`, `opportunities`, `shifts`,
+        `registrations`, `skills`) được tự động đồng bộ vào
+        <code>LocalStorage</code> của trình duyệt, hỗ trợ đầy đủ các thao tác
+        CRUD.
+      </li>
+      <li>
+        <strong>Tổ chức mã nguồn:</strong> Tích hợp 19 màn hình vào
+        <code>dist/</code>; toàn bộ trang HTML, CSS, JavaScript và dữ liệu mẫu
+        được tập trung tại đây để dễ chạy và bảo trì.
+      </li>
+    </ul>
 
-  <h3>B. Nhóm màn hình Điều phối viên (Coordinator) — Phụ trách: Trần Văn Minh</h3>
+    <h2>2. Ma trận phân công trách nhiệm nhóm 2 người</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 18%">Hạng mục</th>
+          <th style="width: 41%">Trần Văn Minh</th>
+          <th style="width: 41%">Nguyễn Bá Thành</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Vai trò chính</strong></td>
+          <td>Tình nguyện viên (Volunteer) + Điều phối viên (Coordinator)</td>
+          <td>Tổ chức xã hội (Organization) + Quản trị viên (Admin)</td>
+        </tr>
+        <tr>
+          <td><strong>Màn hình phụ trách</strong></td>
+          <td>
+            • 6 màn hình nghiệp vụ vai trò<br />
+            • 3 màn hình xác thực (login, register, forgot-password)<br />
+            <em>(Tổng: 9 màn hình)</em>
+          </td>
+          <td>
+            • 6 màn hình nghiệp vụ vai trò<br />
+            • 4 màn hình hệ thống (index, notifications, 403, 404)<br />
+            <em>(Tổng: 10 màn hình)</em>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Tính năng AI</strong></td>
+          <td>
+            <strong>AI-1: Volunteer Matcher</strong> (Ghép kỹ năng & lịch
+            rảnh)<br />
+            <strong>AI-3: Impact Summary</strong> (Tổng kết đóng góp sau hoạt
+            động)
+          </td>
+          <td>
+            <strong>AI-2: Shift Shortage Predictor</strong> (Dự báo ca thiếu
+            nhân sự)<br />
+            Xây dựng component Panel AI dùng chung cho toàn hệ thống<br />
+            <strong>AI-4: Chatbot VolunteerLink</strong> (Hỏi đáp cách sử dụng
+            website)
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Trách nhiệm chéo</strong></td>
+          <td>
+            Thiết kế hệ sinh thái giao diện (Design System), bố cục Khung A & B,
+            tối ưu Responsive đa thiết bị
+          </td>
+          <td>
+            Thiết kế Data Store (api.js), dữ liệu mẫu 6 thực thể JSON, tích hợp
+            bản phân phối dist/ và QA
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-  <div class="card">
-    <div class="card-title">
-      <span>4. coordinator-resource-dashboard.html — Bảng điều khiển tài nguyên</span>
-      <span class="badge badge-primary">Khung B</span>
-    </div>
-    <div class="card-meta">Vai trò: Điều phối viên | CRUD: Read</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Thẻ chỉ số tổng quan (KPIs):</strong> Tổng số ca trong tháng, số ca đang thiếu nhân sự trầm trọng, số ca đã đủ quân số và tổng số TNV đang sẵn sàng.</li>
-        <li><strong>Bảng cảnh báo ca thiếu người:</strong> Tự động tổng hợp dữ liệu từ dự báo của AI-2, hiển thị tỷ lệ lấp đầy, thời gian còn lại trước ngày khởi sự.</li>
-        <li><strong>Bộ lọc hoạt động:</strong> Lọc bảng điều khiển theo từng chương trình thiện nguyện cụ thể.</li>
-      </ul>
-    </div>
-  </div>
+    <div class="page-break"></div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>5. coordinator-matching-board.html — Bảng ghép ca thông minh</span>
-      <span class="badge badge-ai">Dùng luật ghép AI-1</span>
-    </div>
-    <div class="card-meta">Vai trò: Điều phối viên | CRUD: Create, Read, Update</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Bố cục 2 cột trực quan:</strong> Cột trái là danh sách các ca trực đang thiếu người; Cột phải hiển thị ứng viên phù hợp.</li>
-        <li><strong>Thuật toán so khớp thông minh:</strong> Khi chọn 1 ca trực, hệ thống chạy thuật toán matching tính điểm tương thích của toàn bộ TNV dựa theo kỹ năng và lịch rảnh.</li>
-        <li><strong>Gán người trực tiếp (Assign):</strong> Một cú nhấp chuột để điều phối và gán ứng viên trực tiếp vào ca trực, đồng bộ dữ liệu vào hệ thống.</li>
-      </ul>
-    </div>
-  </div>
+    <h2>3. Danh mục chi tiết 19 màn hình & Chức năng</h2>
 
-  <div class="card">
-    <div class="card-title">
-      <span>6. coordinator-impact-summary.html — Báo cáo tổng kết đóng góp & Tác động</span>
-      <span class="badge badge-ai">Tích hợp AI-3</span>
-    </div>
-    <div class="card-meta">Vai trò: Điều phối viên | CRUD: Create, Read, Update, Delete</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Trợ lý AI Impact Summary (AI-3):</strong> Tự động tính toán tổng số người tham gia, số giờ công ích tích lũy, vinh danh tình nguyện viên xuất sắc.</li>
-        <li><strong>Soạn thảo & Tùy biến báo cáo:</strong> AI sinh bản tóm tắt văn bản đầy đủ; điều phối viên có thể chỉnh sửa trực tiếp trên giao diện trước khi xuất bản.</li>
-        <li><strong>Lưu trữ & Truy xuất:</strong> Lưu trữ bản báo cáo tác động vào lịch sử hoạt động để báo cáo cho ban quản lý hoặc nhà tài trợ.</li>
-      </ul>
-    </div>
-  </div>
+    <h3>
+      A. Nhóm màn hình Tình nguyện viên (Volunteer) — Phụ trách: Trần Văn Minh
+    </h3>
 
-  <div class="page-break"></div>
-
-  <h3>C. Nhóm màn hình Xác thực dùng chung — Phụ trách: Trần Văn Minh</h3>
-
-  <div class="card">
-    <div class="card-title">
-      <span>7. login.html — Đăng nhập hệ thống</span>
-      <span class="badge badge-gray">Khung A</span>
+    <div class="card">
+      <div class="card-title">
+        <span>1. volunteer-profile.html — Hồ sơ cá nhân tình nguyện viên</span>
+        <span class="badge badge-primary">Khung B</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Tình nguyện viên | CRUD: Read, Update
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Xem và cập nhật thông tin:</strong> Họ tên, email, số điện
+            thoại, ảnh đại diện, tiểu sử giới thiệu.
+          </li>
+          <li>
+            <strong>Đăng ký kỹ năng sở trường:</strong> Lựa chọn nhiều kỹ năng
+            từ danh mục hệ thống (Sơ cứu, Dạy học, Tin học, Lái xe,...).
+          </li>
+          <li>
+            <strong>Quản lý lịch rảnh trong tuần:</strong> Chọn nhanh các
+            buổi/ngày rảnh (Thứ 2 đến Chủ nhật) để thuật toán AI ghép ca phù
+            hợp.
+          </li>
+          <li>
+            <strong>Thống kê đóng góp:</strong> Hiển thị tổng số giờ thiện
+            nguyện đã tích lũy và huy hiệu đạt được.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="card-meta">Màn hình dùng chung | Phục vụ kiểm thử vai trò</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Form đăng nhập chuẩn UX:</strong> Kiểm tra hợp lệ định dạng email, mật khẩu tối thiểu 6 ký tự.</li>
-        <li><strong>Bộ chuyển đổi vai trò nhanh (Role Switcher):</strong> Hỗ trợ chọn nhanh vai trò (Tình nguyện viên, Tổ chức, Điều phối viên, Quản trị viên) để chấm điểm và kiểm thử nhanh mọi luồng chức năng.</li>
-      </ul>
-    </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>8. register.html — Đăng ký tài khoản</span>
-      <span class="badge badge-gray">Khung A</span>
+    <div class="card">
+      <div class="card-title">
+        <span
+          >2. volunteer-opportunity-search.html — Khám phá hoạt động & Gợi ý
+          AI</span
+        >
+        <span class="badge badge-ai">Tích hợp AI-1</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Tình nguyện viên | CRUD: Create, Read, Update
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Tìm kiếm & Lọc đa tiêu chí:</strong> Tìm theo từ khóa hoạt
+            động, lọc theo nhóm ngành (Y tế, Giáo dục, Môi trường, Hậu cần) và
+            trạng thái.
+          </li>
+          <li>
+            <strong>Trợ lý AI Matcher (AI-1):</strong> Tự động phân tích hồ sơ
+            và đề xuất các hoạt động có độ tương thích cao nhất kèm điểm số và
+            giải thích lý do cụ thể.
+          </li>
+          <li>
+            <strong>Xem chi tiết & Đăng ký:</strong> Mở cửa sổ popup xem thông
+            tin chi tiết đơn vị tổ chức, các ca trực và nhấn đăng ký tham gia ca
+            trực tiếp.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="card-meta">Màn hình dùng chung | Xác thực hợp lệ đa trường</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Form đăng ký tài khoản mới:</strong> Họ tên, email, số điện thoại (10 số), mật khẩu và xác nhận mật khẩu.</li>
-        <li><strong>Lựa chọn nhóm đối tượng:</strong> Đăng ký làm Tình nguyện viên cá nhân hoặc Tổ chức xã hội phát động phong trào.</li>
-      </ul>
+
+    <div class="card">
+      <div class="card-title">
+        <span>3. volunteer-my-shifts.html — Quản lý ca trực cá nhân</span>
+        <span class="badge badge-primary">Khung B</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Tình nguyện viên | CRUD: Create, Read, Update, Delete (Cancel)
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Danh sách ca trực theo dõi:</strong> Thống kê toàn bộ ca
+            trực đã đăng ký kèm thông tin thời gian, địa điểm, đơn vị phụ trách.
+          </li>
+          <li>
+            <strong>Lọc theo trạng thái:</strong> Chờ duyệt (Pending), Đã xác
+            nhận (Confirmed), Hoàn thành (Completed), Đã hủy (Cancelled).
+          </li>
+          <li>
+            <strong>Hành động hủy đăng ký:</strong> Cho phép hủy ca trực sắp
+            diễn ra với hộp thoại xác nhận an toàn, cập nhật lại trạng thái ngay
+            trên giao diện.
+          </li>
+          <li>
+            <strong>Xử lý trạng thái rỗng:</strong> Hiển thị Empty State khi
+            chưa đăng ký ca nào kèm nút điều hướng đến trang tìm kiếm.
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>9. forgot-password.html — Khôi phục mật khẩu</span>
-      <span class="badge badge-gray">Khung A</span>
+    <h3>
+      B. Nhóm màn hình Điều phối viên (Coordinator) — Phụ trách: Trần Văn Minh
+    </h3>
+
+    <div class="card">
+      <div class="card-title">
+        <span
+          >4. coordinator-resource-dashboard.html — Bảng điều khiển tài
+          nguyên</span
+        >
+        <span class="badge badge-primary">Khung B</span>
+      </div>
+      <div class="card-meta">Vai trò: Điều phối viên | CRUD: Read</div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Thẻ chỉ số tổng quan (KPIs):</strong> Tổng số ca trong
+            tháng, số ca đang thiếu nhân sự trầm trọng, số ca đã đủ quân số và
+            tổng số TNV đang sẵn sàng.
+          </li>
+          <li>
+            <strong>Bảng cảnh báo ca thiếu người:</strong> Tự động tổng hợp dữ
+            liệu từ dự báo của AI-2, hiển thị tỷ lệ lấp đầy, thời gian còn lại
+            trước ngày khởi sự.
+          </li>
+          <li>
+            <strong>Bộ lọc hoạt động:</strong> Lọc bảng điều khiển theo từng
+            chương trình thiện nguyện cụ thể.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="card-meta">Màn hình dùng chung | Mô phỏng quy trình cấp lại mật khẩu</div>
-    <div class="card-body">
-      <ul>
-        <li>Nhập email khôi phục, kiểm tra hợp lệ, hiển thị thông báo hướng dẫn gửi mã xác thực giả lập và nút điều hướng về trang đăng nhập.</li>
-      </ul>
+
+    <div class="card">
+      <div class="card-title">
+        <span
+          >5. coordinator-matching-board.html — Bảng ghép ca thông minh</span
+        >
+        <span class="badge badge-ai">Dùng luật ghép AI-1</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Điều phối viên | CRUD: Create, Read, Update
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Bố cục 2 cột trực quan:</strong> Cột trái là danh sách các
+            ca trực đang thiếu người; Cột phải hiển thị ứng viên phù hợp.
+          </li>
+          <li>
+            <strong>Thuật toán so khớp thông minh:</strong> Khi chọn 1 ca trực,
+            hệ thống chạy thuật toán matching tính điểm tương thích của toàn bộ
+            TNV dựa theo kỹ năng và lịch rảnh.
+          </li>
+          <li>
+            <strong>Gán người trực tiếp (Assign):</strong> Một cú nhấp chuột để
+            điều phối và gán ứng viên trực tiếp vào ca trực, đồng bộ dữ liệu vào
+            hệ thống.
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <h3>D. Nhóm màn hình Tổ chức xã hội (Organization) — Phụ trách: Nguyễn Bá Thành</h3>
-
-  <div class="card">
-    <div class="card-title">
-      <span>10. organization-opportunity-management.html — Quản lý hoạt động tình nguyện</span>
-      <span class="badge badge-primary">Khung B</span>
+    <div class="card">
+      <div class="card-title">
+        <span
+          >6. coordinator-impact-summary.html — Báo cáo tổng kết đóng góp & Tác
+          động</span
+        >
+        <span class="badge badge-ai">Tích hợp AI-3</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Điều phối viên | CRUD: Create, Read, Update, Delete
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Trợ lý AI Impact Summary (AI-3):</strong> Tự động tính toán
+            tổng số người tham gia, số giờ công ích tích lũy, vinh danh tình
+            nguyện viên xuất sắc.
+          </li>
+          <li>
+            <strong>Soạn thảo & Tùy biến báo cáo:</strong> AI sinh bản tóm tắt
+            văn bản đầy đủ; điều phối viên có thể chỉnh sửa trực tiếp trên giao
+            diện trước khi xuất bản.
+          </li>
+          <li>
+            <strong>Lưu trữ & Truy xuất:</strong> Lưu trữ bản báo cáo tác động
+            vào lịch sử hoạt động để báo cáo cho ban quản lý hoặc nhà tài trợ.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="card-meta">Vai trò: Tổ chức xã hội | CRUD: Create, Read, Update, Archive</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Bảng danh sách hoạt động:</strong> Hiển thị các chiến dịch do tổ chức khởi xướng, ngày bắt đầu/kết thúc, địa điểm, số lượng tuyển dụng.</li>
-        <li><strong>Modal Tạo mới & Cập nhật:</strong> Biểu mẫu tạo chương trình có đầy đủ kiểm tra hợp lệ, chọn danh mục và tích chọn danh sách kỹ năng yêu cầu.</li>
-        <li><strong>Đóng & Lưu trữ:</strong> Cho phép đóng nhận đăng ký hoặc đưa chương trình vào kho lưu trữ (Archive).</li>
-      </ul>
+
+    <div class="page-break"></div>
+
+    <h3>C. Nhóm màn hình Xác thực dùng chung — Phụ trách: Trần Văn Minh</h3>
+
+    <div class="card">
+      <div class="card-title">
+        <span>7. login.html — Đăng nhập hệ thống</span>
+        <span class="badge badge-gray">Khung A</span>
+      </div>
+      <div class="card-meta">
+        Màn hình dùng chung | Phục vụ kiểm thử vai trò
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Form đăng nhập chuẩn UX:</strong> Kiểm tra hợp lệ định dạng
+            email, mật khẩu tối thiểu 6 ký tự.
+          </li>
+          <li>
+            <strong>Bộ chuyển đổi vai trò nhanh (Role Switcher):</strong> Hỗ trợ
+            chọn nhanh vai trò (Tình nguyện viên, Tổ chức, Điều phối viên, Quản
+            trị viên) để chấm điểm và kiểm thử nhanh mọi luồng chức năng.
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>11. organization-shift-management.html — Quản lý ca trực & Cảnh báo thiếu hụt</span>
-      <span class="badge badge-ai">Tích hợp AI-2</span>
+    <div class="card">
+      <div class="card-title">
+        <span>8. register.html — Đăng ký tài khoản</span>
+        <span class="badge badge-gray">Khung A</span>
+      </div>
+      <div class="card-meta">
+        Màn hình dùng chung | Xác thực hợp lệ đa trường
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Form đăng ký tài khoản mới:</strong> Họ tên, email, số điện
+            thoại (10 số), mật khẩu và xác nhận mật khẩu.
+          </li>
+          <li>
+            <strong>Lựa chọn nhóm đối tượng:</strong> Đăng ký làm Tình nguyện
+            viên cá nhân hoặc Tổ chức xã hội phát động phong trào.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="card-meta">Vai trò: Tổ chức xã hội | CRUD: Create, Read, Update</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Quản lý chi tiết ca trực:</strong> Tạo ca theo ngày, khung giờ (bắt đầu - kết thúc), số lượng TNV cần tuyển, kỹ năng chuyên biệt cho từng ca.</li>
-        <li><strong>Trợ lý AI Shortage Predictor (AI-2):</strong> Tự động quét toàn bộ ca, phát hiện ca thiếu người nguy cấp (dưới 30% quân số hoặc còn dưới 3 ngày) và đề xuất phương án tuyển gấp.</li>
-        <li><strong>Huy hiệu cảnh báo trực quan:</strong> Đính nhãn trực tiếp trên từng dòng bảng dữ liệu (Khẩn cấp, Chú ý, Đủ người).</li>
-      </ul>
+
+    <div class="card">
+      <div class="card-title">
+        <span>9. forgot-password.html — Khôi phục mật khẩu</span>
+        <span class="badge badge-gray">Khung A</span>
+      </div>
+      <div class="card-meta">
+        Màn hình dùng chung | Mô phỏng quy trình cấp lại mật khẩu
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            Nhập email khôi phục, kiểm tra hợp lệ, hiển thị thông báo hướng dẫn
+            gửi mã xác thực giả lập và nút điều hướng về trang đăng nhập.
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>12. organization-volunteer-roster.html — Danh sách tình nguyện viên đăng ký</span>
-      <span class="badge badge-primary">Khung B</span>
+    <h3>
+      D. Nhóm màn hình Tổ chức xã hội (Organization) — Phụ trách: Nguyễn Bá
+      Thành
+    </h3>
+
+    <div class="card">
+      <div class="card-title">
+        <span
+          >10. organization-opportunity-management.html — Quản lý hoạt động tình
+          nguyện</span
+        >
+        <span class="badge badge-primary">Khung B</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Tổ chức xã hội | CRUD: Create, Read, Update, Archive
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Bảng danh sách hoạt động:</strong> Hiển thị các chiến dịch
+            do tổ chức khởi xướng, ngày bắt đầu/kết thúc, địa điểm, số lượng
+            tuyển dụng.
+          </li>
+          <li>
+            <strong>Modal Tạo mới & Cập nhật:</strong> Biểu mẫu tạo chương trình
+            có đầy đủ kiểm tra hợp lệ, chọn danh mục và tích chọn danh sách kỹ
+            năng yêu cầu.
+          </li>
+          <li>
+            <strong>Đóng & Lưu trữ:</strong> Cho phép đóng nhận đăng ký hoặc đưa
+            chương trình vào kho lưu trữ (Archive).
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="card-meta">Vai trò: Tổ chức xã hội | CRUD: Create, Read, Update, Delete</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Ghép nối dữ liệu đa thực thể:</strong> Kết nối thông tin từ đăng ký (registrations), thông tin cá nhân (volunteers) và ca làm việc (shifts).</li>
-        <li><strong>Xét duyệt thành viên:</strong> Nút bấm trực tiếp Phê duyệt (Approve) hoặc Từ chối (Reject) hồ sơ tham gia ca trực của tình nguyện viên.</li>
-        <li><strong>Điểm danh & Xác nhận giờ:</strong> Đánh dấu Hoàn thành ca trực (Completed) và tự động cộng dồn số giờ công ích cho tình nguyện viên.</li>
-      </ul>
+
+    <div class="card">
+      <div class="card-title">
+        <span
+          >11. organization-shift-management.html — Quản lý ca trực & Cảnh báo
+          thiếu hụt</span
+        >
+        <span class="badge badge-ai">Tích hợp AI-2</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Tổ chức xã hội | CRUD: Create, Read, Update
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Quản lý chi tiết ca trực:</strong> Tạo ca theo ngày, khung
+            giờ (bắt đầu - kết thúc), số lượng TNV cần tuyển, kỹ năng chuyên
+            biệt cho từng ca.
+          </li>
+          <li>
+            <strong>Trợ lý AI Shortage Predictor (AI-2):</strong> Tự động quét
+            toàn bộ ca, phát hiện ca thiếu người nguy cấp (dưới 30% quân số hoặc
+            còn dưới 3 ngày) và đề xuất phương án tuyển gấp.
+          </li>
+          <li>
+            <strong>Huy hiệu cảnh báo trực quan:</strong> Đính nhãn trực tiếp
+            trên từng dòng bảng dữ liệu (Khẩn cấp, Chú ý, Đủ người).
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="page-break"></div>
-
-  <h3>E. Nhóm màn hình Quản trị viên (Admin) — Phụ trách: Nguyễn Bá Thành</h3>
-
-  <div class="card">
-    <div class="card-title">
-      <span>13. admin-category-management.html — Quản lý danh mục kỹ năng</span>
-      <span class="badge badge-primary">Khung B</span>
+    <div class="card">
+      <div class="card-title">
+        <span
+          >12. organization-volunteer-roster.html — Danh sách tình nguyện viên
+          đăng ký</span
+        >
+        <span class="badge badge-primary">Khung B</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Tổ chức xã hội | CRUD: Create, Read, Update, Delete
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Ghép nối dữ liệu đa thực thể:</strong> Kết nối thông tin từ
+            đăng ký (registrations), thông tin cá nhân (volunteers) và ca làm
+            việc (shifts).
+          </li>
+          <li>
+            <strong>Xét duyệt thành viên:</strong> Nút bấm trực tiếp Phê duyệt
+            (Approve) hoặc Từ chối (Reject) hồ sơ tham gia ca trực của tình
+            nguyện viên.
+          </li>
+          <li>
+            <strong>Điểm danh & Xác nhận giờ:</strong> Đánh dấu Hoàn thành ca
+            trực (Completed) và tự động cộng dồn số giờ công ích cho tình nguyện
+            viên.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="card-meta">Vai trò: Quản trị viên | CRUD: Create, Read, Update, Archive</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Quản trị Taxonomy kỹ năng:</strong> Danh sách toàn bộ kỹ năng thiện nguyện trong hệ thống (Y tế, Hậu cần, Giáo dục, Vận chuyển,...).</li>
-        <li><strong>Thêm mới & Hiệu chỉnh:</strong> Modal nhập tên kỹ năng, gán nhóm ngành và trạng thái hoạt động.</li>
-        <li><strong>Lưu trữ & Khôi phục:</strong> Ẩn các kỹ năng lỗi thời bằng trạng thái Archived mà không làm sai lệch dữ liệu lịch sử.</li>
-      </ul>
+
+    <div class="page-break"></div>
+
+    <h3>E. Nhóm màn hình Quản trị viên (Admin) — Phụ trách: Nguyễn Bá Thành</h3>
+
+    <div class="card">
+      <div class="card-title">
+        <span
+          >13. admin-category-management.html — Quản lý danh mục kỹ năng</span
+        >
+        <span class="badge badge-primary">Khung B</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Quản trị viên | CRUD: Create, Read, Update, Archive
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Quản trị Taxonomy kỹ năng:</strong> Danh sách toàn bộ kỹ
+            năng thiện nguyện trong hệ thống (Y tế, Hậu cần, Giáo dục, Vận
+            chuyển,...).
+          </li>
+          <li>
+            <strong>Thêm mới & Hiệu chỉnh:</strong> Modal nhập tên kỹ năng, gán
+            nhóm ngành và trạng thái hoạt động.
+          </li>
+          <li>
+            <strong>Lưu trữ & Khôi phục:</strong> Ẩn các kỹ năng lỗi thời bằng
+            trạng thái Archived mà không làm sai lệch dữ liệu lịch sử.
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>14. admin-user-management.html — Quản lý người dùng & Phân quyền</span>
-      <span class="badge badge-primary">Khung B</span>
+    <div class="card">
+      <div class="card-title">
+        <span
+          >14. admin-user-management.html — Quản lý người dùng & Phân
+          quyền</span
+        >
+        <span class="badge badge-primary">Khung B</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Quản trị viên | CRUD: Create, Read, Update
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Hồ sơ người dùng tập trung:</strong> Thống kê và quản lý
+            toàn bộ tài khoản gồm Tình nguyện viên, Tổ chức, Điều phối viên.
+          </li>
+          <li>
+            <strong>Khóa / Mở khóa tài khoản:</strong> Đóng băng các tài khoản
+            có dấu hiệu vi phạm điều khoản cộng đồng.
+          </li>
+          <li>
+            <strong>Chuyển đổi vai trò linh hoạt:</strong> Phân quyền nhanh tài
+            khoản lên Điều phối viên hoặc Quản trị viên hệ thống.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="card-meta">Vai trò: Quản trị viên | CRUD: Create, Read, Update</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Hồ sơ người dùng tập trung:</strong> Thống kê và quản lý toàn bộ tài khoản gồm Tình nguyện viên, Tổ chức, Điều phối viên.</li>
-        <li><strong>Khóa / Mở khóa tài khoản:</strong> Đóng băng các tài khoản có dấu hiệu vi phạm điều khoản cộng đồng.</li>
-        <li><strong>Chuyển đổi vai trò linh hoạt:</strong> Phân quyền nhanh tài khoản lên Điều phối viên hoặc Quản trị viên hệ thống.</li>
-      </ul>
+
+    <div class="card">
+      <div class="card-title">
+        <span>15. admin-moderation.html — Hàng đợi kiểm duyệt nội dung</span>
+        <span class="badge badge-primary">Khung B</span>
+      </div>
+      <div class="card-meta">
+        Vai trò: Quản trị viên | CRUD: Create, Read, Update, Delete
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Hàng đợi kiểm duyệt:</strong> Quản lý danh sách các chương
+            trình hoạt động mới nộp và các báo cáo vi phạm cần xử lý.
+          </li>
+          <li>
+            <strong>Phê duyệt & Bác bỏ:</strong> Nút bấm Phê duyệt công khai lên
+            sàn; Hộp thoại nhập lý do khi Từ chối nội dung.
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>15. admin-moderation.html — Hàng đợi kiểm duyệt nội dung</span>
-      <span class="badge badge-primary">Khung B</span>
+    <h3>
+      F. Nhóm màn hình Dùng chung & Điều hướng — Phụ trách: Nguyễn Bá Thành
+    </h3>
+
+    <div class="card">
+      <div class="card-title">
+        <span>16. index.html — Trang chủ giới thiệu nền tảng</span>
+        <span class="badge badge-gray">Khung A</span>
+      </div>
+      <div class="card-meta">Công khai | Landing Page quảng bá sản phẩm</div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <strong>Khu vực Hero:</strong> Slogan giới thiệu ấn tượng, nút kêu
+            gọi hành động Khám phá và Đăng ký.
+          </li>
+          <li>
+            <strong>Lưới tính năng nổi bật:</strong> 3 khối giới thiệu giá trị
+            cốt lõi của nền tảng.
+          </li>
+          <li>
+            <strong>Danh sách hoạt động tiêu biểu:</strong> Tự động lấy các hoạt
+            động nổi bật từ DataStore hiển thị dạng Card sống động.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="card-meta">Vai trò: Quản trị viên | CRUD: Create, Read, Update, Delete</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Hàng đợi kiểm duyệt:</strong> Quản lý danh sách các chương trình hoạt động mới nộp và các báo cáo vi phạm cần xử lý.</li>
-        <li><strong>Phê duyệt & Bác bỏ:</strong> Nút bấm Phê duyệt công khai lên sàn; Hộp thoại nhập lý do khi Từ chối nội dung.</li>
-      </ul>
+
+    <div class="card">
+      <div class="card-title">
+        <span>17. notifications.html — Trung tâm thông báo</span>
+        <span class="badge badge-primary">Khung B</span>
+      </div>
+      <div class="card-meta">Dùng chung mọi vai trò | Quản trị thông báo</div>
+      <div class="card-body">
+        <ul>
+          <li>
+            Hiển thị danh sách thông báo hệ thống (nhắc ca trực, duyệt hồ sơ,
+            tin nhắn điều phối).
+          </li>
+          <li>
+            Chức năng đánh dấu đã đọc từng mục, đánh dấu tất cả đã đọc và xóa
+            thông báo.
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <h3>F. Nhóm màn hình Dùng chung & Điều hướng — Phụ trách: Nguyễn Bá Thành</h3>
-
-  <div class="card">
-    <div class="card-title">
-      <span>16. index.html — Trang chủ giới thiệu nền tảng</span>
-      <span class="badge badge-gray">Khung A</span>
+    <div class="card">
+      <div class="card-title">
+        <span
+          >18. 403.html — Trang lỗi không có quyền truy cập (Forbidden)</span
+        >
+        <span class="badge badge-gray">Khung A</span>
+      </div>
+      <div class="card-meta">
+        Xử lý bảo mật vai trò người dùng | Nút chuyển hướng quay lại trang an
+        toàn.
+      </div>
     </div>
-    <div class="card-meta">Công khai | Landing Page quảng bá sản phẩm</div>
-    <div class="card-body">
-      <ul>
-        <li><strong>Khu vực Hero:</strong> Slogan giới thiệu ấn tượng, nút kêu gọi hành động Khám phá và Đăng ký.</li>
-        <li><strong>Lưới tính năng nổi bật:</strong> 3 khối giới thiệu giá trị cốt lõi của nền tảng.</li>
-        <li><strong>Danh sách hoạt động tiêu biểu:</strong> Tự động lấy các hoạt động nổi bật từ DataStore hiển thị dạng Card sống động.</li>
-      </ul>
+
+    <div class="card">
+      <div class="card-title">
+        <span
+          >19. 404.html — Trang lỗi không tìm thấy tài nguyên (Not Found)</span
+        >
+        <span class="badge badge-gray">Khung A</span>
+      </div>
+      <div class="card-meta">
+        Điều hướng lỗi thân thiện | Thông báo rõ ràng kèm nút về Trang chủ.
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>17. notifications.html — Trung tâm thông báo</span>
-      <span class="badge badge-primary">Khung B</span>
+    <div class="page-break"></div>
+
+    <h2>4. Thiết kế & Trải nghiệm các tính năng AI</h2>
+
+    <div class="ai-box">
+      <h3 style="margin-top: 0; color: #7c3aed">
+        Nguyên tắc trải nghiệm AI phân tích (AI UX Flow)
+      </h3>
+      Ba công cụ phân tích dùng quy trình 6 bước; chatbot có giao diện hội thoại
+      riêng, trạng thái chờ và thông báo lỗi rõ ràng:
+      <ol>
+        <li>
+          <strong>Nhập dữ liệu (Input):</strong> Người dùng chọn đối tượng cần
+          phân tích (ca trực, hoạt động, tiêu chí).
+        </li>
+        <li>
+          <strong>Kiểm tra hợp lệ (Validate):</strong> Hệ thống đảm bảo đủ dữ
+          liệu đầu vào trước khi kích hoạt.
+        </li>
+        <li>
+          <strong>Đang xử lý (Loading/Spinner):</strong> Hiệu ứng đang phân tích
+          dữ liệu, thông báo trạng thái rõ ràng.
+        </li>
+        <li>
+          <strong>Kết quả (Result):</strong> Hiển thị kết quả được xếp hạng và
+          gắn nhãn điểm số minh bạch.
+        </li>
+        <li>
+          <strong
+            >Giải thích lý do (Explain - "Vì sao có kết quả này?"):</strong
+          >
+          Khối phân tích chi tiết tiêu chí logic phía sau đề xuất.
+        </li>
+        <li>
+          <strong>Quyền kiểm soát (User Control):</strong> Bộ 4 hành động:
+          <em>Chấp nhận / Chỉnh sửa / Từ chối / Tạo lại</em>; kèm trạng thái lỗi
+          khi thiếu dữ liệu và tùy chọn <em>Làm thủ công</em>.
+        </li>
+      </ol>
     </div>
-    <div class="card-meta">Dùng chung mọi vai trò | Quản trị thông báo</div>
-    <div class="card-body">
-      <ul>
-        <li>Hiển thị danh sách thông báo hệ thống (nhắc ca trực, duyệt hồ sơ, tin nhắn điều phối).</li>
-        <li>Chức năng đánh dấu đã đọc từng mục, đánh dấu tất cả đã đọc và xóa thông báo.</li>
-      </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%">Tính năng AI</th>
+          <th style="width: 20%">Vị trí xuất hiện</th>
+          <th style="width: 30%">Logic xử lý</th>
+          <th style="width: 25%">Xử lý ngoại lệ / Thất bại</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>AI-1: Volunteer Matcher</strong><br />
+            <small>Ghép kỹ năng & Lịch rảnh</small>
+          </td>
+          <td>
+            • <code>volunteer-opportunity-search.html</code><br />
+            • <code>coordinator-matching-board.html</code>
+          </td>
+          <td>
+            So khớp kỹ năng (weight 30), kiểm tra lịch rảnh theo thứ trong tuần
+            (weight 25), điểm kinh nghiệm thâm niên (weight 15).
+          </td>
+          <td>
+            Thông báo "Không đủ dữ liệu đề xuất" khi kỹ năng không khớp; cung
+            cấp nút thử lại hoặc gán ca thủ công.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>AI-2: Shift Shortage Predictor</strong><br />
+            <small>Cảnh báo ca thiếu người</small>
+          </td>
+          <td>
+            • <code>organization-shift-management.html</code><br />
+            • <code>coordinator-resource-dashboard.html</code>
+          </td>
+          <td>
+            Tính tỷ lệ nhân sự hiện tại / cần thiết; đánh giá số ngày còn lại
+            đến ca trực; phân loại 3 mức độ cảnh báo (Khẩn cấp, Chú ý, Bình
+            thường).
+          </td>
+          <td>
+            Thông báo "Tất cả ca đều đã đủ người" khi không còn ca thiếu; tự
+            động ẩn cảnh báo khi đã bù đủ quân số.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>AI-3: Impact Summary</strong><br />
+            <small>Tổng kết đóng góp sau hoạt động</small>
+          </td>
+          <td>• <code>coordinator-impact-summary.html</code></td>
+          <td>
+            Tổng hợp số lượt hoàn thành ca, tính tổng giờ công hiến, tìm kiếm
+            Top tình nguyện viên xuất sắc, tự động sinh đoạn văn bản tóm tắt tác
+            động.
+          </td>
+          <td>
+            Thông báo "Chưa có lượt đăng ký hoàn thành nào"; cho phép điều phối
+            viên chỉnh sửa trực tiếp nội dung văn bản trước khi lưu.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>AI-4: Chatbot VolunteerLink</strong><br />
+            <small>Hỏi đáp cách sử dụng website</small>
+          </td>
+          <td>
+            • Widget dùng chung trên các trang trong <code>dist/pages/</code>
+          </td>
+          <td>
+            Gửi câu hỏi tới backend Node.js; backend gọi Google Gemini với hướng
+            dẫn trả lời trong phạm vi VolunteerLink. API key được giữ trong biến
+            môi trường <code>.env</code>, không đưa vào frontend.
+          </td>
+          <td>
+            Hiển thị lỗi khi chưa cấu hình API key, mất kết nối hoặc dịch vụ AI
+            hết hạn mức; không lưu lịch sử hội thoại sau khi đóng tab.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. Hướng dẫn chạy thử nghiệm & Chấm điểm (Quick Start)</h2>
+    <div class="card">
+      <ol>
+        <li>
+          <strong>Cấu hình chatbot:</strong> Sao chép
+          <code>.env.example</code> thành <code>.env</code> ở thư mục gốc và
+          điền API key Google Gemini vào <code>GEMINI_API_KEY</code>. Không đưa
+          API key lên GitHub.
+        </li>
+        <li>
+          <strong>Chạy ứng dụng:</strong> Cài Node.js 18 trở lên, chạy
+          <code>node server.js</code> ở thư mục gốc rồi mở
+          <code>http://localhost:3000</code>. Live Server không khởi chạy API
+          chatbot.
+        </li>
+        <li>
+          <strong>Tài khoản tình nguyện viên mẫu:</strong> Email
+          <code>an.nguyen@email.com</code>, mật khẩu
+          <code>VolunteerLink@2026</code>. Tài khoản này đã đăng ký, đang hoạt
+          động, có 40 giờ tình nguyện và 5 ca hoàn thành.
+        </li>
+        <li>
+          <strong>Đăng ký tài khoản:</strong> Tạo tài khoản tình nguyện viên
+          hoặc tổ chức trước khi đăng nhập. Tài khoản tình nguyện viên mới bắt
+          đầu với hồ sơ thành tích trống; vai trò điều phối viên/quản trị viên
+          không thể tự chọn khi đăng ký công khai.
+        </li>
+        <li>
+          <strong>Khôi phục dữ liệu gốc:</strong> Mở Console trình duyệt (F12)
+          và gõ <code>DataStore.reset()</code> để tải lại dữ liệu mẫu, bao gồm
+          tài khoản demo và thành tích của tài khoản đó.
+        </li>
+      </ol>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span>18. 403.html — Trang lỗi không có quyền truy cập (Forbidden)</span>
-      <span class="badge badge-gray">Khung A</span>
+    <div class="footer-note">
+      Tài liệu bàn giao dự án BTL-24 · VolunteerLink · Hoàn thành ngày
+      18/10/2026.
     </div>
-    <div class="card-meta">Xử lý bảo mật vai trò người dùng | Nút chuyển hướng quay lại trang an toàn.</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">
-      <span>19. 404.html — Trang lỗi không tìm thấy tài nguyên (Not Found)</span>
-      <span class="badge badge-gray">Khung A</span>
-    </div>
-    <div class="card-meta">Điều hướng lỗi thân thiện | Thông báo rõ ràng kèm nút về Trang chủ.</div>
-  </div>
-
-  <div class="page-break"></div>
-
-  <h2>4. Thiết kế & Trải nghiệm các tính năng AI</h2>
-
-  <div class="ai-box">
-    <h3 style="margin-top:0; color:#7C3AED;">Nguyên tắc trải nghiệm AI phân tích (AI UX Flow)</h3>
-    Ba công cụ phân tích dùng quy trình 6 bước; chatbot có giao diện hội thoại riêng, trạng thái chờ và thông báo lỗi rõ ràng:
-    <ol>
-      <li><strong>Nhập dữ liệu (Input):</strong> Người dùng chọn đối tượng cần phân tích (ca trực, hoạt động, tiêu chí).</li>
-      <li><strong>Kiểm tra hợp lệ (Validate):</strong> Hệ thống đảm bảo đủ dữ liệu đầu vào trước khi kích hoạt.</li>
-      <li><strong>Đang xử lý (Loading/Spinner):</strong> Hiệu ứng đang phân tích dữ liệu, thông báo trạng thái rõ ràng.</li>
-      <li><strong>Kết quả (Result):</strong> Hiển thị kết quả được xếp hạng và gắn nhãn điểm số minh bạch.</li>
-      <li><strong>Giải thích lý do (Explain - "Vì sao có kết quả này?"):</strong> Khối phân tích chi tiết tiêu chí logic phía sau đề xuất.</li>
-      <li><strong>Quyền kiểm soát (User Control):</strong> Bộ 4 hành động: <em>Chấp nhận / Chỉnh sửa / Từ chối / Tạo lại</em>; kèm trạng thái lỗi khi thiếu dữ liệu và tùy chọn <em>Làm thủ công</em>.</li>
-    </ol>
-  </div>
-
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 25%;">Tính năng AI</th>
-        <th style="width: 20%;">Vị trí xuất hiện</th>
-        <th style="width: 30%;">Logic xử lý</th>
-        <th style="width: 25%;">Xử lý ngoại lệ / Thất bại</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <strong>AI-1: Volunteer Matcher</strong><br>
-          <small>Ghép kỹ năng & Lịch rảnh</small>
-        </td>
-        <td>
-          • <code>volunteer-opportunity-search.html</code><br>
-          • <code>coordinator-matching-board.html</code>
-        </td>
-        <td>
-          So khớp kỹ năng (weight 30), kiểm tra lịch rảnh theo thứ trong tuần (weight 25), điểm kinh nghiệm thâm niên (weight 15).
-        </td>
-        <td>
-          Thông báo "Không đủ dữ liệu đề xuất" khi kỹ năng không khớp; cung cấp nút thử lại hoặc gán ca thủ công.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>AI-2: Shift Shortage Predictor</strong><br>
-          <small>Cảnh báo ca thiếu người</small>
-        </td>
-        <td>
-          • <code>organization-shift-management.html</code><br>
-          • <code>coordinator-resource-dashboard.html</code>
-        </td>
-        <td>
-          Tính tỷ lệ nhân sự hiện tại / cần thiết; đánh giá số ngày còn lại đến ca trực; phân loại 3 mức độ cảnh báo (Khẩn cấp, Chú ý, Bình thường).
-        </td>
-        <td>
-          Thông báo "Tất cả ca đều đã đủ người" khi không còn ca thiếu; tự động ẩn cảnh báo khi đã bù đủ quân số.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>AI-3: Impact Summary</strong><br>
-          <small>Tổng kết đóng góp sau hoạt động</small>
-        </td>
-        <td>
-          • <code>coordinator-impact-summary.html</code>
-        </td>
-        <td>
-          Tổng hợp số lượt hoàn thành ca, tính tổng giờ công hiến, tìm kiếm Top tình nguyện viên xuất sắc, tự động sinh đoạn văn bản tóm tắt tác động.
-        </td>
-        <td>
-          Thông báo "Chưa có lượt đăng ký hoàn thành nào"; cho phép điều phối viên chỉnh sửa trực tiếp nội dung văn bản trước khi lưu.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>AI-4: Chatbot VolunteerLink</strong><br>
-          <small>Hỏi đáp cách sử dụng website</small>
-        </td>
-        <td>
-          • Widget dùng chung trên các trang trong <code>dist/pages/</code>
-        </td>
-        <td>
-          Gửi câu hỏi tới backend Node.js; backend gọi Google Gemini với hướng dẫn trả lời trong phạm vi VolunteerLink. API key được giữ trong biến môi trường <code>.env</code>, không đưa vào frontend.
-        </td>
-        <td>
-          Hiển thị lỗi khi chưa cấu hình API key, mất kết nối hoặc dịch vụ AI hết hạn mức; không lưu lịch sử hội thoại sau khi đóng tab.
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>5. Hướng dẫn chạy thử nghiệm & Chấm điểm (Quick Start)</h2>
-  <div class="card">
-    <ol>
-      <li><strong>Cấu hình chatbot:</strong> Sao chép <code>.env.example</code> thành <code>.env</code> ở thư mục gốc và điền API key Google Gemini vào <code>GEMINI_API_KEY</code>. Không đưa API key lên GitHub.</li>
-      <li><strong>Chạy ứng dụng:</strong> Cài Node.js 18 trở lên, chạy <code>node server.js</code> ở thư mục gốc rồi mở <code>http://localhost:3000</code>. Live Server không khởi chạy API chatbot.</li>
-      <li><strong>Tài khoản tình nguyện viên mẫu:</strong> Email <code>an.nguyen@email.com</code>, mật khẩu <code>VolunteerLink@2026</code>. Tài khoản này đã đăng ký, đang hoạt động, có 40 giờ tình nguyện và 5 ca hoàn thành.</li>
-      <li><strong>Đăng ký tài khoản:</strong> Tạo tài khoản tình nguyện viên hoặc tổ chức trước khi đăng nhập. Tài khoản tình nguyện viên mới bắt đầu với hồ sơ thành tích trống; vai trò điều phối viên/quản trị viên không thể tự chọn khi đăng ký công khai.</li>
-      <li><strong>Khôi phục dữ liệu gốc:</strong> Mở Console trình duyệt (F12) và gõ <code>DataStore.reset()</code> để tải lại dữ liệu mẫu, bao gồm tài khoản demo và thành tích của tài khoản đó.</li>
-    </ol>
-  </div>
-
-  <div class="footer-note">
-    Tài liệu bàn giao dự án BTL-24 · VolunteerLink · Hoàn thành ngày 18/10/2026.
-  </div>
-
-</body>
+  </body>
 </html>

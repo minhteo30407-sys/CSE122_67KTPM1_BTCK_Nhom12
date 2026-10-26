@@ -33,6 +33,7 @@
           <input
             type="text"
             id="oppSearchInput"
+            aria-label="Tìm hoạt động theo tên, địa điểm hoặc nội dung"
             placeholder="Tìm theo tên hoạt động, địa điểm, nội dung..."
             oninput="filterOpportunities()"
           />
@@ -40,6 +41,7 @@
         <select
           id="categoryFilter"
           class="filter-select"
+          aria-label="Lọc hoạt động theo lĩnh vực"
           onchange="filterOpportunities()"
         >
           <option value="">-- Tất cả lĩnh vực --</option>
@@ -52,6 +54,7 @@
         <select
           id="statusFilter"
           class="filter-select"
+          aria-label="Lọc hoạt động theo trạng thái"
           onchange="filterOpportunities()"
         >
           <option value="">-- Tất cả trạng thái --</option>

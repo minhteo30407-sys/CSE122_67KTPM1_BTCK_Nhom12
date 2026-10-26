@@ -36,16 +36,23 @@
           <input
             type="text"
             id="shiftSearchInput"
+            aria-label="Tìm ca theo ngày hoặc tên ca"
             placeholder="Tìm theo ngày hoặc tên ca..."
             oninput="filterShifts()"
           />
         </div>
-        <select id="oppFilter" class="filter-select" onchange="filterShifts()">
+        <select
+          id="oppFilter"
+          class="filter-select"
+          aria-label="Lọc ca theo hoạt động"
+          onchange="filterShifts()"
+        >
           <option value="">-- Tất cả hoạt động --</option>
         </select>
         <select
           id="statusFilter"
           class="filter-select"
+          aria-label="Lọc ca theo trạng thái"
           onchange="filterShifts()"
         >
           <option value="">-- Tất cả trạng thái --</option>

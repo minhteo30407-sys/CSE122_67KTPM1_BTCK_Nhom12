@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<!-- VolunteerLink: Page structure and content for admin moderation. -->
+<!-- Cấu trúc và nội dung giao diện cho trang kiểm duyệt nội dung. -->
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -40,6 +40,7 @@
           <input
             type="text"
             id="modSearchInput"
+            aria-label="Tìm nội dung cần kiểm duyệt"
             placeholder="Tìm theo tiêu đề, người gửi, nội dung..."
             oninput="filterModeration()"
           />
@@ -47,6 +48,7 @@
         <select
           id="typeFilter"
           class="filter-select"
+          aria-label="Lọc nội dung theo loại"
           onchange="filterModeration()"
         >
           <option value="">-- Tất cả loại nội dung --</option>
@@ -56,6 +58,7 @@
         <select
           id="statusFilter"
           class="filter-select"
+          aria-label="Lọc nội dung theo trạng thái kiểm duyệt"
           onchange="filterModeration()"
         >
           <option value="">-- Tất cả trạng thái --</option>

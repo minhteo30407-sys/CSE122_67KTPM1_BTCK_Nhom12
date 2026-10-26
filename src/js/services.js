@@ -1,5 +1,5 @@
-// VolunteerLink: Shared local data, authentication, and remote synchronization services.
-// Local data store, seed loading, and optional MockAPI synchronization.
+// Dịch vụ dùng chung để quản lý dữ liệu cục bộ, xác thực và đồng bộ với máy chủ.
+// Khởi tạo kho dữ liệu trình duyệt, nạp dữ liệu mẫu và đồng bộ MockAPI khi được cấu hình.
 const DATA_BASE_PATH = new URL("../assets/data/", document.currentScript.src)
   .href;
 
@@ -563,7 +563,7 @@ const DataStore = {
   },
 };
 
-// Account registration, password verification, and session management.
+// Xử lý đăng ký tài khoản, xác minh mật khẩu và quản lý phiên đăng nhập.
 const Auth = {
   demoEmail: "an.nguyen@email.com",
   demoPassword: "VolunteerLink@2026",
@@ -771,7 +771,7 @@ const Auth = {
   },
 };
 
-// Local endpoint handlers used by the pages through the Auth interface.
+// Cung cấp các thao tác xác thực cục bộ cho trang thông qua giao diện Auth.
 const FakeAPI = {
   request: async function (method, path, body) {
     await DataStore.init();

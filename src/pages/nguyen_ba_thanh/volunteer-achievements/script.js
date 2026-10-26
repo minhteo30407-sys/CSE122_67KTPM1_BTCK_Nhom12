@@ -1,4 +1,4 @@
-// VolunteerLink: Page-specific interactions for volunteer achievements.
+// Mã xử lý giao diện và thao tác trên trang thành tựu tình nguyện viên.
 async function loadAchievements() {
   const user = Auth.getCurrentUser();
   const registrations = user

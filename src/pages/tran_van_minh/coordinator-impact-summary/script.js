@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for coordinator impact summary.
+// Mã xử lý giao diện và thao tác trên trang tổng kết tác động cộng đồng.
 let currentSelectedOppId = "";
 
 function populateOppDropdown() {

@@ -1,4 +1,4 @@
-// VolunteerLink: Shared volunteer matcher feature module.
+// Xếp hạng mức độ phù hợp giữa tình nguyện viên và các ca cần người.
 const VolunteerMatcher = {
   match: function (shiftId) {
     const shift = DataStore.getById("shifts", shiftId);

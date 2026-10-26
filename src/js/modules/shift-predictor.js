@@ -1,4 +1,4 @@
-// VolunteerLink: Shared shift predictor feature module.
+// Ước tính tình trạng thiếu người cho các ca dựa trên dữ liệu hiện có.
 const ShiftPredictor = {
   predict: function () {
     const shifts = DataStore.getAll("shifts");

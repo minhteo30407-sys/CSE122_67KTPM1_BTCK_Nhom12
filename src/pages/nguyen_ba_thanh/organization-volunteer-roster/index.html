@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- VolunteerLink: Page structure and content for organization volunteer roster. -->
+<!-- Cấu trúc và nội dung giao diện cho trang danh sách tình nguyện viên của tổ chức. -->
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -71,6 +71,7 @@
           <input
             type="text"
             id="rosterSearchInput"
+            aria-label="Tìm tình nguyện viên theo tên hoặc email"
             placeholder="Tìm theo tên tình nguyện viên, email..."
             oninput="filterRoster()"
           />
@@ -78,6 +79,7 @@
         <select
           id="shiftFilter"
           class="filter-select"
+          aria-label="Lọc tình nguyện viên theo ca"
           onchange="filterRoster()"
         >
           <option value="">-- Tất cả các ca --</option>
@@ -85,6 +87,7 @@
         <select
           id="statusFilter"
           class="filter-select"
+          aria-label="Lọc đăng ký tình nguyện theo trạng thái"
           onchange="filterRoster()"
         >
           <option value="">-- Tất cả trạng thái --</option>

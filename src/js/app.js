@@ -1,10 +1,10 @@
-// VolunteerLink: Shared navigation, access control, and interface utilities.
+// Điều hướng dùng chung, kiểm soát quyền truy cập và các tiện ích giao diện.
 function getPageUrl(pageName) {
   const pageDirectory = pageName.replace(/\.html$/, "");
   return `../${pageDirectory}/index.html`;
 }
 
-// Role-based navigation shared across protected pages.
+// Tạo các mục điều hướng phù hợp với vai trò trên những trang cần đăng nhập.
 const MENUS = {
   volunteer: {
     label: "Tình nguyện viên",
@@ -88,11 +88,11 @@ function escapeJSString(value) {
   return escapeHTML(JSON.stringify(String(value)));
 }
 
-// Build the authenticated application shell.
+// Dựng khung giao diện chung sau khi người dùng đã đăng nhập.
 function renderLayout(role) {
   const user = Auth.getCurrentUser();
   const userName = user ? user.name : "Người dùng";
-  // Hide protected content until local data and the current user's role are verified.
+  // Ẩn nội dung được bảo vệ cho đến khi xác minh dữ liệu và vai trò của người dùng.
   const currentPage = getCurrentPageName();
 
   const topbar = document.createElement("header");
@@ -180,7 +180,7 @@ if (requiresPageAccess) {
   });
 }
 
-// Shared browser events and small interface utilities.
+// Đăng ký sự kiện trình duyệt và các tiện ích giao diện nhỏ dùng chung.
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   if (sidebar) {
