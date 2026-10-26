@@ -56,12 +56,12 @@ BTL/
 │   ├── js/                    ← JavaScript và modules dùng chung
 │   ├── assets/                ← Dữ liệu JSON, hình ảnh
 │   └── pages/
-│       ├── minh/              ← Các trang Trần Văn Minh phụ trách
+│       ├── tran_van_minh/     ← Các trang Trần Văn Minh phụ trách
 │       │   └── <ten-trang>/
 │       │       ├── index.html
 │       │       ├── style.css
 │       │       └── script.js
-│       └── thanh/             ← Các trang Nguyễn Bá Thành phụ trách
+│       └── nguyen_ba_thanh/  ← Các trang Nguyễn Bá Thành phụ trách
 │           └── <ten-trang>/
 │               ├── index.html
 │               ├── style.css
@@ -85,11 +85,11 @@ BTL/
 
 Mỗi trang có bản nguồn riêng trong thư mục của người phụ trách và gồm ba file. Ví dụ trang kiểm duyệt của Minh:
 
-- `src/pages/minh/admin-moderation/index.html` — cấu trúc HTML.
-- `src/pages/minh/admin-moderation/style.css` — kiểu riêng của trang; CSS chung được nạp tự động.
-- `src/pages/minh/admin-moderation/script.js` — JavaScript riêng của trang.
+- `src/pages/tran_van_minh/admin-moderation/index.html` — cấu trúc HTML.
+- `src/pages/tran_van_minh/admin-moderation/style.css` — kiểu riêng của trang; CSS chung được nạp tự động.
+- `src/pages/tran_van_minh/admin-moderation/script.js` — JavaScript riêng của trang.
 
-Trang của Thành nằm trong `src/pages/thanh/`. Các trang dùng chung tiện ích trong `src/js/` và giao diện nền trong `src/css/`; không chỉnh trực tiếp bản build trong `dist/`. Chạy `npm run build` để cập nhật `dist/`; bước build xuất các trang về URL hiện có mà không đưa tên người phụ trách vào đường dẫn.
+Trang của Thành nằm trong `src/pages/nguyen_ba_thanh/`. Các trang dùng chung tiện ích trong `src/js/` và giao diện nền trong `src/css/`; không chỉnh trực tiếp bản build trong `dist/`. Chạy `npm run build` để cập nhật `dist/`; bước build xuất các trang về URL hiện có mà không đưa tên người phụ trách vào đường dẫn.
 
 ## Phân công
 

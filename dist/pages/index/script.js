@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for index.
+// VolunteerLink: Page-specific interactions for index.
 function getHomeDashboard(user) {
   if (!user) return "login";
   const dashboardByRole = {

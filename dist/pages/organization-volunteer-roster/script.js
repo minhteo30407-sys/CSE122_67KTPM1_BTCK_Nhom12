@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for organization volunteer roster.
+// VolunteerLink: Page-specific interactions for organization volunteer roster.
 let currentOrganizationId = "";
 
 function getOrganizationRegistrations() {

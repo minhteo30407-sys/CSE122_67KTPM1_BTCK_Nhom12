@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for organization shift management.
+// VolunteerLink: Page-specific interactions for organization shift management.
 let currentOrganizationId = "";
 
 function getOrganizationOpportunities() {

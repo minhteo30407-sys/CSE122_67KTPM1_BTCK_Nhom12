@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for volunteer opportunity search.
+// VolunteerLink: Page-specific interactions for volunteer opportunity search.
 let currentVolunteerId = "";
 let latestRecommendationIds = [];
 

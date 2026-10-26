@@ -1,53 +1,72 @@
 # Phân công nhiệm vụ nhóm (Team Assignment) - VolunteerLink
 
 > Học phần: Phát triển ứng dụng web cơ bản (CSE122)
-> Nhóm 2 thành viên: Trần Văn Minh & Nguyễn Bá Thành
-> Mã nguồn trang được chia theo người phụ trách trong `src/pages/minh/` và `src/pages/thanh/`.
+> Nhóm: Trần Văn Minh và Nguyễn Bá Thành
+> Danh sách trang và người phụ trách dưới đây được đối chiếu với các thư mục hiện có trong `src/pages/`.
 
-## 1. Trần Văn Minh
-- **Vai trò phụ trách:** Điều phối viên (Coordinator) + Quản trị viên (Admin)
-- **Các màn hình thực hiện (10 màn):**
-  1. `coordinator-resource-dashboard`
-  2. `coordinator-matching-board` (Dùng thuật toán matching AI-1)
-  3. `coordinator-impact-summary` (Tích hợp AI-3)
-  4. `admin-category-management`
-  5. `admin-user-management`
-  6. `admin-moderation`
-  7. `admin-dashboard`
-  8. `login`
-  9. `register`
-  10. `forgot-password`
-- **Tính năng AI phụ trách:**
-  - AI-1: Volunteer Matcher (Gợi ý hoạt động và ghép cặp TNV theo kỹ năng & lịch rảnh)
-  - AI-3: Impact Summary (Tổng kết tác động & số giờ đóng góp sau hoạt động)
-- **Trách nhiệm chéo:**
-  - Thiết kế Design System (`global.css`), kiến trúc khung (Khung A & Khung B).
-  - Tối ưu Responsive mobile/tablet (`responsive.css`).
-  - Đánh giá chéo PR của Nguyễn Bá Thành.
-- **Thư mục trang:** `src/pages/minh/`
+## Trần Văn Minh
 
----
+**Thư mục nguồn:** `src/pages/tran_van_minh/`
+**Vai trò trên các trang:** Điều phối viên, quản trị viên và các trang tài khoản.
 
-## 2. Nguyễn Bá Thành
-- **Vai trò phụ trách:** Tình nguyện viên (Volunteer) + Tổ chức xã hội (Organization)
-- **Các màn hình thực hiện (11 màn):**
-  1. `volunteer-profile`
-  2. `volunteer-opportunity-search`
-  3. `volunteer-my-shifts`
-  4. `volunteer-achievements`
-  5. `organization-opportunity-management`
-  6. `organization-shift-management` (Tích hợp AI-2)
-  7. `organization-volunteer-roster`
-  8. `index`
-  9. `notifications`
-  10. `403`
-  11. `404`
-- **Tính năng AI & Dữ liệu phụ trách:**
-  - AI-2: Shift Shortage Predictor (Cảnh báo sớm ca trực thiếu nhân sự)
-  - Xây dựng component AI Panel dùng chung (`ai-panel.js`)
-  - Thiết kế và quản lý Data Store (`services.js`), 6 thực thể JSON mẫu.
-- **Trách nhiệm chéo:**
-  - Quản lý logic LocalStorage và tích hợp dữ liệu.
-  - Tích hợp kiểm thử đa trình duyệt, đóng gói bản phát hành (`dist/`).
-  - Đánh giá chéo PR của Trần Văn Minh.
-- **Thư mục trang:** `src/pages/thanh/`
+| # | Thư mục trang | Nội dung |
+|---|---|---|
+| 1 | `coordinator-resource-dashboard` | Bảng điều khiển tài nguyên điều phối |
+| 2 | `coordinator-matching-board` | Bảng ghép tình nguyện viên với ca |
+| 3 | `coordinator-impact-summary` | Tổng hợp đóng góp và tác động |
+| 4 | `admin-category-management` | Quản lý danh mục |
+| 5 | `admin-dashboard` | Bảng điều khiển quản trị |
+| 6 | `admin-moderation` | Kiểm duyệt nội dung |
+| 7 | `admin-user-management` | Quản lý người dùng |
+| 8 | `login` | Đăng nhập |
+| 9 | `register` | Đăng ký |
+| 10 | `forgot-password` | Khôi phục mật khẩu |
+
+**Phạm vi công việc:** 10 trang điều phối viên, quản trị viên và tài khoản. Các trang của điều phối viên sử dụng module ghép tình nguyện viên và tổng hợp tác động khi cần.
+
+## Nguyễn Bá Thành
+
+**Thư mục nguồn:** `src/pages/nguyen_ba_thanh/`
+**Vai trò trên các trang:** Tình nguyện viên, tổ chức xã hội và các trang dùng chung.
+
+| # | Thư mục trang | Nội dung |
+|---|---|---|
+| 1 | `index` | Trang chủ |
+| 2 | `notifications` | Thông báo |
+| 3 | `403` | Trang không có quyền truy cập |
+| 4 | `404` | Trang không tìm thấy |
+| 5 | `volunteer-profile` | Hồ sơ tình nguyện viên |
+| 6 | `volunteer-opportunity-search` | Tìm kiếm hoạt động tình nguyện |
+| 7 | `volunteer-my-shifts` | Các ca tình nguyện của tôi |
+| 8 | `volunteer-achievements` | Thành tựu tình nguyện |
+| 9 | `organization-opportunity-management` | Quản lý hoạt động của tổ chức |
+| 10 | `organization-shift-management` | Quản lý ca của tổ chức |
+| 11 | `organization-volunteer-roster` | Danh sách tình nguyện viên đăng ký |
+
+**Phạm vi công việc:** 11 trang tình nguyện viên, tổ chức xã hội và trang dùng chung. Các trang liên quan sử dụng module dự đoán thiếu hụt ca, gợi ý hoạt động và thành tựu tình nguyện.
+
+## Cấu trúc mỗi trang
+
+Mỗi thư mục trang trong `src/pages/tran_van_minh/` và `src/pages/nguyen_ba_thanh/` có cùng cấu trúc:
+
+- `index.html` — nội dung và cấu trúc trang.
+- `style.css` — kiểu giao diện riêng của trang.
+- `script.js` — xử lý tương tác riêng của trang.
+
+## Mã nguồn dùng chung
+
+Các module dùng chung nằm trong `src/js/`, không nằm bên trong thư mục của riêng Minh hoặc Thành:
+
+- `services.js` — dữ liệu, xác thực và đồng bộ dữ liệu.
+- `modules/ai-panel.js` — giao diện bảng tính năng AI.
+- `modules/volunteer-matcher.js` — gợi ý tình nguyện viên hoặc hoạt động phù hợp.
+- `modules/shift-predictor.js` — phân tích và cảnh báo ca có thể thiếu người.
+- `modules/impact-summary.js` — tổng hợp số liệu đóng góp.
+- `modules/volunteer-achievements.js` — thành tựu tình nguyện.
+- `modules/site-chat.js` — widget chatbot dùng chung.
+
+`src/build.js` đọc trang từ hai thư mục `tran_van_minh/` và `nguyen_ba_thanh/`, sau đó tạo bản chạy trong `dist/pages/` theo tên chức năng. Vì vậy, hãy chỉnh sửa bản nguồn trong `src/`, không chỉnh trực tiếp bản được tạo trong `dist/`.
+
+## Phần dùng chung
+
+Các tệp `src/js/`, `src/css/` và `src/assets/` phục vụ nhiều trang. Mã nguồn hiện tại không gắn các phần dùng chung này cho riêng một thành viên; vì vậy tài liệu không quy kết tác giả module chỉ dựa trên việc một trang đang sử dụng module đó.

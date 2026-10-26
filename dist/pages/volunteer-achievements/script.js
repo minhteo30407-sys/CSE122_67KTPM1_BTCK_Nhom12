@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for volunteer achievements.
+// VolunteerLink: Page-specific interactions for volunteer achievements.
 async function loadAchievements() {
   const user = Auth.getCurrentUser();
   const registrations = user

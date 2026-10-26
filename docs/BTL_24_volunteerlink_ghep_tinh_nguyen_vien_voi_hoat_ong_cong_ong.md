@@ -537,8 +537,8 @@ project-root/
 │   ├── js/
 │   ├── assets/
 │   └── pages/
-│       ├── minh/              # Các trang Trần Văn Minh phụ trách
-│       └── thanh/             # Các trang Nguyễn Bá Thành phụ trách
+│       ├── tran_van_minh/     # Các trang Trần Văn Minh phụ trách
+│       └── nguyen_ba_thanh/  # Các trang Nguyễn Bá Thành phụ trách
 ├── server/
 │   └── server.js
 ├── tests/
@@ -549,7 +549,7 @@ project-root/
 └── package.json
 ```
 
-Mỗi trang trong `src/pages/minh/` hoặc `src/pages/thanh/` có thư mục riêng gồm `index.html`, `style.css` và `script.js`. Chạy `npm run build` để xuất các trang vào `dist/pages/` theo URL chức năng, không đổi URL theo tên người phụ trách.
+Mỗi trang trong `src/pages/tran_van_minh/` hoặc `src/pages/nguyen_ba_thanh/` có thư mục riêng gồm `index.html`, `style.css` và `script.js`. Chạy `npm run build` để xuất các trang vào `dist/pages/` theo URL chức năng, không đổi URL theo tên người phụ trách.
 
 ---
 

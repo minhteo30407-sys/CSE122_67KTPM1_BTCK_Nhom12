@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for volunteer profile.
+// VolunteerLink: Page-specific interactions for volunteer profile.
 let currentVolunteer = null;
 
 async function loadProfileData() {

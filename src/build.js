@@ -6,7 +6,7 @@ const PROJECT_DIR = path.resolve(SOURCE_DIR, "..");
 const DIST_DIR = path.join(PROJECT_DIR, "dist");
 const SOURCE_PAGES_DIR = path.join(SOURCE_DIR, "pages");
 const DIST_PAGES_DIR = path.join(DIST_DIR, "pages");
-const owners = ["minh", "thanh"];
+const owners = ["tran_van_minh", "nguyen_ba_thanh"];
 
 for (const directory of ["css", "js", "assets"]) {
   fs.cpSync(

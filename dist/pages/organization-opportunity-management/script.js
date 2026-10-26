@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for organization opportunity management.
+// VolunteerLink: Page-specific interactions for organization opportunity management.
 let currentOrganizationId = "";
 
 function getOrganizationOpportunities() {

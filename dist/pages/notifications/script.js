@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for notifications.
+// VolunteerLink: Page-specific interactions for notifications.
 const DEFAULT_NOTIFICATIONS = [
   {
     id: 1,

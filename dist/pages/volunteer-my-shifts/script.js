@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for volunteer my shifts.
+// VolunteerLink: Page-specific interactions for volunteer my shifts.
 let currentVolunteerId = "";
 let calendarDate = new Date();
 let calendarView = "month";
