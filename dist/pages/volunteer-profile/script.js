@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for volunteer profile.
+// VolunteerLink: Page-specific interactions for volunteer profile.
 let currentVolunteer = null;
 
 async function loadProfileData() {
@@ -72,8 +72,8 @@ function renderSkillsCheckboxes(userSkills) {
     const checked = userSkills.includes(skill.id) ? "checked" : "";
     html += `
       <label class="checkbox-label">
-        <input type="checkbox" name="skills" value="${skill.id}" ${checked}>
-        <span>${skill.name}</span>
+        <input type="checkbox" name="skills" value="${escapeHTML(skill.id)}" ${checked}>
+        <span>${escapeHTML(skill.name)}</span>
       </label>
     `;
   });

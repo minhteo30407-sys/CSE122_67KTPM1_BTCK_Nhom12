@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for organization shift management.
+// VolunteerLink: Page-specific interactions for organization shift management.
 let currentOrganizationId = "";
 
 function getOrganizationOpportunities() {
@@ -23,8 +23,8 @@ function populateOpportunityDropdowns() {
   let modalOptions = '<option value="">-- Chọn hoạt động --</option>';
 
   opps.forEach((opp) => {
-    filterOptions += `<option value="${opp.id}">${opp.title}</option>`;
-    modalOptions += `<option value="${opp.id}">${opp.title} (${opp.id})</option>`;
+    filterOptions += `<option value="${escapeHTML(opp.id)}">${escapeHTML(opp.title)}</option>`;
+    modalOptions += `<option value="${escapeHTML(opp.id)}">${escapeHTML(opp.title)} (${escapeHTML(opp.id)})</option>`;
   });
 
   oppFilter.innerHTML = filterOptions;
@@ -39,8 +39,8 @@ function renderSkillsCheckboxGroup() {
   skills.forEach((skill) => {
     html += `
       <label class="checkbox-label">
-        <input type="checkbox" name="shiftSkills" value="${skill.id}">
-        <span>${skill.name}</span>
+        <input type="checkbox" name="shiftSkills" value="${escapeHTML(skill.id)}">
+        <span>${escapeHTML(skill.name)}</span>
       </label>
     `;
   });
@@ -87,15 +87,15 @@ function renderShiftTable(shifts) {
 
     html += `
       <tr>
-        <td data-label="Mã ca"><strong>${shift.id}</strong></td>
+        <td data-label="Mã ca"><strong>${escapeHTML(shift.id)}</strong></td>
         <td data-label="Hoạt động">
-          <div style="font-weight:600; color:var(--primary-dark);">${oppTitle}</div>
-          <div style="font-size:12px; color:var(--text-secondary);">${shift.oppId}</div>
+          <div style="font-weight:600; color:var(--primary-dark);">${escapeHTML(oppTitle)}</div>
+          <div style="font-size:12px; color:var(--text-secondary);">${escapeHTML(shift.oppId)}</div>
         </td>
-        <td data-label="Ngày">${formatDate(shift.date)}</td>
-        <td data-label="Khung giờ">${shift.startTime} - ${shift.endTime}</td>
+        <td data-label="Ngày">${escapeHTML(formatDate(shift.date))}</td>
+        <td data-label="Khung giờ">${escapeHTML(shift.startTime)} - ${escapeHTML(shift.endTime)}</td>
         <td data-label="Đã có / Yêu cầu">
-          <strong>${shift.currentVolunteers}</strong> / ${shift.requiredVolunteers} người
+          <strong>${escapeHTML(shift.currentVolunteers)}</strong> / ${escapeHTML(shift.requiredVolunteers)} người
         </td>
         <td data-label="Kỹ năng yêu cầu">
           <div class="flex" style="flex-wrap:wrap; gap:4px;">
@@ -106,8 +106,8 @@ function renderShiftTable(shifts) {
         <td data-label="Cảnh báo AI">${warningBadge}</td>
         <td data-label="Hành động">
           <div class="flex" style="gap:6px; flex-wrap:wrap;">
-            <button class="btn btn-sm btn-secondary" onclick="openEditShiftModal('${shift.id}')">✏️ Sửa</button>
-            <button class="btn btn-sm btn-danger" onclick="deleteShift('${shift.id}')">🗑️ Xóa</button>
+            <button class="btn btn-sm btn-secondary" onclick="openEditShiftModal(${escapeJSString(shift.id)})">✏️ Sửa</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteShift(${escapeJSString(shift.id)})">🗑️ Xóa</button>
           </div>
         </td>
       </tr>
@@ -307,11 +307,43 @@ function initAIPredictor() {
     onRun: function () {
       return ShiftPredictor.predict();
     },
-    onAccept: function () {
-      showToast(
-        "Đã ghi nhận các ca thiếu người cần bổ sung tình nguyện viên!",
-        "success",
-      );
+    onAccept: function (result) {
+      if (!result || !Array.isArray(result.items)) {
+        showToast("Không có kết quả cảnh báo hợp lệ để lưu.", "error");
+        return;
+      }
+      try {
+        const reviewed = JSON.parse(
+          localStorage.getItem("vl_reviewed_shift_alerts") || "[]",
+        );
+        if (!Array.isArray(reviewed)) {
+          throw new Error("Danh sách cảnh báo đã xác nhận không hợp lệ.");
+        }
+        const reviewedAt = new Date().toISOString();
+        const byShiftId = new Map(
+          reviewed.map((item) => [item.shiftId, item]),
+        );
+        result.items.forEach((item) => {
+          const shift = item.data && item.data.shift;
+          if (shift && shift.id) {
+            byShiftId.set(shift.id, {
+              shiftId: shift.id,
+              reviewedAt,
+              urgency: item.data.urgency,
+            });
+          }
+        });
+        localStorage.setItem(
+          "vl_reviewed_shift_alerts",
+          JSON.stringify(Array.from(byShiftId.values())),
+        );
+        showToast(
+          "Đã lưu danh sách ca thiếu người cần được theo dõi.",
+          "success",
+        );
+      } catch (error) {
+        showToast(error.message || "Không thể lưu cảnh báo ca.", "error");
+      }
     },
   });
 }

@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for volunteer opportunity search.
+// VolunteerLink: Page-specific interactions for volunteer opportunity search.
 let currentVolunteerId = "";
 let latestRecommendationIds = [];
 
@@ -70,30 +70,30 @@ function renderOpportunitiesGrid(opps) {
       <div class="card" style="display:flex; flex-direction:column; justify-content:space-between;">
         <div class="card-body">
           <div class="flex-between mb-1">
-            <span class="badge badge-info">${opp.category || "Cộng đồng"}</span>
+            <span class="badge badge-info">${escapeHTML(opp.category || "Cộng đồng")}</span>
             <div class="opportunity-card-actions">
               ${statusBadge(opp.status)}
               <button type="button"
                 class="btn btn-secondary btn-sm favorite-button ${favoriteIds.includes(opp.id) ? "is-favorite" : ""}"
                 aria-pressed="${favoriteIds.includes(opp.id)}"
-                aria-label="${favoriteIds.includes(opp.id) ? "Bỏ yêu thích" : "Lưu yêu thích"}: ${opp.title}"
-                onclick="toggleFavorite('${opp.id}')">
+                aria-label="${escapeHTML(favoriteIds.includes(opp.id) ? "Bỏ yêu thích" : "Lưu yêu thích")}: ${escapeHTML(opp.title)}"
+                onclick="toggleFavorite(${escapeJSString(opp.id)})">
                 ${favoriteIds.includes(opp.id) ? "♥ Đã lưu" : "♡ Yêu thích"}
               </button>
             </div>
           </div>
-          <h3 style="margin-bottom:8px; color:var(--primary-dark); font-size:17px;">${opp.title}</h3>
+          <h3 style="margin-bottom:8px; color:var(--primary-dark); font-size:17px;">${escapeHTML(opp.title)}</h3>
           <p style="font-size:13px; color:var(--text-secondary); margin-bottom:12px; line-height:1.4;">
-            ${opp.description}
+            ${escapeHTML(opp.description)}
           </p>
           <div style="font-size:13px; margin-bottom:6px;">
-            <strong>🏢 Đơn vị tổ chức:</strong> ${orgName}
+            <strong>🏢 Đơn vị tổ chức:</strong> ${escapeHTML(orgName)}
           </div>
           <div style="font-size:13px; margin-bottom:6px;">
-            <strong>📍 Địa điểm:</strong> ${opp.location}
+            <strong>📍 Địa điểm:</strong> ${escapeHTML(opp.location)}
           </div>
           <div style="font-size:13px; margin-bottom:10px;">
-            <strong>📅 Thời gian:</strong> ${formatDate(opp.startDate)} - ${formatDate(opp.endDate)}
+            <strong>📅 Thời gian:</strong> ${escapeHTML(formatDate(opp.startDate))} - ${escapeHTML(formatDate(opp.endDate))}
           </div>
           <div style="margin-top:8px;">
             <div style="font-size:12px; color:var(--text-secondary); margin-bottom:4px;">Kỹ năng ưu tiên:</div>
@@ -103,7 +103,7 @@ function renderOpportunitiesGrid(opps) {
           </div>
         </div>
         <div class="card-footer">
-          <button class="btn btn-primary btn-sm" style="width:100%;" onclick="openShiftsModal('${opp.id}')">
+          <button class="btn btn-primary btn-sm" style="width:100%;" onclick="openShiftsModal(${escapeJSString(opp.id)})">
             📅 Xem các ca & Đăng ký
           </button>
         </div>
@@ -186,13 +186,13 @@ function openShiftsModal(oppId) {
       <div style="border:1px solid var(--border); border-radius:var(--radius); padding:14px; background:var(--surface); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
         <div>
           <div style="font-weight:600; font-size:15px; color:var(--primary-dark);">
-            Mã ca: ${shift.id} · ${formatDate(shift.date)}
+            Mã ca: ${escapeHTML(shift.id)} · ${escapeHTML(formatDate(shift.date))}
           </div>
           <div style="font-size:13px; color:var(--text); margin-top:2px;">
-            ⏰ Khung giờ: <strong>${shift.startTime} - ${shift.endTime}</strong>
+            ⏰ Khung giờ: <strong>${escapeHTML(shift.startTime)} - ${escapeHTML(shift.endTime)}</strong>
           </div>
           <div style="font-size:13px; color:var(--text-secondary); margin-top:2px;">
-            👥 Nhân sự: ${shift.currentVolunteers} / ${shift.requiredVolunteers} người
+            👥 Nhân sự: ${escapeHTML(shift.currentVolunteers)} / ${escapeHTML(shift.requiredVolunteers)} người
           </div>
           <div style="margin-top:6px;">
             ${skillsHtml}
@@ -213,7 +213,7 @@ function openShiftsModal(oppId) {
             <span class="badge badge-error" style="padding:6px 12px;">Đã đủ người</span>
           `
                   : `
-            <button class="btn btn-primary btn-sm" onclick="registerForShift('${shift.id}', '${oppId}')">
+            <button class="btn btn-primary btn-sm" onclick="registerForShift(${escapeJSString(shift.id)}, ${escapeJSString(oppId)})">
               Đăng ký tham gia
             </button>
           `

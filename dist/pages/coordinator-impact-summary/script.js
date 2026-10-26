@@ -8,7 +8,7 @@ function populateOppDropdown() {
   let options =
     '<option value="">-- Toàn bộ hệ thống VolunteerLink --</option>';
   opps.forEach((opp) => {
-    options += `<option value="${opp.id}">${opp.title} (${opp.id})</option>`;
+    options += `<option value="${escapeHTML(opp.id)}">${escapeHTML(opp.title)} (${escapeHTML(opp.id)})</option>`;
   });
 
   select.innerHTML = options;
@@ -44,7 +44,7 @@ function updateMetrics() {
                 <div style="font-size:12px; color:var(--text-secondary);">Thành viên tích cực</div>
               </div>
             </div>
-            <span class="badge badge-ai">${v.hours} giờ đóng góp</span>
+            <span class="badge badge-ai">${escapeHTML(v.hours)} giờ đóng góp</span>
           </div>
         `;
       });
@@ -71,11 +71,33 @@ function initImpactAIPanel() {
     onRun: function () {
       return ImpactSummary.generate(currentSelectedOppId);
     },
-    onAccept: function () {
-      showToast(
-        "Đã lưu bản báo cáo tác động xã hội vào kho lưu trữ!",
-        "success",
-      );
+    onAccept: function (result) {
+      if (!result || !result.stats || !result.summaryText) {
+        showToast("Không có bản tóm tắt hợp lệ để lưu.", "error");
+        return;
+      }
+      try {
+        const savedReports = JSON.parse(
+          localStorage.getItem("vl_impact_reports") || "[]",
+        );
+        if (!Array.isArray(savedReports)) {
+          throw new Error("Danh sách báo cáo đã lưu không hợp lệ.");
+        }
+        savedReports.unshift({
+          id: generateId("REPORT"),
+          opportunityId: currentSelectedOppId || null,
+          summaryText: result.summaryText,
+          stats: result.stats,
+          savedAt: new Date().toISOString(),
+        });
+        localStorage.setItem(
+          "vl_impact_reports",
+          JSON.stringify(savedReports.slice(0, 50)),
+        );
+        showToast("Đã lưu bản báo cáo tác động vào trình duyệt.", "success");
+      } catch (error) {
+        showToast(error.message || "Không thể lưu báo cáo tác động.", "error");
+      }
     },
   });
 }

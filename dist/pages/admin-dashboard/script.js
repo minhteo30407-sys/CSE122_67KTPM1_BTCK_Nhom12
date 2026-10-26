@@ -117,7 +117,7 @@ function renderRecentOpportunities(opportunities) {
       <a class="admin-recent-item" href="admin-moderation.html">
         <span class="admin-recent-icon">${icons[item.category] || "🌱"}</span>
         <span class="admin-recent-copy"><strong>${dashboardEscape(item.title)}</strong><small>${dashboardEscape(item.category || "Cộng đồng")} · ${dashboardEscape(item.location || "Đang cập nhật")}</small></span>
-        <span class="admin-recent-date">${item.startDate ? formatDate(item.startDate) : "—"}</span>
+        <span class="admin-recent-date">${dashboardEscape(item.startDate ? formatDate(item.startDate) : "—")}</span>
       </a>
     `,
         )

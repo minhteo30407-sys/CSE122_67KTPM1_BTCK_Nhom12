@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: volunteerlink
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0

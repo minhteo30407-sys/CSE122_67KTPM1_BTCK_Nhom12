@@ -85,24 +85,24 @@ const VolunteerAchievements = {
 
         return `
         <article class="achievement-card ${achieved ? "is-achieved" : "is-pending"}">
-          <div class="achievement-icon" aria-hidden="true">${achievement.icon}</div>
+          <div class="achievement-icon" aria-hidden="true">${escapeHTML(achievement.icon)}</div>
           <div class="achievement-content">
             <div class="achievement-title-row">
-              <h3>${achievement.name}</h3>
+              <h3>${escapeHTML(achievement.name)}</h3>
               <span class="achievement-status ${achieved ? "status-achieved" : "status-pending"}">
                 ${achieved ? "Đã đạt" : "Chưa đạt"}
               </span>
             </div>
-            <p>${achievement.description}</p>
+            <p>${escapeHTML(achievement.description)}</p>
             <div class="achievement-progress-label">
               <span>${progressLabel}</span>
-              <span>${current}/${achievement.target} ${achievement.unit}</span>
+              <span>              ${escapeHTML(current)}/${escapeHTML(achievement.target)} ${escapeHTML(achievement.unit)}</span>
             </div>
             <div class="achievement-progress-track" role="progressbar"
-                 aria-label="Tiến độ ${achievement.name}"
-                 aria-valuemin="0" aria-valuemax="${achievement.target}"
-                 aria-valuenow="${current}">
-              <span style="width:${progress}%"></span>
+                 aria-label="Tiến độ ${escapeHTML(achievement.name)}"
+                 aria-valuemin="0" aria-valuemax="${escapeHTML(achievement.target)}"
+                 aria-valuenow="${escapeHTML(current)}">
+              <span style="width:${escapeHTML(progress)}%"></span>
             </div>
           </div>
         </article>

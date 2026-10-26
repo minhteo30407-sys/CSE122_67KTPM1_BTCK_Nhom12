@@ -121,26 +121,26 @@ function renderModTable(items) {
   items.forEach((item) => {
     html += `
       <tr>
-        <td data-label="Mã mục"><strong>${item.id}</strong></td>
+        <td data-label="Mã mục"><strong>${escapeHTML(item.id)}</strong></td>
         <td data-label="Loại">${renderTypeBadge(item.type)}</td>
         <td data-label="Tiêu đề / Nội dung">
-          <div style="font-weight:600; color:var(--primary-dark);">${item.title}</div>
-          <div style="font-size:13px; color:var(--text-secondary); margin-top:2px;">${item.content}</div>
-          ${item.reason ? `<div style="font-size:12px; color:var(--error); margin-top:4px;"><strong>Lý do từ chối:</strong> ${item.reason}</div>` : ""}
+          <div style="font-weight:600; color:var(--primary-dark);">${escapeHTML(item.title)}</div>
+          <div style="font-size:13px; color:var(--text-secondary); margin-top:2px;">${escapeHTML(item.content)}</div>
+          ${item.reason ? `<div style="font-size:12px; color:var(--error); margin-top:4px;"><strong>Lý do từ chối:</strong> ${escapeHTML(item.reason)}</div>` : ""}
         </td>
-        <td data-label="Người / Đơn vị gửi">${item.sender}</td>
-        <td data-label="Ngày gửi">${formatDate(item.date)}</td>
+        <td data-label="Người / Đơn vị gửi">${escapeHTML(item.sender)}</td>
+        <td data-label="Ngày gửi">${escapeHTML(formatDate(item.date))}</td>
         <td data-label="Trạng thái">${renderModStatusBadge(item.status)}</td>
         <td data-label="Hành động">
           <div class="flex" style="gap:6px; flex-wrap:wrap;">
             ${
               item.status === "pending"
                 ? `
-              <button class="btn btn-sm btn-primary" onclick="approveItem('${item.id}')">✓ Duyệt</button>
-              <button class="btn btn-sm btn-danger" onclick="openRejectModal('${item.id}')">✕ Từ chối</button>
+              <button class="btn btn-sm btn-primary" onclick="approveItem(${escapeJSString(item.id)})">✓ Duyệt</button>
+              <button class="btn btn-sm btn-danger" onclick="openRejectModal(${escapeJSString(item.id)})">✕ Từ chối</button>
             `
                 : `
-              <button class="btn btn-sm btn-secondary" onclick="resetToPending('${item.id}')">🔄 Xem lại</button>
+              <button class="btn btn-sm btn-secondary" onclick="resetToPending(${escapeJSString(item.id)})">🔄 Xem lại</button>
             `
             }
           </div>

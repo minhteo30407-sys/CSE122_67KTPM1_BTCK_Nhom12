@@ -40,6 +40,7 @@
           <input
             type="text"
             id="modSearchInput"
+            aria-label="Tìm nội dung cần kiểm duyệt"
             placeholder="Tìm theo tiêu đề, người gửi, nội dung..."
             oninput="filterModeration()"
           />
@@ -47,6 +48,7 @@
         <select
           id="typeFilter"
           class="filter-select"
+          aria-label="Lọc nội dung theo loại"
           onchange="filterModeration()"
         >
           <option value="">-- Tất cả loại nội dung --</option>
@@ -56,6 +58,7 @@
         <select
           id="statusFilter"
           class="filter-select"
+          aria-label="Lọc nội dung theo trạng thái kiểm duyệt"
           onchange="filterModeration()"
         >
           <option value="">-- Tất cả trạng thái --</option>
@@ -143,10 +146,10 @@
     </div>
 
     <!-- Nạp các tiện ích dùng chung trước phần xử lý kiểm duyệt. -->
-    <script src="../../js/api.js"></script>
+    <script src="../../js/services.js"></script>
     <script src="../../js/modules/ai-panel.js"></script>
     <script src="../../js/modules/shift-predictor.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="../../js/app.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

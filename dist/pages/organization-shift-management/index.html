@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <!-- VolunteerLink: Page structure and content for organization shift management. -->
 <html lang="vi">
   <head>
@@ -36,16 +36,23 @@
           <input
             type="text"
             id="shiftSearchInput"
+            aria-label="Tìm ca theo ngày hoặc tên ca"
             placeholder="Tìm theo ngày hoặc tên ca..."
             oninput="filterShifts()"
           />
         </div>
-        <select id="oppFilter" class="filter-select" onchange="filterShifts()">
+        <select
+          id="oppFilter"
+          class="filter-select"
+          aria-label="Lọc ca theo hoạt động"
+          onchange="filterShifts()"
+        >
           <option value="">-- Tất cả hoạt động --</option>
         </select>
         <select
           id="statusFilter"
           class="filter-select"
+          aria-label="Lọc ca theo trạng thái"
           onchange="filterShifts()"
         >
           <option value="">-- Tất cả trạng thái --</option>
@@ -189,10 +196,10 @@
       </div>
     </div>
 
-    <script src="../../js/api.js"></script>
+    <script src="../../js/services.js"></script>
     <script src="../../js/modules/ai-panel.js"></script>
     <script src="../../js/modules/shift-predictor.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="../../js/app.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

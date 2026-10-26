@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for index.
+// VolunteerLink: Page-specific interactions for index.
 function getHomeDashboard(user) {
   if (!user) return "login";
   const dashboardByRole = {
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           <div class="home-opportunity-meta">
             <span><span aria-hidden="true">🏢</span> ${orgName}</span>
             <span><span aria-hidden="true">📍</span> ${location}</span>
-            <span><span aria-hidden="true">📅</span> ${formatDate(opportunity.startDate)}${opportunity.endDate ? " – " + formatDate(opportunity.endDate) : ""}</span>
+            <span><span aria-hidden="true">📅</span> ${escapeHTML(formatDate(opportunity.startDate))}${opportunity.endDate ? " – " + escapeHTML(formatDate(opportunity.endDate)) : ""}</span>
           </div>
           <a class="home-opportunity-link" href="${destination}">${user ? "Xem hoạt động" : "Đăng nhập để tham gia"} <span aria-hidden="true">→</span></a>
           </div>

@@ -1,0 +1,312 @@
+﻿<!doctype html>
+<!-- VolunteerLink: Page structure and content for index. -->
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang chủ - VolunteerLink</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="layout-public home-page">
+    <header class="public-header">
+      <a
+        class="logo"
+        href="../index/index.html"
+        aria-label="VolunteerLink - Trang chủ"
+        >Volunteer<span>Link</span></a
+      >
+      <nav id="homeNavigation" aria-label="Điều hướng chính">
+        <a
+          class="home-nav-current"
+          href="../index/index.html"
+          aria-current="page"
+          >Trang chủ</a
+        >
+        <a href="#featured-section">Hoạt động nổi bật</a>
+        <a href="../login/index.html">Đăng nhập</a>
+        <a
+          href="../register/index.html"
+          class="btn btn-sm btn-primary home-nav-cta"
+          >Tạo tài khoản</a
+        >
+      </nav>
+    </header>
+
+    <main class="home-content">
+      <div class="home-container">
+        <section class="home-hero">
+          <div class="home-hero-copy">
+            <span class="home-eyebrow"
+              ><span aria-hidden="true">🌱</span> Kết nối yêu thương, lan tỏa
+              điều tử tế</span
+            >
+            <h1 id="homeHeading">Cùng nhau tạo nên những thay đổi tốt đẹp</h1>
+            <p id="homeDescription">
+              Khám phá cơ hội tình nguyện phù hợp, chung tay cùng các tổ chức
+              cộng đồng và ghi lại hành trình đóng góp của bạn.
+            </p>
+            <div class="home-hero-actions" id="homeHeroActions">
+              <a class="btn btn-primary" href="../register/index.html"
+                >Bắt đầu hành trình</a
+              >
+              <a class="btn btn-secondary" href="../login/index.html"
+                >Đăng nhập</a
+              >
+            </div>
+            <div class="home-trust-note" id="homeTrustNote">
+              <span aria-hidden="true">✓</span> Tài khoản mới bắt đầu với hồ sơ
+              và thành tích của riêng bạn
+            </div>
+          </div>
+          <div
+            class="home-hero-art"
+            aria-label="Cùng tình nguyện vì cộng đồng"
+            role="img"
+          >
+            <div class="home-art-orbit home-art-orbit-one"></div>
+            <div class="home-art-orbit home-art-orbit-two"></div>
+            <div class="home-art-center" aria-hidden="true">🤝</div>
+            <div class="home-art-chip home-art-chip-top">
+              <span aria-hidden="true">💚</span> Trao đi điều tốt
+            </div>
+            <div class="home-art-chip home-art-chip-bottom">
+              <span aria-hidden="true">✨</span> Cùng nhau phát triển
+            </div>
+          </div>
+        </section>
+
+        <section class="home-opportunities-section" id="featured-section">
+          <div class="home-section-heading home-section-heading-row">
+            <div>
+              <span class="home-section-kicker">Bắt đầu từ hôm nay</span>
+              <h2>Cơ hội đang chờ bạn</h2>
+              <p>
+                Chọn một hoạt động ý nghĩa và cùng cộng đồng tạo nên khác biệt.
+              </p>
+            </div>
+            <a
+              id="allOpportunitiesLink"
+              href="../login/index.html"
+              class="btn btn-secondary"
+              >Xem tất cả hoạt động <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <div
+            class="home-category-filters"
+            id="homeCategoryFilters"
+            aria-label="Lọc theo lĩnh vực"
+          >
+            <button
+              class="home-category-filter is-active"
+              type="button"
+              data-category="all"
+            >
+              Tất cả
+            </button>
+            <button
+              class="home-category-filter"
+              type="button"
+              data-category="Y tế"
+            >
+              💚 Y tế
+            </button>
+            <button
+              class="home-category-filter"
+              type="button"
+              data-category="Giáo dục"
+            >
+              📚 Giáo dục
+            </button>
+            <button
+              class="home-category-filter"
+              type="button"
+              data-category="Môi trường"
+            >
+              🌱 Môi trường
+            </button>
+            <button
+              class="home-category-filter"
+              type="button"
+              data-category="Hậu cần"
+            >
+              🤲 Hậu cần
+            </button>
+            <button
+              class="home-category-filter"
+              type="button"
+              data-category="Ngôn ngữ"
+            >
+              🌏 Ngôn ngữ
+            </button>
+          </div>
+          <div
+            id="featuredOpportunities"
+            class="home-opportunities-grid"
+            aria-live="polite"
+          >
+            <div class="home-loading">
+              <span class="home-loading-dot"></span> Đang tải hoạt động...
+            </div>
+          </div>
+        </section>
+
+        <section class="home-interest-band" aria-labelledby="interestHeading">
+          <div class="home-interest-icon" aria-hidden="true">♡</div>
+          <span class="home-section-kicker"
+            >Mỗi sự quan tâm đều tạo nên khác biệt</span
+          >
+          <h2 id="interestHeading">Bạn muốn bắt đầu từ đâu?</h2>
+          <p>
+            Chọn lĩnh vực bạn yêu thích, chúng tôi sẽ giúp bạn tìm đúng nơi cần
+            mình.
+          </p>
+          <div class="home-interest-list">
+            <a href="#featured-section" data-interest="Môi trường"
+              ><span>🌿</span> Môi trường</a
+            >
+            <a href="#featured-section" data-interest="Giáo dục"
+              ><span>📚</span> Trẻ em</a
+            >
+            <a href="#featured-section" data-interest="Y tế"
+              ><span>💚</span> Sức khỏe</a
+            >
+            <a href="#featured-section" data-interest="Hậu cần"
+              ><span>🤲</span> Hỗ trợ cộng đồng</a
+            >
+            <a href="#featured-section" data-interest="Ngôn ngữ"
+              ><span>🌏</span> Ngôn ngữ</a
+            >
+            <a href="#featured-section" data-interest="all"
+              ><span>✨</span> Mọi lĩnh vực</a
+            >
+          </div>
+        </section>
+
+        <section class="home-features-section" id="features-section">
+          <div class="home-section-heading home-reasons-heading">
+            <span class="home-section-kicker"
+              >Một chút thời gian, thật nhiều yêu thương</span
+            >
+            <h2>Vì sao nên tình nguyện?</h2>
+            <p>
+              Điều tốt đẹp bạn trao đi sẽ trở thành sức mạnh cho cả cộng đồng.
+            </p>
+          </div>
+          <div class="home-reasons-grid">
+            <article class="home-reason-card">
+              <img
+                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=85"
+                alt="Tình nguyện viên cùng nhau hỗ trợ cộng đồng"
+                loading="lazy"
+              />
+              <div>
+                <span class="home-reason-number">01 · KẾT NỐI</span>
+                <h3>Gặp những người cùng chí hướng</h3>
+                <p>
+                  Chung tay với cộng đồng tích cực, cùng nhau tạo ra những thay
+                  đổi thiết thực.
+                </p>
+              </div>
+            </article>
+            <article class="home-reason-card">
+              <img
+                src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=85"
+                alt="Chăm sóc và đồng hành cùng động vật"
+                loading="lazy"
+              />
+              <div>
+                <span class="home-reason-number">02 · TRẢI NGHIỆM</span>
+                <h3>Học thêm điều mới mỗi ngày</h3>
+                <p>
+                  Khám phá kỹ năng, thử sức ở những lĩnh vực mới và trưởng thành
+                  qua từng hoạt động.
+                </p>
+              </div>
+            </article>
+            <article class="home-reason-card">
+              <img
+                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=85"
+                alt="Mọi người cùng chung tay xây dựng cộng đồng"
+                loading="lazy"
+              />
+              <div>
+                <span class="home-reason-number">03 · LAN TỎA</span>
+                <h3>Để lại dấu ấn tốt đẹp</h3>
+                <p>
+                  Mỗi giờ đóng góp đều được ghi nhận trên hành trình sẻ chia của
+                  riêng bạn.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section
+          class="home-partners-section"
+          aria-labelledby="partnersHeading"
+        >
+          <span class="home-section-kicker">Cùng nhau tạo nên thay đổi</span>
+          <h2 id="partnersHeading">Những tổ chức đồng hành</h2>
+          <div class="home-partners-list" aria-label="Các tổ chức cộng đồng">
+            <span class="home-partner-logo partner-green"
+              ><b>A</b><small>The Project<br />Love Act</small></span
+            >
+            <span class="home-partner-logo partner-yellow"
+              ><b>🐾</b><small>Dog Trust</small></span
+            >
+            <span class="home-partner-logo partner-red"
+              ><b>♡</b><small>Save the Children</small></span
+            >
+            <span class="home-partner-logo partner-teal"
+              ><b>pdsa</b><small>People's Dispensary</small></span
+            >
+            <span class="home-partner-logo partner-green"
+              ><b>A</b><small>Community<br />First</small></span
+            >
+            <span class="home-partner-logo partner-yellow"
+              ><b>🌍</b><small>Global Good</small></span
+            >
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="public-footer">
+      <div class="home-footer-main">
+        <div class="home-footer-brand">
+          <a class="home-footer-logo" href="../index/index.html"
+            >Volunteer<span>Link</span></a
+          >
+          <p>Kết nối trái tim tình nguyện với những cộng đồng cần sẻ chia.</p>
+        </div>
+        <div class="home-footer-links">
+          <div>
+            <strong>Khám phá</strong><a href="#featured-section">Hoạt động</a
+            ><a href="#features-section">Vì sao tình nguyện?</a>
+          </div>
+          <div>
+            <strong>Đồng hành</strong
+            ><a href="../register/index.html">Tạo tài khoản</a
+            ><a href="../login/index.html">Đăng nhập</a>
+          </div>
+          <div>
+            <strong>VolunteerLink</strong
+            ><a href="../index/index.html">Về chúng tôi</a
+            ><a href="../index/index.html">Liên hệ</a>
+          </div>
+        </div>
+        <a class="home-back-to-top" href="#" aria-label="Trở về đầu trang"
+          >↑ Đầu trang</a
+        >
+      </div>
+      <div class="home-footer-bottom">
+        <span>© 2026 VolunteerLink</span
+        ><span>Trao đi điều tốt · Nhận về yêu thương</span>
+      </div>
+    </footer>
+
+    <script src="../../js/services.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

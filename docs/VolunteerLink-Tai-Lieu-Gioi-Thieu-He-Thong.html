@@ -188,7 +188,8 @@
         </td>
         <td>
           <strong>AI-2: Shift Shortage Predictor</strong> (Dự báo ca thiếu nhân sự)<br>
-          Xây dựng component Panel AI dùng chung cho toàn hệ thống
+          Xây dựng component Panel AI dùng chung cho toàn hệ thống<br>
+          <strong>AI-4: Chatbot VolunteerLink</strong> (Hỏi đáp cách sử dụng website)
         </td>
       </tr>
       <tr>
@@ -488,11 +489,11 @@
 
   <div class="page-break"></div>
 
-  <h2>4. Thiết kế & Trải nghiệm 3 tính năng AI đặc sắc</h2>
+  <h2>4. Thiết kế & Trải nghiệm các tính năng AI</h2>
 
   <div class="ai-box">
-    <h3 style="margin-top:0; color:#7C3AED;">Nguyên tắc trải nghiệm AI (AI UX Flow)</h3>
-    Quy trình trải nghiệm AI xuyên suốt toàn bộ hệ thống tuân thủ nghiêm ngặt 6 bước chuẩn:
+    <h3 style="margin-top:0; color:#7C3AED;">Nguyên tắc trải nghiệm AI phân tích (AI UX Flow)</h3>
+    Ba công cụ phân tích dùng quy trình 6 bước; chatbot có giao diện hội thoại riêng, trạng thái chờ và thông báo lỗi rõ ràng:
     <ol>
       <li><strong>Nhập dữ liệu (Input):</strong> Người dùng chọn đối tượng cần phân tích (ca trực, hoạt động, tiêu chí).</li>
       <li><strong>Kiểm tra hợp lệ (Validate):</strong> Hệ thống đảm bảo đủ dữ liệu đầu vào trước khi kích hoạt.</li>
@@ -560,13 +561,29 @@
           Thông báo "Chưa có lượt đăng ký hoàn thành nào"; cho phép điều phối viên chỉnh sửa trực tiếp nội dung văn bản trước khi lưu.
         </td>
       </tr>
+      <tr>
+        <td>
+          <strong>AI-4: Chatbot VolunteerLink</strong><br>
+          <small>Hỏi đáp cách sử dụng website</small>
+        </td>
+        <td>
+          • Widget dùng chung trên các trang trong <code>dist/pages/</code>
+        </td>
+        <td>
+          Gửi câu hỏi tới backend Node.js; backend gọi Google Gemini với hướng dẫn trả lời trong phạm vi VolunteerLink. API key được giữ trong biến môi trường <code>.env</code>, không đưa vào frontend.
+        </td>
+        <td>
+          Hiển thị lỗi khi chưa cấu hình API key, mất kết nối hoặc dịch vụ AI hết hạn mức; không lưu lịch sử hội thoại sau khi đóng tab.
+        </td>
+      </tr>
     </tbody>
   </table>
 
   <h2>5. Hướng dẫn chạy thử nghiệm & Chấm điểm (Quick Start)</h2>
   <div class="card">
     <ol>
-      <li><strong>Chạy ứng dụng:</strong> Mở thư mục <code>dist/</code> bằng Live Server hoặc HTTPS. Toàn bộ 19 trang đã được tích hợp liên thông; CSS, JavaScript và dữ liệu JSON nằm cùng trong thư mục này.</li>
+      <li><strong>Cấu hình chatbot:</strong> Sao chép <code>.env.example</code> thành <code>.env</code> ở thư mục gốc và điền API key Google Gemini vào <code>GEMINI_API_KEY</code>. Không đưa API key lên GitHub.</li>
+      <li><strong>Chạy ứng dụng:</strong> Cài Node.js 18 trở lên, chạy <code>node server.js</code> ở thư mục gốc rồi mở <code>http://localhost:3000</code>. Live Server không khởi chạy API chatbot.</li>
       <li><strong>Tài khoản tình nguyện viên mẫu:</strong> Email <code>an.nguyen@email.com</code>, mật khẩu <code>VolunteerLink@2026</code>. Tài khoản này đã đăng ký, đang hoạt động, có 40 giờ tình nguyện và 5 ca hoàn thành.</li>
       <li><strong>Đăng ký tài khoản:</strong> Tạo tài khoản tình nguyện viên hoặc tổ chức trước khi đăng nhập. Tài khoản tình nguyện viên mới bắt đầu với hồ sơ thành tích trống; vai trò điều phối viên/quản trị viên không thể tự chọn khi đăng ký công khai.</li>
       <li><strong>Khôi phục dữ liệu gốc:</strong> Mở Console trình duyệt (F12) và gõ <code>DataStore.reset()</code> để tải lại dữ liệu mẫu, bao gồm tài khoản demo và thành tích của tài khoản đó.</li>

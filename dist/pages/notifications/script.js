@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for notifications.
+// VolunteerLink: Page-specific interactions for notifications.
 const DEFAULT_NOTIFICATIONS = [
   {
     id: 1,
@@ -94,15 +94,15 @@ function renderNotifications() {
   let html = "";
   displayList.forEach((item) => {
     html += `
-      <div class="notification-item ${item.unread ? "unread" : ""}" onclick="toggleNotification(${item.id})">
-        <div class="notification-icon">${item.icon}</div>
+      <div class="notification-item ${item.unread ? "unread" : ""}" onclick="toggleNotification(${escapeJSString(item.id)})">
+        <div class="notification-icon">${escapeHTML(item.icon)}</div>
         <div class="notification-body">
           <div class="notif-title">
-            ${item.title}
+            ${escapeHTML(item.title)}
             ${item.unread ? '<span class="badge badge-ai" style="margin-left:6px; font-size:10px;">Mới</span>' : ""}
           </div>
-          <div class="notif-text">${item.text}</div>
-          <div class="notif-time">${item.time} · <em>Nhấn để đánh dấu ${item.unread ? "đã đọc" : "chưa đọc"}</em></div>
+          <div class="notif-text">${escapeHTML(item.text)}</div>
+          <div class="notif-time">${escapeHTML(item.time)} · <em>Nhấn để đánh dấu ${item.unread ? "đã đọc" : "chưa đọc"}</em></div>
         </div>
       </div>
     `;

@@ -1,0 +1,197 @@
+<!doctype html>
+<!-- VolunteerLink: Page structure and content for volunteer my shifts. -->
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ca của tôi - VolunteerLink</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-content" id="main">
+      <div class="page-header">
+        <div>
+          <h1>Ca tình nguyện của tôi</h1>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 14px;
+              margin-top: 4px;
+            "
+          >
+            Theo dõi lịch trình trực, tiến độ tham gia và số giờ tình nguyện
+            được ghi nhận
+          </p>
+        </div>
+        <button
+          class="btn btn-primary btn-sm"
+          onclick="
+            window.location.href = getPageUrl('volunteer-opportunity-search')
+          "
+        >
+          ➕ Tìm thêm ca mới
+        </button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="myTotalShiftsCount">0</div>
+          <div class="stat-label">Tổng ca đăng ký</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--accent)"
+            id="myPendingShiftsCount"
+          >
+            0
+          </div>
+          <div class="stat-label">Đang chờ duyệt</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--info)"
+            id="myUpcomingShiftsCount"
+          >
+            0
+          </div>
+          <div class="stat-label">Sắp diễn ra</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--success)"
+            id="myCompletedShiftsCount"
+          >
+            0
+          </div>
+          <div class="stat-label">Đã hoàn thành</div>
+        </div>
+      </div>
+
+      <section
+        class="calendar-panel card"
+        aria-label="Lịch các ca tình nguyện đã đăng ký"
+      >
+        <div class="calendar-toolbar">
+          <div>
+            <h2>Lịch tình nguyện</h2>
+            <p class="text-secondary">
+              Xem nhanh các ca đã đăng ký theo tháng hoặc tuần.
+            </p>
+          </div>
+          <div class="calendar-controls">
+            <div
+              class="calendar-view-toggle"
+              role="group"
+              aria-label="Kiểu hiển thị lịch"
+            >
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm active"
+                id="monthViewButton"
+                onclick="setCalendarView('month')"
+              >
+                Tháng
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                id="weekViewButton"
+                onclick="setCalendarView('week')"
+              >
+                Tuần
+              </button>
+            </div>
+            <div class="calendar-navigation">
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                aria-label="Kỳ trước"
+                onclick="moveCalendar(-1)"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                onclick="goToCalendarToday()"
+              >
+                Hôm nay
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm"
+                aria-label="Kỳ tiếp theo"
+                onclick="moveCalendar(1)"
+              >
+                ›
+              </button>
+            </div>
+          </div>
+        </div>
+        <h3 class="calendar-period" id="calendarPeriod" aria-live="polite"></h3>
+        <div class="calendar-scroll">
+          <div class="calendar-weekdays" aria-hidden="true">
+            <span>Thứ 2</span><span>Thứ 3</span><span>Thứ 4</span
+            ><span>Thứ 5</span> <span>Thứ 6</span><span>Thứ 7</span
+            ><span>Chủ nhật</span>
+          </div>
+          <div class="calendar-grid" id="volunteerCalendar"></div>
+        </div>
+      </section>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="myShiftsSearch"
+            aria-label="Tìm ca đã đăng ký theo hoạt động hoặc địa điểm"
+            placeholder="Tìm theo tên hoạt động, địa điểm..."
+            oninput="filterMyShifts()"
+          />
+        </div>
+        <select
+          id="myShiftStatusFilter"
+          class="filter-select"
+          aria-label="Lọc ca đã đăng ký theo trạng thái"
+          onchange="filterMyShifts()"
+        >
+          <option value="">-- Tất cả trạng thái --</option>
+          <option value="pending">Chờ duyệt (pending)</option>
+          <option value="confirmed">Đã xác nhận (confirmed)</option>
+          <option value="completed">Đã hoàn thành (completed)</option>
+          <option value="cancelled">Đã hủy (cancelled)</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Mã ĐK</th>
+              <th>Hoạt động</th>
+              <th>Địa điểm</th>
+              <th>Ngày diễn ra</th>
+              <th>Khung giờ</th>
+              <th>Số giờ ghi nhận</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="myShiftsTableBody"></tbody>
+        </table>
+      </div>
+
+      <div id="emptyContainer" class="hidden"></div>
+    </main>
+
+    <script src="../../js/services.js"></script>
+    <script src="../../js/modules/ai-panel.js"></script>
+    <script src="../../js/modules/shift-predictor.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

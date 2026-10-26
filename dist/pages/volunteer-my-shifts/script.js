@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for volunteer my shifts.
+// VolunteerLink: Page-specific interactions for volunteer my shifts.
 let currentVolunteerId = "";
 let calendarDate = new Date();
 let calendarView = "month";
@@ -219,23 +219,23 @@ function renderMyShiftsTable(regs) {
 
     html += `
       <tr>
-        <td data-label="Mã ĐK"><strong>${reg.id}</strong></td>
+        <td data-label="Mã ĐK"><strong>${escapeHTML(reg.id)}</strong></td>
         <td data-label="Hoạt động">
-          <strong style="color:var(--primary-dark);">${oppTitle}</strong>
-          <div style="font-size:12px; color:var(--text-secondary);">Mã ca: ${reg.shiftId}</div>
+          <strong style="color:var(--primary-dark);">${escapeHTML(oppTitle)}</strong>
+          <div style="font-size:12px; color:var(--text-secondary);">Mã ca: ${escapeHTML(reg.shiftId)}</div>
         </td>
-        <td data-label="Địa điểm">${location}</td>
-        <td data-label="Ngày diễn ra">${shiftDate}</td>
-        <td data-label="Khung giờ">${shiftTime}</td>
+        <td data-label="Địa điểm">${escapeHTML(location)}</td>
+        <td data-label="Ngày diễn ra">${escapeHTML(shiftDate)}</td>
+        <td data-label="Khung giờ">${escapeHTML(shiftTime)}</td>
         <td data-label="Số giờ ghi nhận">
-          <strong>${reg.hoursLogged || 0} giờ</strong>
+          <strong>${escapeHTML(reg.hoursLogged || 0)} giờ</strong>
         </td>
         <td data-label="Trạng thái">${statusBadge(reg.status)}</td>
         <td data-label="Hành động">
           ${
             reg.status === "pending" || reg.status === "confirmed"
               ? `
-            <button class="btn btn-sm btn-danger" onclick="cancelRegistration('${reg.id}', '${reg.shiftId}')">
+            <button class="btn btn-sm btn-danger" onclick="cancelRegistration(${escapeJSString(reg.id)}, ${escapeJSString(reg.shiftId)})">
               Hủy đăng ký
             </button>
           `

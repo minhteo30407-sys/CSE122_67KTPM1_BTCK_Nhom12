@@ -1,4 +1,23 @@
 // VolunteerLink: Shared ai panel feature module.
+function safeBadgeMarkup(markup) {
+  const template = document.createElement("template");
+  template.innerHTML = String(markup || "");
+  const source = template.content.firstElementChild;
+  const allowedClasses = [
+    "badge-ai",
+    "badge-success",
+    "badge-info",
+    "badge-warning",
+    "badge-error",
+  ];
+  const badgeClass =
+    source && source.tagName === "SPAN"
+      ? allowedClasses.find((name) => source.classList.contains(name))
+      : null;
+  if (!badgeClass) return "";
+  return `<span class="badge ${badgeClass}">${escapeHTML(source.textContent)}</span>`;
+}
+
 const AIPanel = {
   create: function (options) {
     const container = document.getElementById(options.containerId);
@@ -8,20 +27,20 @@ const AIPanel = {
       <div class="ai-panel">
         <div class="ai-panel-header">
           <span class="ai-icon">🤖</span>
-          <span>${options.title || "Trợ lý AI"}</span>
+          <span>${escapeHTML(options.title || "Trợ lý AI")}</span>
           <span class="badge badge-ai">AI</span>
         </div>
         <div class="ai-panel-body">
-          <div id="${options.containerId}-input">
+          <div id="${escapeHTML(options.containerId)}-input">
             <p style="margin-bottom:12px; color:var(--text-secondary); font-size:14px;">
-              ${options.description || "Nhấn nút bên dưới để AI phân tích dữ liệu."}
+              ${escapeHTML(options.description || "Nhấn nút bên dưới để AI phân tích dữ liệu.")}
             </p>
-            <button class="btn btn-ai" onclick="AIPanel.run('${options.containerId}')">
+            <button class="btn btn-ai" onclick="AIPanel.run(${escapeJSString(options.containerId)})">
               🤖 Chạy AI phân tích
             </button>
           </div>
 
-          <div id="${options.containerId}-loading" class="hidden">
+          <div id="${escapeHTML(options.containerId)}-loading" class="hidden">
             <div class="ai-loading">
               <div class="spinner"></div>
               <p>AI đang xử lý dữ liệu...</p>
@@ -29,16 +48,16 @@ const AIPanel = {
             </div>
           </div>
 
-          <div id="${options.containerId}-result" class="hidden"></div>
+          <div id="${escapeHTML(options.containerId)}-result" class="hidden"></div>
 
-          <div id="${options.containerId}-error" class="hidden">
+          <div id="${escapeHTML(options.containerId)}-error" class="hidden">
             <div class="ai-error">
               <p style="font-weight:600; margin-bottom:8px;">⚠️ AI không thể xử lý</p>
-              <p id="${options.containerId}-error-msg">Không đủ dữ liệu để đưa ra đề xuất.</p>
+              <p id="${escapeHTML(options.containerId)}-error-msg">Không đủ dữ liệu để đưa ra đề xuất.</p>
             </div>
             <div class="ai-actions">
-              <button class="btn btn-ai btn-sm" onclick="AIPanel.run('${options.containerId}')">🔄 Thử lại</button>
-              <button class="btn btn-secondary btn-sm" onclick="AIPanel.reset('${options.containerId}')">Làm thủ công</button>
+              <button class="btn btn-ai btn-sm" onclick="AIPanel.run(${escapeJSString(options.containerId)})">🔄 Thử lại</button>
+              <button class="btn btn-secondary btn-sm" onclick="AIPanel.reset(${escapeJSString(options.containerId)})">Làm thủ công</button>
             </div>
           </div>
         </div>
@@ -49,6 +68,7 @@ const AIPanel = {
   },
 
   _callbacks: {},
+  _results: {},
 
   run: function (containerId) {
     const options = this._callbacks[containerId];
@@ -85,10 +105,10 @@ const AIPanel = {
       result.items.forEach((item) => {
         html += `<div class="ai-result-item">
           <div>
-            <strong>${item.title}</strong>
-            <div style="font-size:13px; color:var(--text-secondary);">${item.subtitle || ""}</div>
+            <strong>${escapeHTML(item.title)}</strong>
+              <div style="font-size:13px; color:var(--text-secondary);">${escapeHTML(item.subtitle || "")}</div>
           </div>
-          <div>${item.badge || ""}</div>
+          <div>${safeBadgeMarkup(item.badge)}</div>
         </div>`;
       });
       html += "</div>";
@@ -97,18 +117,23 @@ const AIPanel = {
     if (result.explain) {
       html += `<div class="ai-explain">
         <strong>💡 Vì sao có kết quả này?</strong><br>
-        ${result.explain}
+        ${escapeHTML(result.explain)}
       </div>`;
     }
 
+    if (typeof result.summaryText === "string") {
+      html += `<textarea id="${escapeHTML(containerId)}-summary-editor" class="ai-editable-summary" aria-label="Chỉnh sửa bản tóm tắt trước khi lưu">${escapeHTML(result.summaryText)}</textarea>`;
+    }
+
     html += `<div class="ai-actions">
-      <button class="btn btn-primary btn-sm" onclick="AIPanel.accept('${containerId}')">✅ Chấp nhận</button>
-      <button class="btn btn-secondary btn-sm" onclick="AIPanel.reset('${containerId}')">✏️ Sửa</button>
-      <button class="btn btn-danger btn-sm" onclick="AIPanel.reset('${containerId}')">❌ Từ chối</button>
-      <button class="btn btn-ai btn-sm" onclick="AIPanel.run('${containerId}')">🔄 Tạo lại</button>
+      <button class="btn btn-primary btn-sm" onclick="AIPanel.accept(${escapeJSString(containerId)})">✅ Chấp nhận</button>
+      <button class="btn btn-secondary btn-sm" onclick="AIPanel.reset(${escapeJSString(containerId)})">✏️ Sửa</button>
+      <button class="btn btn-danger btn-sm" onclick="AIPanel.reset(${escapeJSString(containerId)})">❌ Từ chối</button>
+      <button class="btn btn-ai btn-sm" onclick="AIPanel.run(${escapeJSString(containerId)})">🔄 Tạo lại</button>
     </div>`;
 
     resultEl.innerHTML = html;
+    this._results[containerId] = result;
     this._show(containerId, "result");
   },
 
@@ -122,8 +147,12 @@ const AIPanel = {
 
   accept: function (containerId) {
     const options = this._callbacks[containerId];
+    const result = this._results[containerId];
+    const editor = document.getElementById(containerId + "-summary-editor");
+    const acceptedResult =
+      result && editor ? { ...result, summaryText: editor.value.trim() } : result;
     if (options && options.onAccept) {
-      options.onAccept();
+      options.onAccept(acceptedResult);
     }
     showToast("Đã chấp nhận kết quả AI!", "success");
   },

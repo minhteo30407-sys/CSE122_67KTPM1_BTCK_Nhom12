@@ -38,8 +38,8 @@ function updateDashboardStats() {
       skillHtml += `
         <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; background:var(--bg); border-radius:var(--radius-sm);">
           <div>
-            <strong>${skName}</strong>
-            <span style="font-size:12px; color:var(--text-secondary); margin-left:6px;">(${skId})</span>
+            <strong>${escapeHTML(skName)}</strong>
+            <span style="font-size:12px; color:var(--text-secondary); margin-left:6px;">(${escapeHTML(skId)})</span>
           </div>
           <span class="badge badge-error">Thiếu ${count} chỉ tiêu</span>
         </div>
@@ -119,14 +119,14 @@ function renderShiftProgressTable() {
 
     html += `
       <tr>
-        <td data-label="Mã ca"><strong>${shift.id}</strong></td>
+        <td data-label="Mã ca"><strong>${escapeHTML(shift.id)}</strong></td>
         <td data-label="Hoạt động">
-          <div style="font-weight:600; color:var(--primary-dark);">${oppTitle}</div>
+          <div style="font-weight:600; color:var(--primary-dark);">${escapeHTML(oppTitle)}</div>
         </td>
-        <td data-label="Ngày & Giờ">${formatDate(shift.date)}<br><small style="color:var(--text-secondary);">${shift.startTime} - ${shift.endTime}</small></td>
+        <td data-label="Ngày & Giờ">${escapeHTML(formatDate(shift.date))}<br><small style="color:var(--text-secondary);">${escapeHTML(shift.startTime)} - ${escapeHTML(shift.endTime)}</small></td>
         <td data-label="Tiến độ lấp đầy">
           <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
-            <span>${shift.currentVolunteers} / ${shift.requiredVolunteers} người</span>
+            <span>${escapeHTML(shift.currentVolunteers)} / ${escapeHTML(shift.requiredVolunteers)} người</span>
             <span><strong>${percent}%</strong></span>
           </div>
           <div style="background:var(--border); height:8px; border-radius:4px; overflow:hidden;">

@@ -16,21 +16,21 @@ function renderSkillTable(skills) {
   skills.forEach((skill) => {
     html += `
       <tr>
-        <td data-label="Mã kỹ năng"><strong>${skill.id}</strong></td>
+        <td data-label="Mã kỹ năng"><strong>${escapeHTML(skill.id)}</strong></td>
         <td data-label="Tên kỹ năng">
-          <span style="font-weight:600; font-size:15px; color:var(--primary-dark);">${skill.name}</span>
+          <span style="font-weight:600; font-size:15px; color:var(--primary-dark);">${escapeHTML(skill.name)}</span>
         </td>
         <td data-label="Nhóm danh mục">
-          <span class="tag" style="font-size:13px;">${skill.category}</span>
+          <span class="tag" style="font-size:13px;">${escapeHTML(skill.category)}</span>
         </td>
         <td data-label="Trạng thái">${statusBadge(skill.status)}</td>
         <td data-label="Hành động">
           <div class="flex" style="gap:6px; flex-wrap:wrap;">
-            <button class="btn btn-sm btn-secondary" onclick="openEditSkillModal('${skill.id}')">✏️ Sửa</button>
+            <button class="btn btn-sm btn-secondary" onclick="openEditSkillModal(${escapeJSString(skill.id)})">✏️ Sửa</button>
             ${
               skill.status !== "archived"
-                ? `<button class="btn btn-sm btn-warning" onclick="archiveSkill('${skill.id}')">📦 Lưu trữ</button>`
-                : `<button class="btn btn-sm btn-primary" onclick="activateSkill('${skill.id}')">🔄 Khôi phục</button>`
+                ? `<button class="btn btn-sm btn-warning" onclick="archiveSkill(${escapeJSString(skill.id)})">📦 Lưu trữ</button>`
+                : `<button class="btn btn-sm btn-primary" onclick="activateSkill(${escapeJSString(skill.id)})">🔄 Khôi phục</button>`
             }
           </div>
         </td>

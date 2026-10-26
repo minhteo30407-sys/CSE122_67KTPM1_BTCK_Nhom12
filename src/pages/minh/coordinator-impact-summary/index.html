@@ -1,0 +1,171 @@
+﻿<!doctype html>
+<!-- VolunteerLink: Page structure and content for coordinator impact summary. -->
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tổng kết đóng góp - VolunteerLink</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-content" id="main">
+      <div class="page-header">
+        <div>
+          <h1>Tổng kết đóng góp (Impact Summary)</h1>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 14px;
+              margin-top: 4px;
+            "
+          >
+            Tự động tổng hợp dữ liệu, thống kê số giờ thiện nguyện và đo lường
+            tác động xã hội với sự hỗ trợ của AI
+          </p>
+        </div>
+        <button class="btn btn-secondary btn-sm" onclick="exportImpactReport()">
+          📥 Xuất báo cáo CSV
+        </button>
+      </div>
+
+      <div class="card mb-3" style="padding: 16px">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+          "
+        >
+          <label for="selectOppImpact" style="font-weight: 600; font-size: 14px"
+            >📊 Phạm vi tổng kết:</label
+          >
+          <select
+            id="selectOppImpact"
+            class="form-select"
+            style="max-width: 400px"
+            onchange="handleOppChange()"
+          >
+            <option value="">-- Toàn bộ hệ thống VolunteerLink --</option>
+          </select>
+        </div>
+
+        <div id="aiImpactSummaryPanel"></div>
+      </div>
+
+      <div class="board-layout">
+        <div class="card">
+          <div class="card-header">
+            <span>📈 Tác động xã hội định lượng</span>
+          </div>
+          <div class="card-body">
+            <div style="display: flex; flex-direction: column; gap: 16px">
+              <div
+                style="
+                  padding: 16px;
+                  background: var(--bg);
+                  border-radius: var(--radius);
+                  border-left: 4px solid var(--primary);
+                "
+              >
+                <div
+                  style="
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: var(--primary);
+                  "
+                  id="impactHours"
+                >
+                  0 giờ
+                </div>
+                <div
+                  style="
+                    font-size: 13px;
+                    color: var(--text-secondary);
+                    margin-top: 2px;
+                  "
+                >
+                  Tổng thời gian cống hiến cho cộng đồng
+                </div>
+              </div>
+
+              <div
+                style="
+                  padding: 16px;
+                  background: var(--bg);
+                  border-radius: var(--radius);
+                  border-left: 4px solid var(--info);
+                "
+              >
+                <div
+                  style="font-size: 24px; font-weight: 700; color: var(--info)"
+                  id="impactVols"
+                >
+                  0 người
+                </div>
+                <div
+                  style="
+                    font-size: 13px;
+                    color: var(--text-secondary);
+                    margin-top: 2px;
+                  "
+                >
+                  Tình nguyện viên trực tiếp tham gia hoàn thành ca
+                </div>
+              </div>
+
+              <div
+                style="
+                  padding: 16px;
+                  background: var(--bg);
+                  border-radius: var(--radius);
+                  border-left: 4px solid var(--accent);
+                "
+              >
+                <div
+                  style="
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: var(--accent);
+                  "
+                  id="impactFillRate"
+                >
+                  0%
+                </div>
+                <div
+                  style="
+                    font-size: 13px;
+                    color: var(--text-secondary);
+                    margin-top: 2px;
+                  "
+                >
+                  Tỷ lệ lấp đầy nhân sự các ca hoạt động
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span>🏆 Bảng vàng vinh danh tình nguyện viên</span>
+          </div>
+          <div class="card-body">
+            <div
+              id="topVolunteersList"
+              style="display: flex; flex-direction: column; gap: 12px"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../../js/services.js"></script>
+    <script src="../../js/modules/ai-panel.js"></script>
+    <script src="../../js/modules/impact-summary.js"></script>
+    <script src="../../js/modules/shift-predictor.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

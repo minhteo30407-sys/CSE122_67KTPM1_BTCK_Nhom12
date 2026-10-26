@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <!-- VolunteerLink: Page structure and content for organization opportunity management. -->
 <html lang="vi">
   <head>
@@ -33,6 +33,7 @@
           <input
             type="text"
             id="searchInput"
+            aria-label="Tìm hoạt động theo tên hoặc địa điểm"
             placeholder="Tìm theo tên hoạt động, địa điểm..."
             oninput="filterOpportunities()"
           />
@@ -40,6 +41,7 @@
         <select
           id="statusFilter"
           class="filter-select"
+          aria-label="Lọc hoạt động theo trạng thái"
           onchange="filterOpportunities()"
         >
           <option value="">-- Tất cả trạng thái --</option>
@@ -209,10 +211,10 @@
       </div>
     </div>
 
-    <script src="../../js/api.js"></script>
+    <script src="../../js/services.js"></script>
     <script src="../../js/modules/ai-panel.js"></script>
     <script src="../../js/modules/shift-predictor.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="../../js/app.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

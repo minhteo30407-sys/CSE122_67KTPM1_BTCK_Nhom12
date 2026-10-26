@@ -74,7 +74,7 @@ function renderRoleBadge(role) {
     case "admin":
       return '<span class="badge badge-success">Quản trị viên</span>';
     default:
-      return `<span class="badge badge-info">${role}</span>`;
+      return `<span class="badge badge-info">${escapeHTML(role)}</span>`;
   }
 }
 
@@ -110,28 +110,28 @@ function renderUserTable(users) {
 
     html += `
       <tr>
-        <td data-label="Mã"><strong>${user.id}</strong></td>
+        <td data-label="Mã"><strong>${escapeHTML(user.id)}</strong></td>
         <td data-label="Họ và tên / Đơn vị">
-          <div style="font-weight:600; color:var(--primary-dark);">${user.name}</div>
+          <div style="font-weight:600; color:var(--primary-dark);">${escapeHTML(user.name)}</div>
         </td>
-        <td data-label="Email">${user.email}</td>
+        <td data-label="Email">${escapeHTML(user.email)}</td>
         <td data-label="Vai trò">${renderRoleBadge(user.role)}</td>
-        <td data-label="Tổng giờ cống hiến">${user.totalHours}</td>
+        <td data-label="Tổng giờ cống hiến">${escapeHTML(user.totalHours)}</td>
         <td data-label="Trạng thái">${statusBadge(user.status)}</td>
         <td data-label="Hành động">
           <div class="flex" style="gap:6px; flex-wrap:wrap;">
-            <button class="btn btn-sm btn-secondary" onclick="openRoleModal('${user.id}')">
+            <button class="btn btn-sm btn-secondary" onclick="openRoleModal(${escapeJSString(user.id)})">
               ⚙️ Đổi vai trò
             </button>
             ${
               isLocked
                 ? `
-              <button class="btn btn-sm btn-primary" onclick="toggleUserLock('${user.id}', false)">
+              <button class="btn btn-sm btn-primary" onclick="toggleUserLock(${escapeJSString(user.id)}, false)">
                 🔓 Mở khóa
               </button>
             `
                 : `
-              <button class="btn btn-sm btn-danger" onclick="toggleUserLock('${user.id}', true)">
+              <button class="btn btn-sm btn-danger" onclick="toggleUserLock(${escapeJSString(user.id)}, true)">
                 🔒 Khóa
               </button>
             `

@@ -1,0 +1,152 @@
+﻿<!doctype html>
+<!-- VolunteerLink: Page structure and content for admin moderation. -->
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm duyệt nội dung - VolunteerLink</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-content" id="main">
+      <!-- Tiêu đề trang và số lượng mục đang chờ duyệt. -->
+      <div class="page-header">
+        <div
+          class="flex"
+          style="align-items: center; gap: 12px; flex-wrap: wrap"
+        >
+          <h1>Kiểm duyệt nội dung</h1>
+          <span class="badge badge-warning" id="pendingBadge"
+            >Chờ duyệt: 0</span
+          >
+        </div>
+        <p
+          style="
+            color: var(--text-secondary);
+            font-size: 14px;
+            width: 100%;
+            margin-top: 4px;
+          "
+        >
+          Phê duyệt các hoạt động mới đăng tải và xử lý phản ánh, báo cáo vi
+          phạm từ cộng đồng
+        </p>
+      </div>
+
+      <!-- Thanh tìm kiếm và bộ lọc theo loại nội dung, trạng thái. -->
+      <div class="toolbar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="modSearchInput"
+            placeholder="Tìm theo tiêu đề, người gửi, nội dung..."
+            oninput="filterModeration()"
+          />
+        </div>
+        <select
+          id="typeFilter"
+          class="filter-select"
+          onchange="filterModeration()"
+        >
+          <option value="">-- Tất cả loại nội dung --</option>
+          <option value="opportunity">Hoạt động tình nguyện</option>
+          <option value="report">Báo cáo vi phạm</option>
+        </select>
+        <select
+          id="statusFilter"
+          class="filter-select"
+          onchange="filterModeration()"
+        >
+          <option value="">-- Tất cả trạng thái --</option>
+          <option value="pending">Chờ duyệt (pending)</option>
+          <option value="approved">Đã duyệt (approved)</option>
+          <option value="rejected">Đã từ chối (rejected)</option>
+        </select>
+      </div>
+
+      <!-- Bảng hiển thị danh sách mục cần kiểm duyệt. -->
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Mã mục</th>
+              <th>Loại</th>
+              <th>Tiêu đề / Nội dung chi tiết</th>
+              <th>Người / Đơn vị gửi</th>
+              <th>Ngày gửi</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="modTableBody">
+            <!-- Nội dung các hàng được tạo bằng JavaScript. -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Khu vực hiển thị thông báo khi không có kết quả. -->
+      <div id="emptyContainer" class="hidden"></div>
+    </main>
+
+    <!-- Hộp thoại nhập lý do khi từ chối một mục. -->
+    <div class="modal-overlay" id="rejectModal">
+      <div class="modal" style="max-width: 500px">
+        <div class="modal-header">
+          <span>Từ chối phê duyệt</span>
+          <button class="modal-close" onclick="closeModal('rejectModal')">
+            &times;
+          </button>
+        </div>
+        <form id="rejectForm" onsubmit="handleRejectSubmit(event)">
+          <div class="modal-body">
+            <input type="hidden" id="rejectItemId" />
+            <div class="form-group">
+              <label class="form-label">Mục kiểm duyệt:</label>
+              <div
+                id="rejectItemTitle"
+                style="
+                  font-weight: 600;
+                  color: var(--primary-dark);
+                  margin-bottom: 8px;
+                "
+              ></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="rejectReason"
+                >Lý do từ chối *</label
+              >
+              <textarea
+                class="form-textarea"
+                id="rejectReason"
+                rows="4"
+                placeholder="Nhập chi tiết lý do từ chối hoặc yêu cầu chỉnh sửa..."
+                required
+              ></textarea>
+              <div class="form-error"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="closeModal('rejectModal')"
+            >
+              Hủy
+            </button>
+            <button type="submit" class="btn btn-danger">
+              Xác nhận từ chối
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Nạp các tiện ích dùng chung trước phần xử lý kiểm duyệt. -->
+    <script src="../../js/services.js"></script>
+    <script src="../../js/modules/ai-panel.js"></script>
+    <script src="../../js/modules/shift-predictor.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

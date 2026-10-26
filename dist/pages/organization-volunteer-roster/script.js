@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for organization volunteer roster.
+// VolunteerLink: Page-specific interactions for organization volunteer roster.
 let currentOrganizationId = "";
 
 function getOrganizationRegistrations() {
@@ -31,7 +31,7 @@ function populateShiftDropdown() {
   let options = '<option value="">-- Tất cả các ca --</option>';
   shifts.forEach((shift) => {
     const oppTitle = DataStore.getOppTitle(shift.oppId);
-    options += `<option value="${shift.id}">${shift.id} - ${oppTitle} (${formatDate(shift.date)} ${shift.startTime})</option>`;
+    options += `<option value="${escapeHTML(shift.id)}">${escapeHTML(shift.id)} - ${escapeHTML(oppTitle)} (${escapeHTML(formatDate(shift.date))} ${escapeHTML(shift.startTime)})</option>`;
   });
 
   select.innerHTML = options;
@@ -77,45 +77,45 @@ function renderRosterTable(registrations) {
     let regTimeFormatted = reg.registeredAt || "-";
     if (reg.registeredAt && reg.registeredAt.includes("T")) {
       const parts = reg.registeredAt.split("T");
-      regTimeFormatted = `${formatDate(parts[0])} ${parts[1].substring(0, 5)}`;
+      regTimeFormatted = `${escapeHTML(formatDate(parts[0]))} ${escapeHTML(parts[1].substring(0, 5))}`;
     }
 
     html += `
       <tr>
-        <td data-label="Mã ĐK"><strong>${reg.id}</strong></td>
+        <td data-label="Mã ĐK"><strong>${escapeHTML(reg.id)}</strong></td>
         <td data-label="Tình nguyện viên">
-          <div style="font-weight:600; color:var(--primary-dark);">${volName}</div>
-          <div style="font-size:12px; color:var(--text-secondary);">Mã TNV: ${reg.volunteerId}</div>
+          <div style="font-weight:600; color:var(--primary-dark);">${escapeHTML(volName)}</div>
+          <div style="font-size:12px; color:var(--text-secondary);">Mã TNV: ${escapeHTML(reg.volunteerId)}</div>
         </td>
         <td data-label="Email / SĐT">
-          <div>${volEmail}</div>
-          ${volPhone ? `<div style="font-size:12px; color:var(--text-secondary);">${volPhone}</div>` : ""}
+          <div>${escapeHTML(volEmail)}</div>
+          ${volPhone ? `<div style="font-size:12px; color:var(--text-secondary);">${escapeHTML(volPhone)}</div>` : ""}
         </td>
         <td data-label="Ca làm việc">
-          <div><strong>${reg.shiftId}</strong> - ${oppTitle}</div>
-          <div style="font-size:12px; color:var(--text-secondary);">⏰ ${shiftTime}</div>
+          <div><strong>${escapeHTML(reg.shiftId)}</strong> - ${escapeHTML(oppTitle)}</div>
+          <div style="font-size:12px; color:var(--text-secondary);">⏰ ${escapeHTML(shiftTime)}</div>
         </td>
-        <td data-label="Ngày diễn ra">${shiftDate}</td>
-        <td data-label="Thời gian ĐK">${regTimeFormatted}</td>
+        <td data-label="Ngày diễn ra">${escapeHTML(shiftDate)}</td>
+        <td data-label="Thời gian ĐK">${escapeHTML(regTimeFormatted)}</td>
         <td data-label="Trạng thái">${statusBadge(reg.status)}</td>
         <td data-label="Hành động">
           <div class="flex" style="gap:6px; flex-wrap:wrap;">
             ${
               reg.status === "pending"
                 ? `
-              <button class="btn btn-sm btn-primary" onclick="approveRegistration('${reg.id}')">✓ Duyệt</button>
-              <button class="btn btn-sm btn-danger" onclick="rejectRegistration('${reg.id}')">✕ Từ chối</button>
+              <button class="btn btn-sm btn-primary" onclick="approveRegistration(${escapeJSString(reg.id)})">✓ Duyệt</button>
+              <button class="btn btn-sm btn-danger" onclick="rejectRegistration(${escapeJSString(reg.id)})">✕ Từ chối</button>
             `
                 : ""
             }
             ${
               reg.status === "confirmed"
                 ? `
-              <button class="btn btn-sm btn-secondary" onclick="completeRegistration('${reg.id}')">Hoàn thành</button>
+              <button class="btn btn-sm btn-secondary" onclick="completeRegistration(${escapeJSString(reg.id)})">Hoàn thành</button>
             `
                 : ""
             }
-            <button class="btn btn-sm btn-danger" onclick="deleteRegistration('${reg.id}')" title="Xóa bản ghi">🗑️</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteRegistration(${escapeJSString(reg.id)})" title="Xóa bản ghi">🗑️</button>
           </div>
         </td>
       </tr>

@@ -12,7 +12,7 @@ function populateShifts() {
 
   shortageShifts.forEach((s, idx) => {
     const oppTitle = DataStore.getOppTitle(s.oppId);
-    optionsHtml += `<option value="${s.id}">${s.id} - ${oppTitle} (${formatDate(s.date)} ${s.startTime}) [Thiếu ${s.requiredVolunteers - s.currentVolunteers}]</option>`;
+    optionsHtml += `<option value="${escapeHTML(s.id)}">${escapeHTML(s.id)} - ${escapeHTML(oppTitle)} (${escapeHTML(formatDate(s.date))} ${escapeHTML(s.startTime)}) [Thiếu ${s.requiredVolunteers - s.currentVolunteers}]</option>`;
   });
 
   select.innerHTML =
@@ -35,13 +35,13 @@ function populateShifts() {
       const skillsHtml = skillTags(s.requiredSkills || []);
 
       col1Html += `
-        <div class="board-item ${s.id === currentSelectedShiftId ? "active" : ""}" onclick="selectShift('${s.id}')" style="cursor:pointer;">
+        <div class="board-item ${s.id === currentSelectedShiftId ? "active" : ""}" onclick="selectShift(${escapeJSString(s.id)})" style="cursor:pointer;">
           <div class="flex-between">
-            <strong>${s.id} · ${oppTitle}</strong>
+            <strong>${escapeHTML(s.id)} · ${escapeHTML(oppTitle)}</strong>
             <span class="badge badge-error">Thiếu ${shortage}</span>
           </div>
           <div style="font-size:13px; color:var(--text-secondary); margin-top:2px;">
-            📅 ${formatDate(s.date)} · ⏰ ${s.startTime} - ${s.endTime}
+            📅 ${escapeHTML(formatDate(s.date))} · ⏰ ${escapeHTML(s.startTime)} - ${escapeHTML(s.endTime)}
           </div>
           <div style="margin-top:6px;">
             ${skillsHtml}
@@ -70,17 +70,17 @@ function populateVolunteers() {
     html += `
       <div class="board-item">
         <div class="flex-between">
-          <strong>${v.name}</strong>
-          <span class="badge badge-info">${v.totalHours || 0} giờ</span>
+          <strong>${escapeHTML(v.name)}</strong>
+          <span class="badge badge-info">${escapeHTML(v.totalHours || 0)} giờ</span>
         </div>
         <div style="font-size:12px; color:var(--text-secondary); margin-top:2px;">
-          Lịch rảnh: <strong>${availText || "Linh hoạt"}</strong>
+          Lịch rảnh: <strong>${escapeHTML(availText || "Linh hoạt")}</strong>
         </div>
         <div style="margin-top:4px;">
           ${skillsHtml}
         </div>
         <div style="margin-top:8px; text-align:right;">
-          <button class="btn btn-sm btn-secondary" onclick="assignVolunteerToShift('${v.id}')">
+          <button class="btn btn-sm btn-secondary" onclick="assignVolunteerToShift(${escapeJSString(v.id)})">
             ➕ Ghép vào ca đang chọn
           </button>
         </div>

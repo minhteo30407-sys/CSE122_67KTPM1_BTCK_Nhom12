@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<!-- VolunteerLink: Page structure and content for coordinator resource dashboard. -->
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bảng điều khiển - VolunteerLink</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main-content" id="main">
+      <div class="page-header">
+        <div>
+          <h1>Bảng điều khiển tài nguyên</h1>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 14px;
+              margin-top: 4px;
+            "
+          >
+            Tổng quan nhân lực, theo dõi tỷ lệ lấp đầy các ca và cảnh báo thiếu
+            hụt kỹ năng
+          </p>
+        </div>
+        <button
+          class="btn btn-primary btn-sm"
+          onclick="
+            window.location.href = getPageUrl('coordinator-matching-board')
+          "
+        >
+          🔗 Ghép tình nguyện viên (AI)
+        </button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--primary)"
+            id="dashVolCount"
+          >
+            0
+          </div>
+          <div class="stat-label">Tình nguyện viên sẵn sàng</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" style="color: var(--info)" id="dashOppCount">
+            0
+          </div>
+          <div class="stat-label">Hoạt động đang mở</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--accent)"
+            id="dashShiftCount"
+          >
+            0
+          </div>
+          <div class="stat-label">Tổng ca trực</div>
+        </div>
+        <div class="stat-card">
+          <div
+            class="stat-number"
+            style="color: var(--error)"
+            id="dashShortageCount"
+          >
+            0
+          </div>
+          <div class="stat-label">Ca đang thiếu người</div>
+        </div>
+      </div>
+
+      <div class="board-layout mb-3">
+        <div class="card">
+          <div class="card-header">
+            <span>⚠️ Kỹ năng đang thiếu hụt trong các ca</span>
+          </div>
+          <div class="card-body">
+            <div
+              id="skillsShortageList"
+              style="display: flex; flex-direction: column; gap: 10px"
+            ></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span>📅 Tỷ lệ TNV rảnh theo ngày trong tuần</span>
+          </div>
+          <div class="card-body">
+            <div
+              id="availabilityDistribution"
+              style="display: flex; flex-direction: column; gap: 10px"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-header" style="margin-bottom: 12px">
+        <h2>Tiến độ nhân sự các ca trực</h2>
+        <select
+          id="dashFilterShift"
+          class="filter-select"
+          aria-label="Lọc tiến độ theo tình trạng nhân sự của ca"
+          onchange="renderShiftProgressTable()"
+        >
+          <option value="all">Tất cả các ca</option>
+          <option value="shortage" selected>Chỉ xem ca đang thiếu người</option>
+          <option value="filled">Chỉ xem ca đã đủ người</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Mã ca</th>
+              <th>Hoạt động</th>
+              <th>Ngày & Giờ</th>
+              <th>Tiến độ lấp đầy</th>
+              <th>Kỹ năng yêu cầu</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="dashShiftsTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="../../js/services.js"></script>
+    <script src="../../js/modules/ai-panel.js"></script>
+    <script src="../../js/modules/shift-predictor.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for organization opportunity management.
+// VolunteerLink: Page-specific interactions for organization opportunity management.
 let currentOrganizationId = "";
 
 function getOrganizationOpportunities() {
@@ -19,8 +19,8 @@ function renderSkillCheckboxes() {
   skills.forEach((skill) => {
     html += `
       <label class="checkbox-label">
-        <input type="checkbox" name="skills" value="${skill.id}">
-        <span>${skill.name}</span>
+        <input type="checkbox" name="skills" value="${escapeHTML(skill.id)}">
+        <span>${escapeHTML(skill.name)}</span>
       </label>
     `;
   });
@@ -46,21 +46,21 @@ function renderTable(opportunities) {
       <tr>
         <td data-label="STT">${index + 1}</td>
         <td data-label="Tên hoạt động">
-          <strong>${item.title}</strong>
-          <div style="font-size:12px; color:var(--text-secondary); margin-top:2px;">Mã: ${item.id}</div>
+          <strong>${escapeHTML(item.title)}</strong>
+          <div style="font-size:12px; color:var(--text-secondary); margin-top:2px;">Mã: ${escapeHTML(item.id)}</div>
         </td>
-        <td data-label="Danh mục"><span class="badge badge-info">${item.category || "Chung"}</span></td>
-        <td data-label="Địa điểm">${item.location}</td>
-        <td data-label="Thời gian">${formatDate(item.startDate)} - ${formatDate(item.endDate)}</td>
-        <td data-label="TNV tối đa">${item.maxVolunteers || 0} người</td>
+        <td data-label="Danh mục"><span class="badge badge-info">${escapeHTML(item.category || "Chung")}</span></td>
+        <td data-label="Địa điểm">${escapeHTML(item.location)}</td>
+        <td data-label="Thời gian">${escapeHTML(formatDate(item.startDate))} - ${escapeHTML(formatDate(item.endDate))}</td>
+        <td data-label="TNV tối đa">${escapeHTML(item.maxVolunteers || 0)} người</td>
         <td data-label="Trạng thái">${statusBadge(item.status)}</td>
         <td data-label="Hành động">
           <div class="flex" style="gap:6px; flex-wrap:wrap;">
-            <button class="btn btn-sm btn-secondary" onclick="openEditModal('${item.id}')">✏️ Sửa</button>
+            <button class="btn btn-sm btn-secondary" onclick="openEditModal(${escapeJSString(item.id)})">✏️ Sửa</button>
             ${
               item.status === "open"
-                ? `<button class="btn btn-sm btn-danger" onclick="changeStatus('${item.id}', 'cancelled')">Đóng</button>`
-                : `<button class="btn btn-sm btn-primary" onclick="changeStatus('${item.id}', 'open')">Mở lại</button>`
+                ? `<button class="btn btn-sm btn-danger" onclick="changeStatus(${escapeJSString(item.id)}, 'cancelled')">Đóng</button>`
+                : `<button class="btn btn-sm btn-primary" onclick="changeStatus(${escapeJSString(item.id)}, 'open')">Mở lại</button>`
             }
           </div>
         </td>
