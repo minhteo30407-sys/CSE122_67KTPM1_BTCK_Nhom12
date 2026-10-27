@@ -1,4 +1,4 @@
-// VolunteerLink: Shared volunteer achievements feature module.
+// Tính toán và hiển thị các mốc thành tựu của tình nguyện viên.
 const VolunteerAchievements = {
   getAll: function (completedShifts, completedHours) {
     return [

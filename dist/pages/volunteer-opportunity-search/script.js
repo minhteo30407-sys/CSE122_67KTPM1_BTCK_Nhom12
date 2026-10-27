@@ -1,4 +1,4 @@
-// VolunteerLink: Page-specific interactions for volunteer opportunity search.
+// Mã xử lý giao diện và thao tác trên trang tìm kiếm hoạt động tình nguyện.
 let currentVolunteerId = "";
 let latestRecommendationIds = [];
 

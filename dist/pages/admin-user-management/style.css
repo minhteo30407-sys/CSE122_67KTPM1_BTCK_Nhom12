@@ -1,6 +1,6 @@
-/* Page-specific styles for tran_van_minh/admin-user-management. */
-/* VolunteerLink: Page-specific base styles copied from the former shared stylesheet. */
-/* Design tokens and document defaults. */
+/* Kiểu dáng riêng cho trang quản lý người dùng do Trần Văn Minh phụ trách. */
+/* Các quy tắc nền tảng được tách từ tệp kiểu dáng dùng chung trước đây. */
+/* Khai báo màu sắc, kích thước và các thiết lập mặc định cho trang. */
 :root {
   --primary: #2e7d5b;
   --primary-dark: #1f5a41;
@@ -33,6 +33,7 @@
   --topbar-height: 60px;
   --sidebar-width: 250px;
 }
+/* Chuẩn hóa cách tính kích thước và khoảng cách mặc định của các phần tử. */
 * {
   margin: 0;
   padding: 0;
@@ -787,14 +788,14 @@ textarea:focus-visible {
     height: min(620px, calc(100vh - 100px));
   }
 }
-/* VolunteerLink: Page-specific responsive styles copied from the former shared stylesheet. */
-/* Tablet layout adjustments. */
+/* Các quy tắc hiển thị thích ứng được tách từ tệp kiểu dáng dùng chung trước đây. */
+/* Điều chỉnh bố cục cho máy tính bảng. */
 @media (max-width: 1024px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-/* Mobile navigation, forms, tables, and page spacing. */
+/* Thu gọn điều hướng, biểu mẫu, bảng và khoảng cách trên điện thoại. */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;

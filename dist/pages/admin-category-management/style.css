@@ -1,6 +1,6 @@
-/* Kiểu dáng riêng cho trang quản lý danh mục của Trần Văn Minh. */
+/* Kiểu dáng riêng cho trang quản lý danh mục do Trần Văn Minh phụ trách. */
 /* Các quy tắc nền tảng được tách từ tệp kiểu dáng dùng chung trước đây. */
-/* Khai báo màu sắc, kích thước và thiết lập mặc định cho toàn trang. */
+/* Khai báo màu sắc, kích thước và các thiết lập mặc định cho trang. */
 :root {
   --primary: #2e7d5b;
   --primary-dark: #1f5a41;
@@ -27,6 +27,7 @@
   --sidebar-width: 250px;
 }
 /* Đặt lại khoảng cách mặc định và thống nhất cách tính kích thước phần tử. */
+/* Chuẩn hóa cách tính kích thước và khoảng cách mặc định của các phần tử. */
 * {
   margin: 0;
   padding: 0;

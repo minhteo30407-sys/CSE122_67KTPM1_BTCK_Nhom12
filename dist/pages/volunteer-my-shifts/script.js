@@ -1,4 +1,4 @@
-// VolunteerLink: Page-specific interactions for volunteer my shifts.
+// Mã xử lý giao diện và thao tác trên trang ca tình nguyện của tôi.
 let currentVolunteerId = "";
 let calendarDate = new Date();
 let calendarView = "month";
@@ -156,16 +156,16 @@ function renderVolunteerCalendar() {
         .join(" ");
       const eventMarkup = dayEvents.length
         ? dayEvents
-            .map(
-              (event) => `
+          .map(
+            (event) => `
         <div class="calendar-event status-${escapeCalendarText(event.status)}"
           title="${escapeCalendarText(event.title)} · ${escapeCalendarText(event.time)} · ${escapeCalendarText(event.status)}">
           <span class="calendar-event-time">${escapeCalendarText(event.time)}</span>
           <span class="calendar-event-title">${escapeCalendarText(event.title)}</span>
         </div>
       `,
-            )
-            .join("")
+          )
+          .join("")
         : '<span class="calendar-no-event">Không có ca</span>';
       return `
       <div class="${classes}">
@@ -232,17 +232,16 @@ function renderMyShiftsTable(regs) {
         </td>
         <td data-label="Trạng thái">${statusBadge(reg.status)}</td>
         <td data-label="Hành động">
-          ${
-            reg.status === "pending" || reg.status === "confirmed"
-              ? `
+          ${reg.status === "pending" || reg.status === "confirmed"
+        ? `
             <button class="btn btn-sm btn-danger" onclick="cancelRegistration(${escapeJSString(reg.id)}, ${escapeJSString(reg.shiftId)})">
               Hủy đăng ký
             </button>
           `
-              : `
+        : `
             <span class="text-secondary" style="font-size:13px;">—</span>
           `
-          }
+      }
         </td>
       </tr>
     `;

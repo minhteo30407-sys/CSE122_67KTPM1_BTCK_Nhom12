@@ -1,138 +1,104 @@
 <!doctype html>
-<!-- VolunteerLink: Page structure and content for volunteer opportunity search. -->
+<!-- Cấu trúc và nội dung giao diện cho trang tìm kiếm hoạt động tình nguyện. -->
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tìm kiếm hoạt động - VolunteerLink</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main class="main-content" id="main">
-      <div class="page-header">
-        <div>
-          <h1>Tìm kiếm hoạt động tình nguyện</h1>
-          <p
-            style="
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tìm kiếm hoạt động - VolunteerLink</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="main-content" id="main">
+    <div class="page-header">
+      <div>
+        <h1>Tìm kiếm hoạt động tình nguyện</h1>
+        <p style="
               color: var(--text-secondary);
               font-size: 14px;
               margin-top: 4px;
-            "
-          >
-            Khám phá các chương trình thiện nguyện ý nghĩa và đăng ký ca tham
-            gia phù hợp
-          </p>
-        </div>
-      </div>
-
-      <div id="aiVolunteerMatcherPanel" class="mb-3"></div>
-
-      <div class="toolbar">
-        <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input
-            type="text"
-            id="oppSearchInput"
-            aria-label="Tìm hoạt động theo tên, địa điểm hoặc nội dung"
-            placeholder="Tìm theo tên hoạt động, địa điểm, nội dung..."
-            oninput="filterOpportunities()"
-          />
-        </div>
-        <select
-          id="categoryFilter"
-          class="filter-select"
-          aria-label="Lọc hoạt động theo lĩnh vực"
-          onchange="filterOpportunities()"
-        >
-          <option value="">-- Tất cả lĩnh vực --</option>
-          <option value="Y tế">Y tế</option>
-          <option value="Giáo dục">Giáo dục</option>
-          <option value="Môi trường">Môi trường</option>
-          <option value="Hậu cần">Hậu cần</option>
-          <option value="Văn hóa - Xã hội">Văn hóa - Xã hội</option>
-        </select>
-        <select
-          id="statusFilter"
-          class="filter-select"
-          aria-label="Lọc hoạt động theo trạng thái"
-          onchange="filterOpportunities()"
-        >
-          <option value="">-- Tất cả trạng thái --</option>
-          <option value="open">Đang mở đăng ký (open)</option>
-          <option value="filled">Đã đủ người (filled)</option>
-          <option value="completed">Đã hoàn thành</option>
-        </select>
-      </div>
-
-      <div class="favorite-filter card">
-        <label class="checkbox-label">
-          <input
-            type="checkbox"
-            id="favoritesOnly"
-            onchange="filterOpportunities()"
-          />
-          <span>Chỉ hiện hoạt động yêu thích</span>
-        </label>
-        <span class="badge badge-info"
-          ><span id="favoriteCount">0</span> hoạt động đã lưu</span
-        >
-      </div>
-
-      <div
-        id="opportunitiesGrid"
-        class="stats-grid"
-        style="
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-          gap: 20px;
-        "
-      ></div>
-
-      <div id="emptyContainer" class="hidden"></div>
-    </main>
-
-    <div class="modal-overlay" id="shiftsModal">
-      <div class="modal" style="max-width: 650px">
-        <div class="modal-header">
-          <div>
-            <span id="modalOppTitle" style="font-size: 16px"
-              >Danh sách ca làm việc</span
-            >
-            <div
-              id="modalOppLocation"
-              style="
-                font-size: 12px;
-                color: var(--text-secondary);
-                margin-top: 2px;
-              "
-            ></div>
-          </div>
-          <button class="modal-close" onclick="closeModal('shiftsModal')">
-            &times;
-          </button>
-        </div>
-        <div class="modal-body">
-          <div
-            id="modalShiftsList"
-            style="display: flex; flex-direction: column; gap: 12px"
-          ></div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            onclick="closeModal('shiftsModal')"
-          >
-            Đóng
-          </button>
-        </div>
+            ">
+          Khám phá các chương trình thiện nguyện ý nghĩa và đăng ký ca tham
+          gia phù hợp
+        </p>
       </div>
     </div>
 
-    <script src="../../js/services.js"></script>
-    <script src="../../js/modules/ai-panel.js"></script>
-    <script src="../../js/modules/volunteer-matcher.js"></script>
-    <script src="../../js/modules/shift-predictor.js"></script>
-    <script src="../../js/app.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <div id="aiVolunteerMatcherPanel" class="mb-3"></div>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="oppSearchInput" aria-label="Tìm hoạt động theo tên, địa điểm hoặc nội dung"
+          placeholder="Tìm theo tên hoạt động, địa điểm, nội dung..." oninput="filterOpportunities()" />
+      </div>
+      <select id="categoryFilter" class="filter-select" aria-label="Lọc hoạt động theo lĩnh vực"
+        onchange="filterOpportunities()">
+        <option value="">-- Tất cả lĩnh vực --</option>
+        <option value="Y tế">Y tế</option>
+        <option value="Giáo dục">Giáo dục</option>
+        <option value="Môi trường">Môi trường</option>
+        <option value="Hậu cần">Hậu cần</option>
+        <option value="Văn hóa - Xã hội">Văn hóa - Xã hội</option>
+      </select>
+      <select id="statusFilter" class="filter-select" aria-label="Lọc hoạt động theo trạng thái"
+        onchange="filterOpportunities()">
+        <option value="">-- Tất cả trạng thái --</option>
+        <option value="open">Đang mở đăng ký (open)</option>
+        <option value="filled">Đã đủ người (filled)</option>
+        <option value="completed">Đã hoàn thành</option>
+      </select>
+    </div>
+
+    <div class="favorite-filter card">
+      <label class="checkbox-label">
+        <input type="checkbox" id="favoritesOnly" onchange="filterOpportunities()" />
+        <span>Chỉ hiện hoạt động yêu thích</span>
+      </label>
+      <span class="badge badge-info"><span id="favoriteCount">0</span> hoạt động đã lưu</span>
+    </div>
+
+    <div id="opportunitiesGrid" class="stats-grid" style="
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 20px;
+        "></div>
+
+    <div id="emptyContainer" class="hidden"></div>
+  </main>
+
+  <div class="modal-overlay" id="shiftsModal">
+    <div class="modal" style="max-width: 650px">
+      <div class="modal-header">
+        <div>
+          <span id="modalOppTitle" style="font-size: 16px">Danh sách ca làm việc</span>
+          <div id="modalOppLocation" style="
+                font-size: 12px;
+                color: var(--text-secondary);
+                margin-top: 2px;
+              "></div>
+        </div>
+        <button class="modal-close" onclick="closeModal('shiftsModal')">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="modalShiftsList" style="display: flex; flex-direction: column; gap: 12px"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('shiftsModal')">
+          Đóng
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/services.js"></script>
+  <script src="../../js/modules/ai-panel.js"></script>
+  <script src="../../js/modules/volunteer-matcher.js"></script>
+  <script src="../../js/modules/shift-predictor.js"></script>
+  <script src="../../js/app.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
