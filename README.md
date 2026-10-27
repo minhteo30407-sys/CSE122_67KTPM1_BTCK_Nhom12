@@ -149,6 +149,15 @@ Tài khoản tình nguyện viên mẫu đã đăng ký sẵn:
 - **Email:** `an.nguyen@email.com`
 - **Mật khẩu:** `VolunteerLink@2026`
 
+Tài khoản điều phối viên và quản trị viên mẫu:
+
+- **Quản trị viên (Admin):**
+  - **Email:** `admin@gmail.com`
+  - **Mật khẩu:** `admin@volunteerlink`
+- **Điều phối viên (Coordinator):**
+  - **Email:** `coordinator@gmail.com`
+  - **Mật khẩu:** `coordinator@volunteerlink`
+
 Các trang chức năng yêu cầu đăng nhập và đúng vai trò; chưa đăng nhập sẽ được chuyển về trang đăng nhập. Đây chỉ là kiểm tra phía trình duyệt cho bản nguyên mẫu dùng LocalStorage, không thay thế xác thực và phân quyền ở máy chủ khi triển khai thực tế.
 Mật khẩu được dẫn xuất bằng PBKDF2 và lưu cùng muối trong LocalStorage; hãy chạy qua `http://localhost` hoặc HTTPS để trình duyệt hỗ trợ Web Crypto. Tài khoản mới bắt đầu với 0 giờ, 0 ca hoàn thành, 0 huy hiệu và 0% điểm tin cậy. Huy hiệu được trao theo số ca/giờ đã hoàn thành, còn điểm tin cậy tính từ ca hoàn thành so với các ca đã hủy.
 
