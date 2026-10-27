@@ -1,5 +1,5 @@
-// VolunteerLink: Shared local data, authentication, and remote synchronization services.
-// Local data store, seed loading, and optional MockAPI synchronization.
+// Dịch vụ dùng chung để quản lý dữ liệu cục bộ, xác thực và đồng bộ với máy chủ.
+// Khởi tạo kho dữ liệu trình duyệt, nạp dữ liệu mẫu và đồng bộ MockAPI khi được cấu hình.
 const DATA_BASE_PATH = new URL("../assets/data/", document.currentScript.src)
   .href;
 
@@ -563,7 +563,7 @@ const DataStore = {
   },
 };
 
-// Account registration, password verification, and session management.
+// Xử lý đăng ký tài khoản, xác minh mật khẩu và quản lý phiên đăng nhập.
 const Auth = {
   demoEmail: "an.nguyen@email.com",
   demoPassword: "VolunteerLink@2026",
@@ -634,101 +634,11 @@ const Auth = {
       });
     }
     DataStore.update("volunteers", demo.id, updates);
-
-    // Clean up any previously added admin/coordinator from volunteers collection
-    const currentVolunteers = DataStore.getAll("volunteers");
-    const cleanedVolunteers = currentVolunteers.filter(
-      (v) => v.email !== "admin@gmail.com" && v.email !== "coordinator@gmail.com"
-    );
-    if (cleanedVolunteers.length !== currentVolunteers.length) {
-      DataStore.save("volunteers", cleanedVolunteers);
-    }
-
-    // Ensure staff accounts (admin and coordinator) in vl_staff_users
-    let staffUsers = [];
-    try {
-      staffUsers = JSON.parse(localStorage.getItem("vl_staff_users") || "[]");
-    } catch {
-      staffUsers = [];
-    }
-
-    const adminEmail = "admin@gmail.com";
-    const adminPass = "admin@volunteerlink";
-    let admin = staffUsers.find((s) => s.email === adminEmail || s.role === "admin");
-    const adminCred = await this.hashPassword(adminPass);
-    if (admin) {
-      Object.assign(admin, {
-        id: admin.id || "ADMIN001",
-        name: admin.name || "Quản trị viên",
-        email: adminEmail,
-        role: "admin",
-        status: "active",
-        totalHours: "-",
-        accountCreated: true,
-        credentialVersion: "pbkdf2-v1",
-        passwordHash: adminCred.passwordHash,
-        passwordSalt: adminCred.passwordSalt,
-      });
-    } else {
-      staffUsers.push({
-        id: "ADMIN001",
-        name: "Quản trị viên",
-        email: adminEmail,
-        role: "admin",
-        status: "active",
-        totalHours: "-",
-        accountCreated: true,
-        credentialVersion: "pbkdf2-v1",
-        passwordHash: adminCred.passwordHash,
-        passwordSalt: adminCred.passwordSalt,
-      });
-    }
-
-    const coordEmail = "coordinator@gmail.com";
-    const coordPass = "coordinator@volunteerlink";
-    let coord = staffUsers.find((s) => s.email === coordEmail || s.role === "coordinator");
-    const coordCred = await this.hashPassword(coordPass);
-    if (coord) {
-      Object.assign(coord, {
-        id: coord.id || "COORD001",
-        name: coord.name || "Điều phối viên",
-        email: coordEmail,
-        role: "coordinator",
-        status: "active",
-        totalHours: "-",
-        accountCreated: true,
-        credentialVersion: "pbkdf2-v1",
-        passwordHash: coordCred.passwordHash,
-        passwordSalt: coordCred.passwordSalt,
-      });
-    } else {
-      staffUsers.push({
-        id: "COORD001",
-        name: "Điều phối viên",
-        email: coordEmail,
-        role: "coordinator",
-        status: "active",
-        totalHours: "-",
-        accountCreated: true,
-        credentialVersion: "pbkdf2-v1",
-        passwordHash: coordCred.passwordHash,
-        passwordSalt: coordCred.passwordSalt,
-      });
-    }
-
-    localStorage.setItem("vl_staff_users", JSON.stringify(staffUsers));
   },
 
   getRegisteredAccounts: function () {
-    let staff = [];
-    try {
-      staff = JSON.parse(localStorage.getItem("vl_staff_users") || "[]");
-    } catch {
-      staff = [];
-    }
     return DataStore.getAll("volunteers")
       .concat(DataStore.getAll("organizations"))
-      .concat(staff)
       .filter((account) => account.accountCreated === true);
   },
 
@@ -861,7 +771,7 @@ const Auth = {
   },
 };
 
-// Local endpoint handlers used by the pages through the Auth interface.
+// Cung cấp các thao tác xác thực cục bộ cho trang thông qua giao diện Auth.
 const FakeAPI = {
   request: async function (method, path, body) {
     await DataStore.init();
@@ -986,82 +896,3 @@ const FakeAPI = {
     );
   },
 };
-
-
-// Automatically redirect users to their role-specific dashboard upon login
-if (typeof window !== "undefined" && typeof document !== "undefined") {
-  window.addEventListener("DOMContentLoaded", function () {
-    const loginForm = document.getElementById("loginForm");
-    if (loginForm && typeof window.handleLogin === "function") {
-      window.handleLogin = async function (e) {
-        if (e && e.preventDefault) e.preventDefault();
-
-        const emailInput = document.getElementById("loginEmail");
-        const passwordInput = document.getElementById("loginPassword");
-        const rememberInput = document.getElementById("rememberMe");
-
-        const email = emailInput ? emailInput.value.trim() : "";
-        const password = passwordInput ? passwordInput.value : "";
-
-        if (!email) {
-          if (typeof showToast === "function") {
-            showToast("Vui lòng nhập email!", "error");
-          }
-          return;
-        }
-
-        let user;
-        try {
-          await DataStore.init();
-          user = await Auth.login(
-            email,
-            password,
-            rememberInput ? rememberInput.checked : false,
-          );
-        } catch (error) {
-          if (typeof showToast === "function") {
-            showToast(error.message, "error");
-          }
-          return;
-        }
-
-        if (!user) {
-          if (typeof showToast === "function") {
-            showToast(
-              "Email hoặc mật khẩu không đúng, hoặc tài khoản chưa được đăng ký.",
-              "error",
-            );
-          }
-          return;
-        }
-
-        const roleTarget = {
-          admin: "admin-dashboard",
-          coordinator: "coordinator-resource-dashboard",
-          organization: "organization-opportunity-management",
-          volunteer: "index",
-        };
-        const targetPage = roleTarget[user.role] || "index";
-        const roleLabels = {
-          admin: "trang quản trị",
-          coordinator: "bảng điều phối",
-          organization: "trang quản lý tổ chức",
-          volunteer: "trang chủ",
-        };
-        const destination = roleLabels[user.role] || "trang chủ";
-
-        if (typeof showToast === "function") {
-          showToast("Đăng nhập thành công. Đang chuyển đến " + destination + "...", "success");
-        }
-
-        setTimeout(() => {
-          if (typeof getPageUrl === "function") {
-            window.location.href = getPageUrl(targetPage);
-          } else {
-            window.location.href = "../" + targetPage + "/index.html";
-          }
-        }, 500);
-      };
-    }
-  });
-}

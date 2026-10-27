@@ -1,10 +1,8 @@
 # VolunteerLink 🤝
 
 > **BTL-24** · Học phần Phát triển ứng dụng web cơ bản (CSE122)  
-> **Nhóm thực hiện:** Trần Văn Minh · Nguyễn Bá Thành  
-> **GitHub Repository:** [CSE122_67KTPM1_BTCK_Nhom12](https://github.com/minhteo30407-sys/CSE122_67KTPM1_BTCK_Nhom12)  
-> **Link Live Deployment:**  https://minhteo30407-sys.github.io/CSE122_67KTPM1_BTCK_Nhom12/  
-> **Link figma:**  https://www.figma.com/design/HuP4KEqctSwA49iLHnBQV6/BTL_Volunteerlink?node-id=5-2030&t=tgTLTscvsAt3vBwy-1
+> **Nhóm:** Trần Văn Minh · Nguyễn Bá Thành
+
 ## Giới thiệu
 
 **VolunteerLink** là một ứng dụng web nguyên mẫu ghép tình nguyện viên với các ca hoạt động cộng đồng. Giao diện chạy trên trình duyệt; máy chủ Node.js phục vụ ứng dụng và cung cấp API chatbot. Sản phẩm giải quyết 4 vấn đề:
@@ -96,7 +94,7 @@ Trang của Thành nằm trong `src/pages/nguyen_ba_thanh/`. Mỗi trang có `st
 
 ## Phân công
 
-Nhóm gồm hai thành viên: Trần Văn Minh phụ trách 10 trang trong `src/pages/tran_van_minh/`, Nguyễn Bá Thành phụ trách 11 trang trong `src/pages/nguyen_ba_thanh/`. Xem [docs/team-assignment.md](./docs/team-assignment.md) và [docs/screen-list.md](./docs/screen-list.md) để biết chi tiết.
+Nhóm gồm hai thành viên: Trần Văn Minh phụ trách 10 trang trong `src/pages/tran_van_minh/`, Nguyễn Bá Thành phụ trách 11 trang trong `src/pages/nguyen_ba_thanh/`. Xem chi tiết tại [Bảng kiểm kê màn hình 12 cột](./docs/screen-inventory.md), [docs/team-assignment.md](./docs/team-assignment.md) và [docs/screen-list.md](./docs/screen-list.md).
 
 ### Trần Văn Minh
 
@@ -149,15 +147,6 @@ Tài khoản tình nguyện viên mẫu đã đăng ký sẵn:
 
 - **Email:** `an.nguyen@email.com`
 - **Mật khẩu:** `VolunteerLink@2026`
-
-Tài khoản điều phối viên và quản trị viên mẫu:
-
-- **Quản trị viên (Admin):**
-  - **Email:** `admin@gmail.com`
-  - **Mật khẩu:** `admin@volunteerlink`
-- **Điều phối viên (Coordinator):**
-  - **Email:** `coordinator@gmail.com`
-  - **Mật khẩu:** `coordinator@volunteerlink`
 
 Các trang chức năng yêu cầu đăng nhập và đúng vai trò; chưa đăng nhập sẽ được chuyển về trang đăng nhập. Đây chỉ là kiểm tra phía trình duyệt cho bản nguyên mẫu dùng LocalStorage, không thay thế xác thực và phân quyền ở máy chủ khi triển khai thực tế.
 Mật khẩu được dẫn xuất bằng PBKDF2 và lưu cùng muối trong LocalStorage; hãy chạy qua `http://localhost` hoặc HTTPS để trình duyệt hỗ trợ Web Crypto. Tài khoản mới bắt đầu với 0 giờ, 0 ca hoàn thành, 0 huy hiệu và 0% điểm tin cậy. Huy hiệu được trao theo số ca/giờ đã hoàn thành, còn điểm tin cậy tính từ ca hoàn thành so với các ca đã hủy.

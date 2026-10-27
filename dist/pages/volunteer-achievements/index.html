@@ -1,143 +1,109 @@
 <!doctype html>
-<!-- VolunteerLink: Page structure and content for volunteer achievements. -->
+<!-- Cấu trúc và nội dung giao diện cho trang thành tựu tình nguyện viên. -->
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thành tựu của tôi - VolunteerLink</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main class="main-content" id="main">
-      <div class="page-header">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thành tựu của tôi - VolunteerLink</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="main-content" id="main">
+    <div class="page-header">
+      <div>
+        <span class="achievement-page-kicker">Ghi nhận hành trình</span>
+        <h1>Thành tựu của tôi</h1>
+        <p class="achievement-page-description">
+          Mỗi ca hoàn thành là một dấu mốc. Theo dõi thành tựu đã đạt và mục
+          tiêu tiếp theo của bạn.
+        </p>
+      </div>
+      <a class="btn btn-primary btn-sm" href="../volunteer-opportunity-search/index.html">🔍 Tìm hoạt động mới</a>
+    </div>
+
+    <section class="achievement-overview-grid" aria-label="Tổng quan thành tựu">
+      <article class="achievement-overview-card achievement-overview-featured">
+        <div class="achievement-overview-icon" aria-hidden="true">🏆</div>
         <div>
-          <span class="achievement-page-kicker">Ghi nhận hành trình</span>
-          <h1>Thành tựu của tôi</h1>
-          <p class="achievement-page-description">
-            Mỗi ca hoàn thành là một dấu mốc. Theo dõi thành tựu đã đạt và mục
-            tiêu tiếp theo của bạn.
+          <span class="achievement-overview-label">Thành tựu đã đạt</span>
+          <div class="achievement-overview-value">
+            <span id="achievementCount">0</span><span class="achievement-overview-total">/<span
+                id="achievementTotal">0</span></span>
+          </div>
+          <p id="achievementOverviewText">
+            Mỗi đóng góp đều tạo nên khác biệt.
           </p>
         </div>
-        <a
-          class="btn btn-primary btn-sm"
-          href="../volunteer-opportunity-search/index.html"
-          >🔍 Tìm hoạt động mới</a
-        >
-      </div>
-
-      <section
-        class="achievement-overview-grid"
-        aria-label="Tổng quan thành tựu"
-      >
-        <article
-          class="achievement-overview-card achievement-overview-featured"
-        >
-          <div class="achievement-overview-icon" aria-hidden="true">🏆</div>
-          <div>
-            <span class="achievement-overview-label">Thành tựu đã đạt</span>
-            <div class="achievement-overview-value">
-              <span id="achievementCount">0</span
-              ><span class="achievement-overview-total"
-                >/<span id="achievementTotal">0</span></span
-              >
-            </div>
-            <p id="achievementOverviewText">
-              Mỗi đóng góp đều tạo nên khác biệt.
-            </p>
-          </div>
-        </article>
-        <article class="achievement-overview-card">
-          <div class="achievement-overview-icon" aria-hidden="true">⏱️</div>
-          <div>
-            <span class="achievement-overview-label">Giờ đã cống hiến</span>
-            <div class="achievement-overview-value">
-              <span id="achievementHours">0</span
-              ><span class="achievement-overview-unit">giờ</span>
-            </div>
-            <p>Được tính từ các ca đã hoàn thành.</p>
-          </div>
-        </article>
-        <article class="achievement-overview-card">
-          <div class="achievement-overview-icon" aria-hidden="true">🌱</div>
-          <div>
-            <span class="achievement-overview-label">Ca đã hoàn thành</span>
-            <div class="achievement-overview-value">
-              <span id="achievementShifts">0</span
-              ><span class="achievement-overview-unit">ca</span>
-            </div>
-            <p>Những lần bạn trực tiếp chung tay.</p>
-          </div>
-        </article>
-      </section>
-
-      <section
-        class="achievement-next-card"
-        id="nextAchievementPanel"
-        aria-live="polite"
-      >
-        <div class="achievement-next-icon" aria-hidden="true">✨</div>
-        <div class="achievement-next-copy">
-          <span class="achievement-next-label">Mục tiêu tiếp theo</span>
-          <h2 id="nextAchievementTitle">Đang tải thành tựu...</h2>
-          <p id="nextAchievementDescription"></p>
-          <div class="achievement-next-progress-track">
-            <span id="nextAchievementProgress"></span>
-          </div>
-          <div
-            class="achievement-next-progress-label"
-            id="nextAchievementProgressLabel"
-          ></div>
-        </div>
-        <a
-          href="../volunteer-opportunity-search/index.html"
-          class="achievement-next-action"
-          >Khám phá hoạt động <span aria-hidden="true">→</span></a
-        >
-      </section>
-
-      <div class="achievement-collection-heading">
+      </article>
+      <article class="achievement-overview-card">
+        <div class="achievement-overview-icon" aria-hidden="true">⏱️</div>
         <div>
-          <h2>Bộ sưu tập thành tựu</h2>
-          <p class="text-secondary">
-            Thành tựu được cập nhật sau khi tổ chức xác nhận ca đã hoàn thành.
-          </p>
+          <span class="achievement-overview-label">Giờ đã cống hiến</span>
+          <div class="achievement-overview-value">
+            <span id="achievementHours">0</span><span class="achievement-overview-unit">giờ</span>
+          </div>
+          <p>Được tính từ các ca đã hoàn thành.</p>
         </div>
+      </article>
+      <article class="achievement-overview-card">
+        <div class="achievement-overview-icon" aria-hidden="true">🌱</div>
+        <div>
+          <span class="achievement-overview-label">Ca đã hoàn thành</span>
+          <div class="achievement-overview-value">
+            <span id="achievementShifts">0</span><span class="achievement-overview-unit">ca</span>
+          </div>
+          <p>Những lần bạn trực tiếp chung tay.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="achievement-next-card" id="nextAchievementPanel" aria-live="polite">
+      <div class="achievement-next-icon" aria-hidden="true">✨</div>
+      <div class="achievement-next-copy">
+        <span class="achievement-next-label">Mục tiêu tiếp theo</span>
+        <h2 id="nextAchievementTitle">Đang tải thành tựu...</h2>
+        <p id="nextAchievementDescription"></p>
+        <div class="achievement-next-progress-track">
+          <span id="nextAchievementProgress"></span>
+        </div>
+        <div class="achievement-next-progress-label" id="nextAchievementProgressLabel"></div>
       </div>
+      <a href="../volunteer-opportunity-search/index.html" class="achievement-next-action">Khám phá hoạt động <span
+          aria-hidden="true">→</span></a>
+    </section>
 
-      <section
-        class="achievement-collection-section"
-        aria-labelledby="achievedHeading"
-      >
-        <div class="achievement-section-heading">
-          <h2 id="achievedHeading">Đã chinh phục</h2>
-          <span class="achievement-section-count" id="achievedCount">0</span>
-        </div>
-        <div
-          class="achievement-collection-grid"
-          id="achievedAchievements"
-          aria-live="polite"
-        ></div>
-      </section>
+    <div class="achievement-collection-heading">
+      <div>
+        <h2>Bộ sưu tập thành tựu</h2>
+        <p class="text-secondary">
+          Thành tựu được cập nhật sau khi tổ chức xác nhận ca đã hoàn thành.
+        </p>
+      </div>
+    </div>
 
-      <section
-        class="achievement-collection-section"
-        aria-labelledby="pendingHeading"
-      >
-        <div class="achievement-section-heading">
-          <h2 id="pendingHeading">Mục tiêu đang hướng tới</h2>
-          <span class="achievement-section-count" id="pendingCount">0</span>
-        </div>
-        <div
-          class="achievement-collection-grid"
-          id="pendingAchievements"
-          aria-live="polite"
-        ></div>
-      </section>
-    </main>
+    <section class="achievement-collection-section" aria-labelledby="achievedHeading">
+      <div class="achievement-section-heading">
+        <h2 id="achievedHeading">Đã chinh phục</h2>
+        <span class="achievement-section-count" id="achievedCount">0</span>
+      </div>
+      <div class="achievement-collection-grid" id="achievedAchievements" aria-live="polite"></div>
+    </section>
 
-    <script src="../../js/services.js"></script>
-    <script src="../../js/modules/volunteer-achievements.js"></script>
-    <script src="../../js/app.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <section class="achievement-collection-section" aria-labelledby="pendingHeading">
+      <div class="achievement-section-heading">
+        <h2 id="pendingHeading">Mục tiêu đang hướng tới</h2>
+        <span class="achievement-section-count" id="pendingCount">0</span>
+      </div>
+      <div class="achievement-collection-grid" id="pendingAchievements" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="../../js/services.js"></script>
+  <script src="../../js/modules/volunteer-achievements.js"></script>
+  <script src="../../js/app.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -1,4 +1,4 @@
-// VolunteerLink: Shared impact summary feature module.
+// Tính toán và trình bày số liệu tổng hợp về tác động của hoạt động tình nguyện.
 const ImpactSummary = {
   generate: function (oppId) {
     const registrations = DataStore.getAll("registrations");

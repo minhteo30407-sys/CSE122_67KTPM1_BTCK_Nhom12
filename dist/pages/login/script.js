@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for login.
+// Mã xử lý giao diện và thao tác trên trang đăng nhập.
 document.addEventListener("DOMContentLoaded", function () {
   if (
     new URLSearchParams(window.location.search).get("error") === "data-init"

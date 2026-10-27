@@ -1,4 +1,4 @@
-// VolunteerLink: Page-specific interactions for organization shift management.
+// Mã xử lý giao diện và thao tác trên trang quản lý ca tình nguyện của tổ chức.
 let currentOrganizationId = "";
 
 function getOrganizationOpportunities() {

@@ -1,4 +1,4 @@
-// VolunteerLink: Page-specific interactions for volunteer profile.
+// Mã xử lý giao diện và thao tác trên trang hồ sơ tình nguyện viên.
 let currentVolunteer = null;
 
 async function loadProfileData() {
@@ -134,3 +134,64 @@ document.addEventListener("DOMContentLoaded", async function () {
     showToast(error.message, "error");
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

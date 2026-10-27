@@ -1,6 +1,6 @@
-/* Page-specific styles for tran_van_minh/admin-category-management. */
-/* VolunteerLink: Page-specific base styles copied from the former shared stylesheet. */
-/* Design tokens and document defaults. */
+/* Kiểu dáng riêng cho trang quản lý danh mục do Trần Văn Minh phụ trách. */
+/* Các quy tắc nền tảng được tách từ tệp kiểu dáng dùng chung trước đây. */
+/* Khai báo màu sắc, kích thước và các thiết lập mặc định cho trang. */
 :root {
   --primary: #2e7d5b;
   --primary-dark: #1f5a41;
@@ -26,11 +26,14 @@
   --topbar-height: 60px;
   --sidebar-width: 250px;
 }
+/* Đặt lại khoảng cách mặc định và thống nhất cách tính kích thước phần tử. */
+/* Chuẩn hóa cách tính kích thước và khoảng cách mặc định của các phần tử. */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* Thiết lập phông chữ, màu nền, màu chữ và khoảng cách dòng mặc định. */
 body {
   font-family:
     system-ui,
@@ -42,6 +45,7 @@ body {
   line-height: 1.6;
   font-size: 15px;
 }
+/* Định dạng liên kết, danh sách, hình ảnh và các cấp tiêu đề. */
 a {
   color: var(--primary);
   text-decoration: none;
@@ -69,6 +73,7 @@ h3 {
   font-size: 17px;
   font-weight: 600;
 }
+/* Tinh chỉnh hiệu ứng kính mờ và khoảng cách của thanh điều hướng. */
 .topbar {
   backdrop-filter: saturate(1.15);
 }
@@ -86,6 +91,7 @@ h3 {
   border-right: 0;
   box-shadow: inset 3px 0 var(--primary);
 }
+/* Cố định thanh trên cùng để luôn hiển thị khi cuộn trang. */
 .topbar {
   position: fixed;
   top: 0;
@@ -126,6 +132,7 @@ h3 {
   color: var(--text);
   padding: 4px 8px;
 }
+/* Hiển thị thanh bên cố định bên dưới thanh trên cùng; cho phép cuộn mục điều hướng. */
 .sidebar {
   position: fixed;
   top: var(--topbar-height);
@@ -171,6 +178,7 @@ h3 {
   background: var(--border);
   margin: 8px 0;
 }
+/* Chừa không gian cho thanh điều hướng và sắp xếp phần nội dung chính. */
 .main-content {
   margin-left: var(--sidebar-width);
   margin-top: var(--topbar-height);
@@ -185,6 +193,7 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
 }
+/* Dùng chung kiểu nút và làm nổi bật trạng thái rê chuột, nhấn, bàn phím. */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -231,6 +240,7 @@ h3 {
   padding: 4px 12px;
   font-size: 13px;
 }
+/* Bọc bảng để cuộn ngang trên màn hình hẹp mà không làm vỡ bố cục. */
 .table-container {
   overflow-x: auto;
   border-radius: var(--radius);
@@ -263,6 +273,7 @@ h3 {
 .data-table tr:hover {
   background: var(--primary-light);
 }
+/* Chuẩn hóa khoảng cách trường nhập liệu và hiển thị rõ trạng thái lỗi. */
 .form-group {
   margin-bottom: 16px;
 }
@@ -309,6 +320,7 @@ h3 {
 .form-error.show {
   display: block;
 }
+/* Lớp phủ căn giữa hộp thoại; hộp thoại chỉ hiện khi lớp phủ có trạng thái mở. */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -360,6 +372,7 @@ h3 {
   justify-content: flex-end;
   gap: 8px;
 }
+/* Kiểu huy hiệu trạng thái và thẻ nhãn nhỏ bên trong nội dung. */
 .badge {
   display: inline-block;
   padding: 2px 10px;
@@ -376,6 +389,7 @@ h3 {
   color: var(--primary);
   margin: 2px;
 }
+/* Thông báo nhanh ở góc màn hình và hiệu ứng trượt khi xuất hiện. */
 .toast-container {
   position: fixed;
   top: 80px;
@@ -410,6 +424,7 @@ h3 {
     transform: rotate(360deg);
   }
 }
+/* Trạng thái trống, chỉ báo đang tải và vòng xoay chờ dữ liệu. */
 .empty-state {
   text-align: center;
   padding: 60px 20px;
@@ -435,6 +450,7 @@ h3 {
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
+/* Thanh công cụ tìm kiếm và bộ lọc tự xuống dòng khi thiếu không gian. */
 .toolbar {
   display: flex;
   align-items: center;
@@ -472,6 +488,7 @@ h3 {
   font-size: 14px;
   background: var(--surface);
 }
+/* Lớp tiện ích và hành vi cuộn mượt cho các liên kết trong trang. */
 .flex {
   display: flex;
 }
@@ -484,6 +501,7 @@ html {
 body {
   letter-spacing: 0.01em;
 }
+/* Bổ sung hiệu ứng tương tác, trạng thái tiêu điểm và khả năng tiếp cận. */
 a,
 button,
 input,
@@ -548,6 +566,7 @@ textarea:focus-visible {
 .toast {
   border-radius: 10px;
 }
+/* Giảm chuyển động nếu người dùng bật tùy chọn hạn chế hiệu ứng. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -558,6 +577,7 @@ textarea:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+/* Nút mở trợ lý và khung trò chuyện cố định theo kích thước màn hình. */
 .site-chat-toggle {
   display: flex;
   align-items: center;
@@ -717,9 +737,9 @@ textarea:focus-visible {
     height: min(620px, calc(100vh - 100px));
   }
 }
-/* VolunteerLink: Page-specific responsive styles copied from the former shared stylesheet. */
-/* Tablet layout adjustments. */
-/* Mobile navigation, forms, tables, and page spacing. */
+/* Các quy tắc thích ứng riêng được tách từ tệp kiểu dáng dùng chung trước đây. */
+/* Điều chỉnh bố cục cho máy tính bảng và điện thoại. */
+/* Thu gọn điều hướng, biểu mẫu, bảng và khoảng cách trên màn hình nhỏ. */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -810,6 +830,7 @@ textarea:focus-visible {
     max-height: 90vh;
   }
 }
+/* Tinh chỉnh thanh trên cùng và thông tin người dùng trên điện thoại nhỏ. */
 @media (max-width: 480px) {
   .topbar {
     padding: 0 12px;

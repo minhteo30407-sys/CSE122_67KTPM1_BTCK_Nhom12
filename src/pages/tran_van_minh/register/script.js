@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for register.
+// Mã xử lý giao diện và thao tác trên trang đăng ký tài khoản.
 document.addEventListener("DOMContentLoaded", async function () {
   await DataStore.init();
 });

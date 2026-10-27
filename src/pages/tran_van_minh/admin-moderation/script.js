@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for admin moderation.
+// Mã xử lý giao diện và thao tác trên trang kiểm duyệt nội dung.
 // Dữ liệu mẫu ban đầu, chỉ được lưu khi trình duyệt chưa có dữ liệu kiểm duyệt.
 const DEFAULT_MODERATION_ITEMS = [
   {

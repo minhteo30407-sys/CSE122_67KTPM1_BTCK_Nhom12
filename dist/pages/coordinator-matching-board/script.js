@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for coordinator matching board.
+// Mã xử lý giao diện và thao tác trên trang ghép tình nguyện viên với ca.
 let currentSelectedShiftId = "";
 
 function populateShifts() {

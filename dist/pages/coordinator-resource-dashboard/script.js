@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for coordinator resource dashboard.
+// Mã xử lý giao diện và thao tác trên trang tổng quan nguồn lực điều phối.
 function updateDashboardStats() {
   const vols = DataStore.getAll("volunteers");
   const opps = DataStore.getAll("opportunities");

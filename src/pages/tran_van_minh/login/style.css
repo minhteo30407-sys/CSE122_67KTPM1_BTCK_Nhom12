@@ -1,6 +1,6 @@
-/* Page-specific styles for tran_van_minh/login. */
-/* VolunteerLink: Page-specific base styles copied from the former shared stylesheet. */
-/* Design tokens and document defaults. */
+/* Kiểu dáng riêng cho trang đăng nhập do Trần Văn Minh phụ trách. */
+/* Các quy tắc nền tảng được tách từ tệp kiểu dáng dùng chung trước đây. */
+/* Khai báo màu sắc, kích thước và các thiết lập mặc định cho trang. */
 :root {
   --primary: #2e7d5b;
   --primary-dark: #1f5a41;
@@ -26,6 +26,7 @@
   --topbar-height: 60px;
   --sidebar-width: 250px;
 }
+/* Chuẩn hóa cách tính kích thước và khoảng cách mặc định của các phần tử. */
 * {
   margin: 0;
   padding: 0;
@@ -77,7 +78,7 @@ h3 {
 .login-page {
   background:
     linear-gradient(90deg, rgba(20, 57, 45, 0.48), rgba(20, 57, 45, 0.12)),
-    url("/assets/images/volunteer-login-bg.svg") center / cover fixed;
+    url("../../assets/images/volunteer-login-bg.svg") center / cover fixed;
 }
 .login-page .public-header,
 .login-page .public-footer {
@@ -101,7 +102,7 @@ h3 {
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 24px 70px rgba(17, 48, 38, 0.3);
 }
-/* Shared public and authenticated navigation layouts. */
+/* Bố cục điều hướng dùng chung cho trang công khai và trang cần đăng nhập. */
 .public-header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -759,9 +760,9 @@ textarea:focus-visible {
     height: min(620px, calc(100vh - 100px));
   }
 }
-/* VolunteerLink: Page-specific responsive styles copied from the former shared stylesheet. */
-/* Tablet layout adjustments. */
-/* Mobile navigation, forms, tables, and page spacing. */
+/* Các quy tắc hiển thị thích ứng được tách từ tệp kiểu dáng dùng chung trước đây. */
+/* Điều chỉnh bố cục cho máy tính bảng. */
+/* Thu gọn điều hướng, biểu mẫu, bảng và khoảng cách trên điện thoại. */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;

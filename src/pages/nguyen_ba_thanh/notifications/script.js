@@ -1,4 +1,4 @@
-// VolunteerLink: Page-specific interactions for notifications.
+// Mã xử lý giao diện và thao tác trên trang thông báo.
 const DEFAULT_NOTIFICATIONS = [
   {
     id: 1,

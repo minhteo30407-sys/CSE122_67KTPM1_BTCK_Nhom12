@@ -1,4 +1,4 @@
-// VolunteerLink: Page-specific interactions for organization volunteer roster.
+// Mã xử lý giao diện và thao tác trên trang danh sách tình nguyện viên của tổ chức.
 let currentOrganizationId = "";
 
 function getOrganizationRegistrations() {

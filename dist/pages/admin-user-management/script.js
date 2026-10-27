@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for admin user management.
+// Mã xử lý giao diện và thao tác trên trang quản lý người dùng.
 const DEFAULT_STAFF_USERS = [
   {
     id: "COORD001",

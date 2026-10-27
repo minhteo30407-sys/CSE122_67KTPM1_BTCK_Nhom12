@@ -1,4 +1,4 @@
-﻿// VolunteerLink: Page-specific interactions for admin dashboard.
+// Mã xử lý giao diện và thao tác trên trang tổng quan quản trị.
 function dashboardEscape(value) {
   return escapeHTML(value == null ? "" : value);
 }

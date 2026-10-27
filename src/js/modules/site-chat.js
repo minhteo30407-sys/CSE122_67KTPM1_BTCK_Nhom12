@@ -1,4 +1,4 @@
-// VolunteerLink: Shared AI assistant for website questions.
+// Quản lý giao diện trò chuyện và trao đổi câu hỏi với trợ lý của website.
 (function () {
   const MAX_MESSAGE_LENGTH = 1000;
   const MAX_HISTORY_ITEMS = 8;

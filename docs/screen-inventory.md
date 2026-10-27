@@ -1,135 +1,50 @@
 # Bảng kiểm kê màn hình (Screen Inventory) - VolunteerLink
 
-> Học phần: Phát triển ứng dụng web cơ bản (CSE122)
-> Nhóm: Trần Văn Minh và Nguyễn Bá Thành
-> Bản nguồn được chia theo thư mục trong `src/pages/tran_van_minh/` và `src/pages/nguyen_ba_thanh/`. Bản build trong `dist/pages/` giữ URL theo tên chức năng.
+> **Học phần:** Phát triển ứng dụng Web cơ bản (CSE122) - BTL-24  
+> **Nhóm thực hiện:** Trần Văn Minh & Nguyễn Bá Thành  
+> **Bản thiết kế Figma:** [Figma BTL_Volunteerlink](https://www.figma.com/design/HuP4KEqctSwA49iLHnBQV6/BTL_Volunteerlink?node-id=5-2030&t=JJLerCAi8yzLaugf-1)  
+> **Bảng công việc Trello:** [VolunteerLink Trello Board](https://trello.com/b/6aa76d8cbf36c881dce53f29/)  
+> **Kho mã nguồn:** [CSE122_67KTPM1_BTCK_Nhom12](https://github.com/minhteo30407-sys/CSE122_67KTPM1_BTCK_Nhom12)
 
-## Trần Văn Minh
+---
 
-- Thư mục nguồn: `src/pages/tran_van_minh/`
-- Tổng số: 10 màn hình.
+## Bảng đối chiếu 12 cột chuẩn Barem CSE122
 
-### Tài khoản
+| Role | User Goal | User Task | Screen | File | CRUD | States | AI | Assignee | Task ID | Branch | OBS |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Dùng chung** | Tìm hiểu nền tảng & chuyển vai trò | Xem giới thiệu, khám phá hoạt động nổi bật | Trang chủ giới thiệu | `dist/pages/index/index.html` | R | Normal, Empty | AI-4 (Chatbot) | Nguyễn Bá Thành | TASK-01 | `feature/volunteer-screens` | `SV2-01-index.mp4` |
+| **Dùng chung** | Cập nhật tin tức & phản hồi hệ thống | Xem thông báo ca, duyệt đơn, đánh dấu đã đọc | Trung tâm thông báo | `dist/pages/notifications/index.html` | R, U | Normal, Empty, Loading | — | Nguyễn Bá Thành | TASK-02 | `feature/volunteer-screens` | `SV2-02-notifications.mp4` |
+| **Dùng chung** | Nhận biết lỗi phân quyền | Xem thông báo không có quyền truy cập | Lỗi 403 Forbidden | `dist/pages/403/index.html` | R | Normal | — | Nguyễn Bá Thành | TASK-03 | `feature/volunteer-screens` | `SV2-03-403.mp4` |
+| **Dùng chung** | Định hướng khi gõ sai đường dẫn | Xem thông báo trang không tồn tại & quay lại | Lỗi 404 Not Found | `dist/pages/404/index.html` | R | Normal | — | Nguyễn Bá Thành | TASK-04 | `feature/volunteer-screens` | `SV2-04-404.mp4` |
+| **Tình nguyện viên** | Quản lý thông tin & kỹ năng bản thân | Cập nhật kỹ năng, khu vực, lịch rảnh, liên hệ | Hồ sơ tình nguyện viên | `dist/pages/volunteer-profile/index.html` | R, U | Normal, Loading, Error | — | Nguyễn Bá Thành | TASK-05 | `feature/volunteer-screens` | `SV2-05-volunteer-profile.mp4` |
+| **Tình nguyện viên** | Tìm kiếm hoạt động phù hợp | Lọc theo chủ đề, địa điểm, xem gợi ý ghép đôi | Tìm kiếm hoạt động | `dist/pages/volunteer-opportunity-search/index.html` | C, R, U | Normal, Loading, Empty, Error | AI-1 (Volunteer Matcher) | Nguyễn Bá Thành | TASK-06 | `feature/volunteer-screens` | `SV2-06-opportunity-search.mp4` |
+| **Tình nguyện viên** | Theo dõi lịch trực & tiến độ ca | Xem ca sắp tới, hủy đăng ký, điểm danh | Ca của tôi | `dist/pages/volunteer-my-shifts/index.html` | C, R, U, D | Normal, Empty, Loading | — | Nguyễn Bá Thành | TASK-07 | `feature/volunteer-screens` | `SV2-07-volunteer-my-shifts.mp4` |
+| **Tình nguyện viên** | Ghi nhận cống hiến & huy hiệu | Xem số giờ tích lũy, huy hiệu đạt được, mục tiêu | Thành tựu tình nguyện | `dist/pages/volunteer-achievements/index.html` | R | Normal, Loading, Empty | — | Nguyễn Bá Thành | TASK-08 | `feature/volunteer-screens` | `SV2-08-volunteer-achievements.mp4` |
+| **Tổ chức xã hội** | Tổ chức chiến dịch cộng đồng | Đăng hoạt động mới, sửa mô tả, đóng hoạt động | Quản lý hoạt động | `dist/pages/organization-opportunity-management/index.html` | C, R, U, D | Normal, Loading, Empty, Error | — | Nguyễn Bá Thành | TASK-09 | `feature/volunteer-screens` | `SV2-09-org-opp-manage.mp4` |
+| **Tổ chức xã hội** | Quản trị nhân lực & thời gian ca | Tạo ca trực, định lượng tình nguyện viên, xem cảnh báo thiếu | Quản lý ca trực | `dist/pages/organization-shift-management/index.html` | C, R, U | Normal, Loading, Empty, Error | AI-2 (Shift Predictor) | Nguyễn Bá Thành | TASK-10 | `feature/volunteer-screens` | `SV2-10-org-shift-manage.mp4` |
+| **Tổ chức xã hội** | Duyệt & điểm danh tình nguyện viên | Phê duyệt đơn đăng ký, điểm danh, ghi nhận giờ | Danh sách đăng ký ca | `dist/pages/organization-volunteer-roster/index.html` | C, R, U, D | Normal, Loading, Empty, Error | — | Nguyễn Bá Thành | TASK-11 | `feature/volunteer-screens` | `SV2-11-org-roster.mp4` |
+| **Tài khoản** | Xác thực danh tính | Đăng nhập hệ thống bằng email và mật khẩu | Đăng nhập | `dist/pages/login/index.html` | R | Normal, Error | — | Trần Văn Minh | TASK-12 | `feature/auth-and-admin` | `SV1-12-login.mp4` |
+| **Tài khoản** | Gia nhập mạng lưới | Tạo tài khoản tình nguyện viên hoặc tổ chức | Đăng ký | `dist/pages/register/index.html` | C, R | Normal, Error | — | Trần Văn Minh | TASK-13 | `feature/auth-and-admin` | `SV1-13-register.mp4` |
+| **Tài khoản** | Khôi phục quyền truy cập | Gửi yêu cầu đặt lại mật khẩu qua email | Quên mật khẩu | `dist/pages/forgot-password/index.html` | R, U | Normal, Error | — | Trần Văn Minh | TASK-14 | `feature/auth-and-admin` | `SV1-14-forgot-password.mp4` |
+| **Điều phối viên** | Giám sát toàn cục tài nguyên | Theo dõi số ca thiếu hụt, tỷ lệ lấp đầy, nhu cầu kỹ năng | Bảng điều khiển tài nguyên | `dist/pages/coordinator-resource-dashboard/index.html` | R | Normal, Loading, Empty | — | Trần Văn Minh | TASK-15 | `feature/coordinator-portal` | `SV1-15-coord-dashboard.mp4` |
+| **Điều phối viên** | Tối ưu hóa điều phối nhân lực | Ghép đôi tình nguyện viên rảnh với ca còn thiếu | Bảng ghép ca thông minh | `dist/pages/coordinator-matching-board/index.html` | C, R, U | Normal, Loading, Empty, Error | AI-1 (Volunteer Matcher) | Trần Văn Minh | TASK-16 | `feature/coordinator-portal` | `SV1-16-coord-matching.mp4` |
+| **Điều phối viên** | Báo cáo tác động xã hội | Tổng kết số giờ công hiến, giá trị kinh tế, xuất báo cáo | Tổng kết tác động | `dist/pages/coordinator-impact-summary/index.html` | C, R, U, D | Normal, Loading, Empty | AI-3 (Impact Summary) | Trần Văn Minh | TASK-17 | `feature/coordinator-portal` | `SV1-17-coord-impact.mp4` |
+| **Quản trị viên** | Chuẩn hóa danh mục toàn hệ thống | Thêm, sửa, đóng danh mục kỹ năng và lĩnh vực | Quản lý danh mục | `dist/pages/admin-category-management/index.html` | C, R, U, D | Normal, Loading, Empty, Error | — | Trần Văn Minh | TASK-18 | `feature/auth-and-admin` | `SV1-18-admin-category.mp4` |
+| **Quản trị viên** | Kiểm soát người dùng nền tảng | Phân quyền, khóa/mở tài khoản, xem lịch sử | Quản lý người dùng | `dist/pages/admin-user-management/index.html` | C, R, U | Normal, Loading, Empty, Error | — | Trần Văn Minh | TASK-19 | `feature/auth-and-admin` | `SV1-19-admin-user.mp4` |
+| **Quản trị viên** | Đảm bảo an toàn nội dung cộng đồng | Phê duyệt hoặc từ chối chiến dịch do tổ chức tạo | Hàng đợi kiểm duyệt | `dist/pages/admin-moderation/index.html` | C, R, U, D | Normal, Loading, Empty, Error | — | Trần Văn Minh | TASK-20 | `feature/auth-and-admin` | `SV1-20-admin-moderation.mp4` |
+| **Quản trị viên** | Giám sát chỉ số vận hành tổng thể | Xem KPI hệ thống, tăng trưởng người dùng và lượt tham gia | Bảng tổng quan quản trị | `dist/pages/admin-dashboard/index.html` | R | Normal, Loading, Empty | — | Trần Văn Minh | TASK-21 | `feature/auth-and-admin` | `SV1-21-admin-dashboard.mp4` |
 
-- `login`
-  - Tên màn hình: Đăng nhập hệ thống.
-  - Vai trò: Dùng chung.
-  - Trạng thái: Đăng nhập.
-  - Thư mục: `src/pages/tran_van_minh/login/`
-- `register`
-  - Tên màn hình: Đăng ký tài khoản.
-  - Vai trò: Dùng chung.
-  - Trạng thái: Đăng ký.
-  - Thư mục: `src/pages/tran_van_minh/register/`
-- `forgot-password`
-  - Tên màn hình: Khôi phục mật khẩu.
-  - Vai trò: Dùng chung.
-  - Trạng thái: Khôi phục mật khẩu.
-  - Thư mục: `src/pages/tran_van_minh/forgot-password/`
+---
 
-### Điều phối viên
+## Thống kê phân công Vertical Slice
 
-- `coordinator-resource-dashboard`
-  - Tên màn hình: Bảng điều khiển tài nguyên.
-  - CRUD/trạng thái: Đọc (R).
-  - Thư mục: `src/pages/tran_van_minh/coordinator-resource-dashboard/`
-- `coordinator-matching-board`
-  - Tên màn hình: Bảng ghép ca thông minh.
-  - CRUD/trạng thái: Tạo, đọc, cập nhật (C/R/U).
-  - AI: AI-1 Volunteer Matcher.
-  - Thư mục: `src/pages/tran_van_minh/coordinator-matching-board/`
-- `coordinator-impact-summary`
-  - Tên màn hình: Tổng kết đóng góp và tác động.
-  - CRUD/trạng thái: Tạo, đọc, cập nhật, xóa (C/R/U/D).
-  - AI: AI-3 Impact Summary.
-  - Thư mục: `src/pages/tran_van_minh/coordinator-impact-summary/`
+- **Nguyễn Bá Thành (SV2):** 11 màn hình (TASK-01 → TASK-11)
+  - Vai trò chính: Tình nguyện viên (Volunteer), Tổ chức xã hội (Organization), Các trang dùng chung (Shared/Error).
+  - Tính năng AI phụ trách: **AI-1** (Volunteer Matcher phía tìm kiếm), **AI-2** (Shift Shortage Predictor phía tổ chức).
+  - Trục chéo: Kiến trúc JavaScript, mô-đun dữ liệu giả lập (`js/services.js`, `localStorage`), chuẩn hóa tương tác AI UX.
 
-### Quản trị viên
+- **Trần Văn Minh (SV1):** 10 màn hình (TASK-12 → TASK-21)
+  - Vai trò chính: Điều phối viên (Coordinator), Quản trị viên (Admin), Tài khoản & Xác thực (Auth).
+  - Tính năng AI phụ trách: **AI-1** (Matching Board phía điều phối), **AI-3** (Impact Summary).
+  - Trục chéo: Design System (`css/style.css`, biến `:root`), điều hướng chung (`Role Switcher`), Accessibility (A11y).
 
-- `admin-category-management`
-  - Tên màn hình: Quản lý danh mục kỹ năng.
-  - CRUD/trạng thái: Tạo, đọc, cập nhật, xóa (C/R/U/D).
-  - Thư mục: `src/pages/tran_van_minh/admin-category-management/`
-- `admin-user-management`
-  - Tên màn hình: Quản lý người dùng hệ thống.
-  - CRUD/trạng thái: Tạo, đọc, cập nhật (C/R/U).
-  - Thư mục: `src/pages/tran_van_minh/admin-user-management/`
-- `admin-moderation`
-  - Tên màn hình: Hàng đợi kiểm duyệt.
-  - CRUD/trạng thái: Tạo, đọc, cập nhật, xóa (C/R/U/D).
-  - Thư mục: `src/pages/tran_van_minh/admin-moderation/`
-- `admin-dashboard`
-  - Tên màn hình: Bảng tổng quan quản trị.
-  - CRUD/trạng thái: Đọc (R).
-  - Thư mục: `src/pages/tran_van_minh/admin-dashboard/`
-
-## Nguyễn Bá Thành
-
-- Thư mục nguồn: `src/pages/nguyen_ba_thanh/`
-- Tổng số: 11 màn hình.
-
-### Trang dùng chung
-
-- `index`
-  - Tên màn hình: Trang chủ giới thiệu.
-  - CRUD/trạng thái: Đọc (R).
-  - Thư mục: `src/pages/nguyen_ba_thanh/index/`
-- `notifications`
-  - Tên màn hình: Trung tâm thông báo.
-  - CRUD/trạng thái: Đọc, cập nhật (R/U).
-  - Thư mục: `src/pages/nguyen_ba_thanh/notifications/`
-- `403`
-  - Tên màn hình: Trang lỗi không có quyền.
-  - Trạng thái: Lỗi quyền truy cập.
-  - Thư mục: `src/pages/nguyen_ba_thanh/403/`
-- `404`
-  - Tên màn hình: Trang lỗi không tìm thấy.
-  - Trạng thái: Không tìm thấy trang.
-  - Thư mục: `src/pages/nguyen_ba_thanh/404/`
-
-### Tình nguyện viên
-
-- `volunteer-profile`
-  - Tên màn hình: Hồ sơ tình nguyện viên.
-  - CRUD/trạng thái: Đọc, cập nhật (R/U).
-  - Thư mục: `src/pages/nguyen_ba_thanh/volunteer-profile/`
-- `volunteer-opportunity-search`
-  - Tên màn hình: Tìm kiếm hoạt động.
-  - CRUD/trạng thái: Tạo, đọc, cập nhật (C/R/U).
-  - AI: AI-1 Volunteer Matcher.
-  - Thư mục: `src/pages/nguyen_ba_thanh/volunteer-opportunity-search/`
-- `volunteer-my-shifts`
-  - Tên màn hình: Ca của tôi.
-  - CRUD/trạng thái: Tạo, đọc, cập nhật, xóa (C/R/U/D).
-  - Thư mục: `src/pages/nguyen_ba_thanh/volunteer-my-shifts/`
-- `volunteer-achievements`
-  - Tên màn hình: Thành tựu tình nguyện viên.
-  - CRUD/trạng thái: Đọc (R).
-  - Thư mục: `src/pages/nguyen_ba_thanh/volunteer-achievements/`
-
-### Tổ chức xã hội
-
-- `organization-opportunity-management`
-  - Tên màn hình: Quản lý hoạt động tổ chức.
-  - CRUD/trạng thái: Tạo, đọc, cập nhật, xóa (C/R/U/D).
-  - Thư mục: `src/pages/nguyen_ba_thanh/organization-opportunity-management/`
-- `organization-shift-management`
-  - Tên màn hình: Quản lý ca trực tổ chức.
-  - CRUD/trạng thái: Tạo, đọc, cập nhật (C/R/U).
-  - AI: AI-2 Shift Predictor.
-  - Thư mục: `src/pages/nguyen_ba_thanh/organization-shift-management/`
-- `organization-volunteer-roster`
-  - Tên màn hình: Danh sách tình nguyện viên đăng ký ca.
-  - CRUD/trạng thái: Tạo, đọc, cập nhật, xóa (C/R/U/D).
-  - Thư mục: `src/pages/nguyen_ba_thanh/organization-volunteer-roster/`
-
-## Thành phần dùng chung
-
-- Chatbot AI-4 trong `src/js/modules/site-chat.js` là widget dùng chung, không phải màn hình riêng nên không tính vào tổng 21 màn hình.
-
-### Ký hiệu CRUD
-
-- C: Tạo (Create).
-- R: Đọc (Read).
-- U: Cập nhật (Update).
-- D: Xóa (Delete).
