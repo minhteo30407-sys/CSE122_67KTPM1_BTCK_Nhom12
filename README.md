@@ -94,7 +94,7 @@ Trang của Thành nằm trong `src/pages/nguyen_ba_thanh/`. Mỗi trang có `st
 
 ## Phân công
 
-Nhóm gồm hai thành viên: Trần Văn Minh phụ trách 10 trang trong `src/pages/tran_van_minh/`, Nguyễn Bá Thành phụ trách 11 trang trong `src/pages/nguyen_ba_thanh/`. Xem [docs/team-assignment.md](./docs/team-assignment.md) và [docs/screen-list.md](./docs/screen-list.md) để biết chi tiết.
+Nhóm gồm hai thành viên: Trần Văn Minh phụ trách 10 trang trong `src/pages/tran_van_minh/`, Nguyễn Bá Thành phụ trách 11 trang trong `src/pages/nguyen_ba_thanh/`. Xem chi tiết tại [Bảng kiểm kê màn hình 12 cột](./docs/screen-inventory.md), [docs/team-assignment.md](./docs/team-assignment.md) và [docs/screen-list.md](./docs/screen-list.md).
 
 ### Trần Văn Minh
 
